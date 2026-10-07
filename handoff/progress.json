@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-07T03:02:12.743797+00:00",
+  "generated_at": "2026-10-07T04:24:59+00:00",
   "workspace": "/home/joe/LLM-Workspace",
   "operator_directive": "STOP_NEW_WORK; urgent checkpoint only. Subsequent agents resume work when invoked by the operator.",
   "source_ledger": "commissioning/progress.json",
@@ -677,5 +677,12 @@
   "missing_paths_expected": [
     "state/local-agent-handoff-proof-post-reboot.json",
     "scratch/local-agent-handoff-proof-post-reboot.json"
-  ]
+  ],
+  "bionic_context_diagnosis": {
+    "status": "COMPLETE",
+    "completed_at": "2026-10-07T04:24:59Z",
+    "evidence": "evidence/bionic-failed-request-22929.json",
+    "finding": "Task 22929 rejected: 38,297 > 33,280 cap. Cause: accumulated unbounded tool-result text in long resumed-session turn (62 results / 139,372 chars; largest single = unbounded read of handoff/progress.json 25,721 chars). Not MCP catalog, not Local Workbench. Fresh session (min tools, bounded reads) 15,447-31,748 tokens all accepted; peaks ~95% cap with compaction resets. Local Workbench MCP alone sufficient; context NOT increased.",
+    "next_recommendation": "Keep handoff/progress.json compact or split tasks array (structural follow-up, needs consumer check). Use bounded reads for state files."
+  }
 }

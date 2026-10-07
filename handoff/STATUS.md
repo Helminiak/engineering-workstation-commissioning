@@ -23,3 +23,16 @@ Captured 2026-10-07T03:02:12.743797+00:00. No commissioning tasks IN_PROGRESS. O
 | integration_report_refresh | NOT_TESTED | tests/end_to_end.py and scripts/build_reports.py modified but full integration/report generation not run. Older completion reports may be stale; this handoff is authoritative. |
 
 Last verified completed stage: github at 2026-10-07T02:55:16.480484+00:00. Latest attempted stage: bionic_usability, BLOCKED/exit2. Next unfinished: bionic_usability.
+
+## Bionic context overflow diagnosis (2026-10-07, COMPLETE)
+
+| Item | Result |
+|---|---|
+| Failed request | task 22929 @ 00:10:15Z, 38,297 tokens > 33,280 cap (server log `2026-10-07.1.log:15`) |
+| Root cause | Accumulated unbounded tool-result text in one long resumed-session turn: 62 results / 139,372 chars; largest single = unbounded full-file read of `handoff/progress.json` (25,721 chars). NOT the MCP catalog, NOT the Local Workbench call. |
+| Duplicate MCP registrations | None active in Bionic; only built-in vs Local Workbench overlap (by design). `context7` + `context7-public` both defined in main-app `~/.lmstudio/mcp.json` (inactive for Bionic; optional cleanup). |
+| Fresh-session baseline | 15,447–31,748 tokens, all accepted (truncated=0); peaks ~95% of cap, compaction resets to ~15.4K. Healthy but tight. |
+| Token record | Before: 38,297 (rejected). After (min tools, bounded reads): 15,447–31,748 (accepted). |
+| MCP sufficiency | Local Workbench alone is sufficient; other MCPs correctly disabled. |
+| Context length | NOT increased (operator directive). |
+| Evidence | `evidence/bionic-failed-request-22929.json` |
