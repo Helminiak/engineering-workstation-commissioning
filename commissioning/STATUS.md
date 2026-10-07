@@ -1,6 +1,6 @@
 # Status
-Checkpoint: 2026-10-07T02:08:26.937336+00:00
-Historical native PASS preserved from real trace; current Bionic context overflow measured and blocked; configuration backed up; no context/plugin changes
+Checkpoint: 2026-10-07T02:13:21.495216+00:00
+REBOOT CHECKPOINT: work saved; historical native acceptance PASS/current Bionic usability BLOCKED; no active commissioning jobs; no new tasks until operator resumes
 
 - execution: PASS
 - local_agent: PASS_WITH_LIMITATIONS
