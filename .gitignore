@@ -1,0 +1,17 @@
+# Explicitly version sanitized commissioning sources only.
+/*
+!/.gitignore
+!/commissioning/
+!/scripts/
+!/tests/
+!/handoff/
+!/reports/
+!/configs/
+!/tools/
+/tools/*
+!/tools/commissioning*
+!/tools/workbench_mcp.py
+commissioning/.runner.lock
+**/__pycache__/
+**/*.pyc
+reports/*raw*

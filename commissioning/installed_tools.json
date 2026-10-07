@@ -1,0 +1,149 @@
+{
+  "git": {
+    "path": "/usr/bin/git"
+  },
+  "gh": {
+    "path": null
+  },
+  "curl": {
+    "path": "/usr/bin/curl"
+  },
+  "wget": {
+    "path": "/usr/bin/wget"
+  },
+  "jq": {
+    "path": "/usr/bin/jq"
+  },
+  "yq": {
+    "path": null
+  },
+  "rg": {
+    "path": "/home/joe/.codex/packages/app-server-daemon/releases/0.160.1-x86_64-unknown-linux-musl/codex-path/rg"
+  },
+  "fd": {
+    "path": null
+  },
+  "fdfind": {
+    "path": null
+  },
+  "tree": {
+    "path": null
+  },
+  "rsync": {
+    "path": "/usr/bin/rsync"
+  },
+  "zip": {
+    "path": "/usr/bin/zip"
+  },
+  "unzip": {
+    "path": "/usr/bin/unzip"
+  },
+  "tmux": {
+    "path": null
+  },
+  "htop": {
+    "path": null
+  },
+  "btop": {
+    "path": "/usr/bin/btop"
+  },
+  "nvtop": {
+    "path": null
+  },
+  "lsof": {
+    "path": "/usr/bin/lsof"
+  },
+  "strace": {
+    "path": "/usr/bin/strace"
+  },
+  "shellcheck": {
+    "path": null
+  },
+  "hyperfine": {
+    "path": null
+  },
+  "iostat": {
+    "path": "/usr/bin/iostat"
+  },
+  "sensors": {
+    "path": null
+  },
+  "gcc": {
+    "path": null
+  },
+  "g++": {
+    "path": null
+  },
+  "clang": {
+    "path": null
+  },
+  "llvm-config": {
+    "path": null
+  },
+  "make": {
+    "path": "/usr/bin/make"
+  },
+  "cmake": {
+    "path": null
+  },
+  "ninja": {
+    "path": null
+  },
+  "pkg-config": {
+    "path": "/usr/bin/pkg-config"
+  },
+  "gdb": {
+    "path": "/usr/bin/gdb"
+  },
+  "valgrind": {
+    "path": null
+  },
+  "ccache": {
+    "path": null
+  },
+  "gcov": {
+    "path": null
+  },
+  "python3": {
+    "path": "/usr/bin/python3"
+  },
+  "pipx": {
+    "path": null
+  },
+  "uv": {
+    "path": "/home/joe/.local/bin/uv"
+  },
+  "node": {
+    "path": "/home/joe/.local/bin/node"
+  },
+  "npm": {
+    "path": "/home/joe/.local/bin/npm"
+  },
+  "npx": {
+    "path": "/home/joe/.local/bin/npx"
+  },
+  "java": {
+    "path": null
+  },
+  "javac": {
+    "path": null
+  },
+  "mvn": {
+    "path": null
+  },
+  "gradle": {
+    "path": null
+  },
+  "rustc": {
+    "path": null
+  },
+  "cargo": {
+    "path": null
+  },
+  "rustfmt": {
+    "path": null
+  },
+  "nvcc": {
+    "path": null
+  }
+}

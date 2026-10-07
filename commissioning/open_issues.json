@@ -1,0 +1,19 @@
+{
+  "issues": [
+    {
+      "id": "github-cli",
+      "status": "NOT_TESTED",
+      "detail": "gh missing; auth not tested; repository creation not authorized."
+    },
+    {
+      "id": "bionic-native",
+      "status": "MANUAL_REQUIRED",
+      "detail": "No native apps or browser surfaces exposed to UI automation. Native shell, project mode and approval behavior cannot yet be verified."
+    },
+    {
+      "id": "context",
+      "status": "IN_PROGRESS",
+      "detail": "Model observed loaded with 19968 context; 32K measurement pending."
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+# Security
+Never print or commit credentials. Raw evidence stays local. No sudo, system driver/kernel/firmware changes, network exposure, security-control changes, merge, force push, deployment, or new GitHub repository without operator approval. Read-only diagnostics and workspace writes authorized. Existing shell bridge has full Joe-account privileges, even though cwd and document reads are scoped; it is not a security sandbox. Back up important configuration before edits.

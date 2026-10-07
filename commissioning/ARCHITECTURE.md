@@ -1,0 +1,2 @@
+# Architecture
+Codex commissions and repairs; local Qwen performs scoped engineering via Local Workbench; ChatGPT reviews architecture using sanitized handoff files. Persistent stage state and append-only command evidence underpin restart. Local services bind loopback. Execution is normal-user code execution, not an OS sandbox. Optional documentation tools must remain independent of core execution.
