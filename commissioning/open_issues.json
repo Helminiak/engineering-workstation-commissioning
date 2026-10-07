@@ -1,11 +1,6 @@
 {
   "issues": [
     {
-      "id": "github-remote",
-      "status": "MANUAL_REQUIRED",
-      "detail": "CLI authentication as Helminiak and account API read PASS; connected app read also PASS. Dedicated commissioning repository lookup unavailable and no remote configured. Repository creation/push still need new authorization. No credential copied or exposed."
-    },
-    {
       "id": "bionic-native",
       "status": "MANUAL_REQUIRED",
       "detail": "No native UI surfaces exposed. Bionic native projects, approval behavior and independent native version remain unverified; API/MCP acceptance passes."

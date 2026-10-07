@@ -28,4 +28,4 @@
 
 - Fresh acceptance retest rejected by independent verifier: model saw an old parent tracked-file diff and claimed it had appended the new case file without doing so. The new file remained baseline. Strengthened exact-case path instructions and scoped independent diff verification. Failed transcript preserved in evidence/local-llm-acceptance-failed-scope.json; model final claims are not proof.
 
-Full integration exits 2 for unfinished authorized GitHub remote writes and native UI verification. CLI authentication now passes. These are not PASS.
+Full integration exits 2 for unfinished native Bionic UI verification. CLI authentication and authorized private remote push verification pass. These are not PASS.

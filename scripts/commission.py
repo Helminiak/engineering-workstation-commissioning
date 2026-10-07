@@ -102,7 +102,7 @@ Working branch: {branch}.
 Currently running stages: {json.dumps(running)}. An IN_PROGRESS record may reflect interruption; inspect process list before reverify. LM Studio localhost API and model are persistent services, see machine_state.json.
 First command: scripts/show_status.sh
 Read commissioning/MISSION.md for the durable operator requirements.
-Reproduce current blockers: git remote -v (no remote until approved); gh repo view Helminiak/engineering-workstation-commissioning (unavailable at last lookup); native Bionic UI requires operator verification. Health checks CLI authentication separately from remote writes. Development passes; do not repeat apt installation.
+Reproduce current blocker: native Bionic UI requires operator verification; read handoff/BIONIC_NATIVE_VERIFICATION.md. Verify private GitHub state with python3 scripts/verify-github-remote.py after authorized pushes. Health checks CLI authentication separately from remote writes. Development passes; do not repeat apt installation.
 Next: inspect evidence for {pending[0] if pending else "end_to_end"}; rerun recorded verifier before continuing.
 Reproduce: python3 scripts/commission.py verify STAGE --command 'VERIFIER' (inspect progress.json commands).
 Do not repeat: working NVIDIA driver, working Node, existing model downloads; do not replace existing integrations.

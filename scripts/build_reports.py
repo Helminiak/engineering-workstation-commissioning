@@ -141,6 +141,7 @@ verification = {
     "local_agent_java": read("evidence/local-agent-java-verification.json"),
     "github_connector": read("evidence/github-connector.json"),
     "github_cli_read": read("evidence/github-cli-read.json"),
+    "github_remote": read("evidence/github-remote-verification.json"),
     "rag_formats": read("evidence/rag-formats.json"),
     "hardware": read("evidence/hardware-validation.json"),
     "rag": {
@@ -243,13 +244,13 @@ Verified: Joe/5090FE/Ubuntu 26.04.1/RTX 5090; real shell and file writes; Node/n
 
 Recommended Qwen Q6_K context: 32,768, tested with 25,729 input tokens. Measured short benchmark peak VRAM 25,725 MiB of 32,607 MiB; median generation about 161 tokens/sec. Cache and short-prompt limits apply.
 
-Incomplete: private remote authorization and push/PR verification (CLI authentication as Helminiak and connected app public metadata read pass); native Bionic projects/tool approval; full integration completion. One unexplained Python3.14 streaming failure is recorded; controls pass and forensic verification is pinned to Python3.12. yq/fd and Gradle are absent and were not needed for verified workflows. No driver, kernel, firmware or security-control changes made. No GitHub repository created or pushed.
+Private Helminiak/engineering-workstation-commissioning created with operator approval; commissioning/main-work push verified by matching local HEAD, Git remote and GitHub API commits. CLI authentication as Helminiak and repository privacy/write permissions pass. Incomplete: native Bionic projects/tool approval and full integration completion. PR creation, merge and deployment were not authorized or performed. One unexplained Python3.14 streaming failure is recorded; controls pass and forensic verification is pinned to Python3.12. yq/fd and Gradle are absent and were not needed for verified workflows. No driver, kernel, firmware or security-control changes made. Only the approved private commissioning repository/task branch was created/pushed.
 
-Read commissioning/NEXT_AGENT.md and run scripts/show_status.sh. Detailed evidence is local in evidence/ and logs/. Sanitized reports, scripts and state are committed locally. See git log -1 for the exact latest commit.
+Read commissioning/NEXT_AGENT.md and run scripts/show_status.sh. Detailed evidence is local in evidence/ and logs/. Sanitized reports, scripts and state are committed locally and pushed to the approved private repository. See git log -1 for the exact latest commit.
 """)
 (R / "FAILURE_REPORT.md").write_text(
     (C / "FAILURES.md").read_text()
-    + "\nFull integration exits 2 for unfinished authorized GitHub remote writes and native UI verification. CLI authentication now passes. These are not PASS.\n"
+    + "\nFull integration exits 2 for unfinished native Bionic UI verification. CLI authentication and authorized private remote push verification pass. These are not PASS.\n"
 )
 (R / "SYSTEM_ARCHITECTURE.md").write_text(
     (C / "ARCHITECTURE.md").read_text()
@@ -283,11 +284,11 @@ git log -1
 ```
 Integration exit 2 means incomplete. Health checks mandatory local subsystems and CLI authentication; health exit 0 does not prove remote write access or native Bionic behavior.
 
-The reviewed apt batch is already approved, installed and verified; do not repeat it. Run scripts/verify-development.sh and scripts/verify-build-tools.sh for verification. CLI authentication as Helminiak is verified. Creating a new private repository requires separate authorization. No automatic merge/deploy/push.
+The reviewed apt batch is already approved, installed and verified; do not repeat it. Run scripts/verify-development.sh and scripts/verify-build-tools.sh for verification. CLI authentication as Helminiak is verified. The private commissioning repository and commissioning/main-work pushes are authorized and verified. Run python3 scripts/verify-github-remote.py after pushes. Other repositories/branches and merge/deploy require separate authorization.
 """)
 (R / "REPRODUCIBILITY_REPORT.md").write_text("""# Reproducibility
 Exact currently installed Python versions are frozen in configs/*-requirements.lock. Recreate isolated Python 3.12 environments with uv venv, then install the matching lock; the GPU lock requires the official cu130 PyTorch wheel index. Locks list versions but do not lock every wheel hash; platform-specific reproducibility is limited. CONFIGURATION_HASHES.json records source/config hashes and SBOM.cdx.json records packages per environment. SHA-256 source-evidence hashes and seeded validation are recorded locally. Raw datasets are excluded from Git; tests regenerate synthetic fixtures.
 
-No remote state exists until repository creation/push authorization and verification are completed. Previous Qwen setup documentation may be stale; commissioned settings/evidence are authoritative. Benchmark medians include prefix caching and do not represent cold long-context prompt throughput.
+Sanitized state is available in the approved private Helminiak/engineering-workstation-commissioning repository on commissioning/main-work; verify remote commit against local HEAD after pushes. Previous Qwen setup documentation may be stale; commissioned settings/evidence are authoritative. Benchmark medians include prefix caching and do not represent cold long-context prompt throughput.
 """)
 print("Reports refreshed with actual incomplete statuses")

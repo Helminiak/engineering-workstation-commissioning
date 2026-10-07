@@ -30,6 +30,7 @@ commands = [
     ("Java/C++/Rust", "scripts/verify-development.sh && scripts/verify-build-tools.sh"),
     ("CPU/RAM/filesystem", "python3 tests/validate_hardware.py"),
     ("GitHub authentication", "gh api user --jq .login"),
+    ("GitHub remote writes", "python3 scripts/verify-github-remote.py"),
     ("security/code validation", "scripts/verify-security.sh"),
     (
         "property tests",
@@ -70,10 +71,6 @@ for name, cmd in commands:
     print(name, status, flush=True)
 for category, reason in [
     (
-        "GitHub remote writes",
-        "Private commissioning repository creation and push require operator approval; no remote configured.",
-    ),
-    (
         "Bionic native UI",
         "Native projects and approval behavior unavailable to automation; API/MCP tested separately.",
     ),
@@ -102,7 +99,7 @@ report = {
     "artifact_sha256": hashlib.sha256(p.read_bytes()).hexdigest(),
     "results": rows,
     "local_llm_evidence": "evidence/local-llm-acceptance.json",
-    "limitations": "Local LLM evidence is independently checked; Authorized GitHub remote writes and native Bionic verification gate full integration completion. Native Bionic remains separately unverified. No proprietary data or trading strategy.",
+    "limitations": "Local LLM evidence is independently checked; Private remote write/commit verification passes; native Bionic verification gates full integration completion. Native Bionic remains separately unverified. No proprietary data or trading strategy.",
 }
 (ROOT / "evidence/end-to-end.json").write_text(json.dumps(report, indent=2) + "\n")
 (ROOT / "artifacts/engineering-report.json").write_text(

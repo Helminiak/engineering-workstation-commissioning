@@ -147,3 +147,13 @@
 - 2026-10-07T01:26:26.813962+00:00: Cancelled stale login; CLI/keyring Helminiak authenticated; account API and local health/integration checks pass; remote writes/native UI still manual
 
 - 2026-10-07T01:28:13.811633+00:00: Operator approved private commissioning repository creation and sanitized commissioning/main-work push; pre-push history scan and tests running
+
+- 2026-10-07T01:28:51.441236+00:00: github: verification started
+
+- 2026-10-07T01:28:53.654909+00:00: github: PASS_WITH_LIMITATIONS
+
+- 2026-10-07T01:29:19.523377+00:00: end_to_end: verification started
+
+- 2026-10-07T01:29:34.178763+00:00: end_to_end: BLOCKED
+
+- 2026-10-07T01:29:40.286913+00:00: Approved private repository created; reviewed task branch pushed; privacy/auth/read/write and matching Git/API commit verified; native Bionic remains manual
