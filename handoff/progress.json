@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-07T03:02:12.743797+00:00",
+  "workspace": "/home/joe/LLM-Workspace",
+  "operator_directive": "STOP_NEW_WORK; urgent checkpoint only. Subsequent agents resume work when invoked by the operator.",
+  "source_ledger": "commissioning/progress.json",
+  "overall_status": "BLOCKED",
+  "tasks": [
+    {
+      "id": "execution",
+      "status": "PASS",
+      "source_status": "PASS",
+      "dependencies": [],
+      "started_at": "2026-10-06T23:59:19.603847+00:00",
+      "verified_at": "2026-10-06T23:59:19.670531+00:00",
+      "verification": true,
+      "evidence": [
+        {
+          "path": "evidence/execution-20261006T195919664576.json",
+          "exists": true,
+          "sha256": "8c0aeaea13c6aeb12266962e036fe7234b05c5a749a73db7a0f7ca399f7321cc"
+        }
+      ],
+      "latest_command": [
+        {
+          "command": "whoami && pwd && id && uname -a && lsb_release -a && nvidia-smi && free -h && df -h && test -r commissioning/CODEX_EXECUTION_TEST.txt && cat commissioning/CODEX_EXECUTION_TEST.txt",
+          "exit_code": 0,
+          "start_time": "2026-10-06T23:59:19.612422+00:00",
+          "end_time": "2026-10-06T23:59:19.664560+00:00"
+        }
+      ],
+      "limitations": [],
+      "next_action": "Preserve completed evidence; no commissioning rerun during checkpoint"
+    },
+    {
+      "id": "local_agent",
+      "status": "PASS",
+      "source_status": "PASS_WITH_LIMITATIONS",
+      "dependencies": [
+        "execution"
+      ],
+      "started_at": "2026-10-07T02:52:59.942697+00:00",
+      "verified_at": "2026-10-07T02:53:21.849196+00:00",
+      "verification": true,
+      "evidence": [
+        {
+          "path": "evidence/local_agent-20261006T200028544357.json",
+          "exists": true,
+          "sha256": "0ab627cc8b10039f44115b70602948d7dfa9bacfe74e82d1a9c048cf84dc3c33"
+        },
+        {
+          "path": "evidence/local_agent-20261007T000952581269.json",
+          "exists": true,
+          "sha256": "fa04e592d70267d79e1d8653e199fa7daf8afcd75b62a20878205ff01f6e3241"
+        },
+        {
+          "path": "evidence/local_agent-20261007T010807156789.json",
+          "exists": true,
+          "sha256": "6be9fede5b1960c73c2411869b679d078ff9c738d6bba1a7b045af1883ec2f7a"
+        },
+        {
+          "path": "evidence/local_agent-20261007T025321846839.json",
+          "exists": true,
+          "sha256": "7e82a54d7b1e120e9a2dca11e22ad7c31b86e5af132ffa8371566651099dbef1"
+        }
+      ],
+      "latest_command": [
+        {
+          "command": ".venv/bin/python tests/local_llm_acceptance.py --evidence evidence/local-llm-acceptance-post-reboot.json && .venv/bin/python tests/test_bridge.py && .venv/bin/python tests/test_mcp_isolation.py",
+          "exit_code": 0,
+          "start_time": "2026-10-07T02:52:59.950767+00:00",
+          "end_time": "2026-10-07T02:53:21.846820+00:00"
+        }
+      ],
+      "limitations": [
+        "Fresh API/MCP core engineering tools and optional-failure isolation verified on operator-loaded model. Native Bionic current usability remains a separate blocked stage. Joe-account tools are not an OS sandbox."
+      ],
+      "next_action": "Preserve completed evidence; no commissioning rerun during checkpoint"
+    },
+    {
+      "id": "resume_engine",
+      "status": "PASS",
+      "source_status": "PASS",
+      "dependencies": [
+        "execution"
+      ],
+      "started_at": "2026-10-07T02:52:34.485086+00:00",
+      "verified_at": "2026-10-07T02:52:35.727605+00:00",
+      "verification": true,
+      "evidence": [
+        {
+          "path": "evidence/resume_engine-20261006T200049692660.json",
+          "exists": true,
+          "sha256": "9c32afb802ae7973e5ed9a014a345ad6129e60ab6c412edd5e4bb53440d8a87d"
+        },
+        {
+          "path": "evidence/resume_engine-20261007T025235722389.json",
+          "exists": true,
+          "sha256": "cd2df0cf5ef44f959a4125447a29dcf357ad9e329118e720116ae81a2118a4c2"
+        }
+      ],
+      "latest_command": [
+        {
+          "command": "python3 tests/test_runner.py && scripts/resume_commissioning.sh",
+          "exit_code": 0,
+          "start_time": "2026-10-07T02:52:34.491271+00:00",
+          "end_time": "2026-10-07T02:52:35.722376+00:00"
+        }
+      ],
+      "limitations": [],
+      "next_action": "Preserve completed evidence; no commissioning rerun during checkpoint"
+    },
+    {
+      "id": "development",
+      "status": "PASS",
+      "source_status": "PASS",
+      "dependencies": [
+        "execution"
+      ],
+      "started_at": "2026-10-07T00:56:20.775520+00:00",
+      "verified_at": "2026-10-07T00:56:25.136070+00:00",
+      "verification": true,
+      "evidence": [
+        {
+          "path": "evidence/development-20261007T005227163055.json",
+          "exists": true,
+          "sha256": "3b7389ff48ae9805c0a6c1291d43b3191cf3d3fc63766a7510a5250b123466b9"
+        },
+        {
+          "path": "evidence/development-20261007T005625124624.json",
+          "exists": true,
+          "sha256": "e9b09f074d7f2ec3e09e3c7dd57f7c3507938fe0b0976e51dca94a4c2eb5320d"
+        }
+      ],
+      "latest_command": [
+        {
+          "command": "scripts/verify-development.sh && scripts/verify-build-tools.sh",
+          "exit_code": 0,
+          "start_time": "2026-10-07T00:56:20.784508+00:00",
+          "end_time": "2026-10-07T00:56:25.124592+00:00"
+        }
+      ],
+      "limitations": [],
+      "next_action": "Preserve completed evidence; no commissioning rerun during checkpoint"
+    },
+    {
+      "id": "github",
+      "status": "PASS",
+      "source_status": "PASS_WITH_LIMITATIONS",
+      "dependencies": [
+        "execution",
+        "development"
+      ],
+      "started_at": "2026-10-07T02:55:14.827816+00:00",
+      "verified_at": "2026-10-07T02:55:16.480484+00:00",
+      "verification": true,
+      "evidence": [
+        {
+          "path": "evidence/github-20261007T012853631993.json",
+          "exists": true,
+          "sha256": "ecb03f239a9867c00c9b0a7338b6ffccdf52d0037bb51584e3bcb617fa732ab6"
+        },
+        {
+          "path": "evidence/github-20261007T025516478022.json",
+          "exists": true,
+          "sha256": "4d2a7cc335143e4258fa9e32a75201b46773c924b10a34ba090723e45c5f38ff"
+        }
+      ],
+      "latest_command": [
+        {
+          "command": "python3 scripts/verify-github-remote.py",
+          "exit_code": 0,
+          "start_time": "2026-10-07T02:55:14.833210+00:00",
+          "end_time": "2026-10-07T02:55:16.478004+00:00"
+        }
+      ],
+      "limitations": [
+        "Existing authentication, private repository, authorized task branch and matching commit verified. PR creation/merge/deploy are outside authorization."
+      ],
+      "next_action": "Preserve completed evidence; no commissioning rerun during checkpoint"
+    },
+    {
+      "id": "gpu_llm",
+      "status": "PASS",
+      "source_status": "PASS_WITH_LIMITATIONS",
+      "dependencies": [
+        "execution",
+        "local_agent"
+      ],
+      "started_at": "2026-10-07T00:07:18.519178+00:00",
+      "verified_at": "2026-10-07T00:07:20.464009+00:00",
+      "verification": true,
+      "evidence": [
+        {
+          "path": "evidence/gpu_llm-20261006T200720454223.json",
+          "exists": true,
+          "sha256": "c0363e833f84c046f63b13838f5c8a1991fab6a7cc7784292fb8a20b9bf26254"
+        }
+      ],
+      "latest_command": [
+        {
+          "command": "venvs/gpu/bin/python tests/validate_cuda.py && node tests/long_context.cjs",
+          "exit_code": 0,
+          "start_time": "2026-10-07T00:07:18.531616+00:00",
+          "end_time": "2026-10-07T00:07:20.454206+00:00"
+        }
+      ],
+      "limitations": [
+        "Historical Q6 16K/32K benchmark evidence retained. Current operator-loaded Q4/four-slot config is sampled in BIONIC_CONTEXT_DIAGNOSIS.json; no reload or blind context increase performed. Optional 48K/64K Q6 benchmarks not required for current native overhead diagnosis."
+      ],
+      "next_action": "Preserve completed evidence; no commissioning rerun during checkpoint"
+    },
+    {
+      "id": "scientific",
+      "status": "PASS",
+      "source_status": "PASS",
+      "dependencies": [
+        "development"
+      ],
+      "started_at": "2026-10-07T00:07:40.154290+00:00",
+      "verified_at": "2026-10-07T00:07:43.827584+00:00",
+      "verification": true,
+      "evidence": [
+        {
+          "path": "evidence/scientific-20261006T200743799069.json",
+          "exists": true,
+          "sha256": "b28d46c5c2872dddc03d06bac4047648bc7fd5b9938a24af34108e5500be5f25"
+        }
+      ],
+      "latest_command": [
+        {
+          "command": "venvs/quant/bin/python tests/validate_scientific.py && uv pip check --python venvs/quant/bin/python",
+          "exit_code": 0,
+          "start_time": "2026-10-07T00:07:40.164323+00:00",
+          "end_time": "2026-10-07T00:07:43.799045+00:00"
+        }
+      ],
+      "limitations": [],
+      "next_action": "Preserve completed evidence; no commissioning rerun during checkpoint"
+    },
+    {
+      "id": "forensics",
+      "status": "PASS",
+      "source_status": "PASS_WITH_LIMITATIONS",
+      "dependencies": [
+        "scientific"
+      ],
+      "started_at": "2026-10-07T01:00:28.016692+00:00",
+      "verified_at": "2026-10-07T01:00:29.006947+00:00",
+      "verification": true,
+      "evidence": [
+        {
+          "path": "evidence/forensics-20261006T200601555207.json",
+          "exists": true,
+          "sha256": "012e9b340c3d551c73f0bb5b97fcc2ecdd0d3d7010ca4c0822f246fc96a573b8"
+        },
+        {
+          "path": "evidence/forensics-20261007T005853904493.json",
+          "exists": true,
+          "sha256": "1aa24d2241d4c5e805ddb4ef544f548c3581fa2977da7a664e5cabf7741940da"
+        },
+        {
+          "path": "evidence/forensics-20261007T010029000684.json",
+          "exists": true,
+          "sha256": "59f64c32b44a937706b18e86e68ee49910e498b5ed379e21baa9484679babd3b"
+        }
+      ],
+      "latest_command": [
+        {
+          "command": "venvs/quant/bin/python tests/test_forensics.py && venvs/quant/bin/python tests/test_streaming_forensics.py && venvs/quant/bin/python tests/test_forensic_statistics.py",
+          "exit_code": 0,
+          "start_time": "2026-10-07T01:00:28.024743+00:00",
+          "end_time": "2026-10-07T01:00:29.000666+00:00"
+        }
+      ],
+      "limitations": [
+        "200K synthetic streaming record verification. Descriptive statistics only. One unexplained Python 3.14 failure retained; controls pass and commissioned forensic interpreter is isolated Python 3.12."
+      ],
+      "next_action": "Preserve completed evidence; no commissioning rerun during checkpoint"
+    },
+    {
+      "id": "mbo",
+      "status": "PASS",
+      "source_status": "PASS_WITH_LIMITATIONS",
+      "dependencies": [
+        "development",
+        "scientific"
+      ],
+      "started_at": "2026-10-07T00:57:17.755091+00:00",
+      "verified_at": "2026-10-07T00:57:18.590163+00:00",
+      "verification": true,
+      "evidence": [
+        {
+          "path": "evidence/mbo-20261007T005718584140.json",
+          "exists": true,
+          "sha256": "fafc125ab1fc6dc17ab55ae94ccf6f8577ec97bd8447053f8856d7ef3b8ea0b2"
+        }
+      ],
+      "latest_command": [
+        {
+          "command": "python3 tests/test_mbo.py && scripts/verify-java-mbo.sh && python3 tests/test_cross_language_replay.py && python3 tests/test_mbo_analysis.py && venvs/quant/bin/python -m pytest -q tests/test_orderbook_properties.py",
+          "exit_code": 0,
+          "start_time": "2026-10-07T00:57:17.765548+00:00",
+          "end_time": "2026-10-07T00:57:18.584125+00:00"
+        }
+      ],
+      "limitations": [
+        "Synthetic Java/Python foundation, not a CME decoder. Queue/persistence are reference rules; regimes describe volume imbalance, not trading strategies. Measured 200-order depth, not exchange-scale load."
+      ],
+      "next_action": "Preserve completed evidence; no commissioning rerun during checkpoint"
+    },
+    {
+      "id": "security",
+      "status": "PASS",
+      "source_status": "PASS_WITH_LIMITATIONS",
+      "dependencies": [
+        "development"
+      ],
+      "started_at": "2026-10-07T01:07:17.882594+00:00",
+      "verified_at": "2026-10-07T01:07:18.030795+00:00",
+      "verification": true,
+      "evidence": [
+        {
+          "path": "evidence/security-20261007T001442043751.json",
+          "exists": true,
+          "sha256": "c7b184d15bee176a2e0a6752cea221c887e3f33e40ab9308d0ae5835722c4b6b"
+        },
+        {
+          "path": "evidence/security-20261007T010718024753.json",
+          "exists": true,
+          "sha256": "03d9245ca7ee7d172b928a2a6fe13b9bf65f9dc38c72efff39fec98814868055"
+        }
+      ],
+      "latest_command": [
+        {
+          "command": "scripts/verify-security.sh",
+          "exit_code": 0,
+          "start_time": "2026-10-07T01:07:17.891194+00:00",
+          "end_time": "2026-10-07T01:07:18.024742+00:00"
+        }
+      ],
+      "limitations": [
+        "Heuristic secret scan and scoped type checks; GPU wheel advisory coverage incomplete. No private code uploaded."
+      ],
+      "next_action": "Preserve completed evidence; no commissioning rerun during checkpoint"
+    },
+    {
+      "id": "rag",
+      "status": "PASS",
+      "source_status": "PASS_WITH_LIMITATIONS",
+      "dependencies": [
+        "local_agent",
+        "scientific"
+      ],
+      "started_at": "2026-10-07T01:04:43.757599+00:00",
+      "verified_at": "2026-10-07T01:04:44.033869+00:00",
+      "verification": true,
+      "evidence": [
+        {
+          "path": "evidence/rag-20261006T200733510434.json",
+          "exists": true,
+          "sha256": "dc4395afb308d6bdc791486a67cb08836a577baf5efcba86e1bcb69d02f55371"
+        },
+        {
+          "path": "evidence/rag-20261007T010444028156.json",
+          "exists": true,
+          "sha256": "6364c58337976ed212429c269a382b4f4b39dbbbf468cbe9aae9fdce715e8daf"
+        }
+      ],
+      "latest_command": [
+        {
+          "command": ".venv/bin/python tests/test_rag.py && .venv/bin/python tests/test_rag_formats.py",
+          "exit_code": 0,
+          "start_time": "2026-10-07T01:04:43.765852+00:00",
+          "end_time": "2026-10-07T01:04:44.028142+00:00"
+        }
+      ],
+      "limitations": [
+        "Local synthetic authorized directories; PDF text supported/tested, OCR not included. No personal or external data indexed."
+      ],
+      "next_action": "Preserve completed evidence; no commissioning rerun during checkpoint"
+    },
+    {
+      "id": "end_to_end",
+      "status": "BLOCKED",
+      "source_status": "BLOCKED",
+      "dependencies": [
+        "local_agent",
+        "resume_engine",
+        "development",
+        "github",
+        "gpu_llm",
+        "scientific",
+        "forensics",
+        "mbo",
+        "security",
+        "rag",
+        "bionic_usability"
+      ],
+      "started_at": "2026-10-07T01:29:19.516433+00:00",
+      "verified_at": "2026-10-07T01:29:34.171363+00:00",
+      "verification": false,
+      "evidence": [
+        {
+          "path": "evidence/end_to_end-20261007T001423446485.json",
+          "exists": true,
+          "sha256": "306e3a08949304ec22716e4575b1f49c92c061bac84182a657dcb3291497a364"
+        },
+        {
+          "path": "evidence/end_to_end-20261007T001703407609.json",
+          "exists": true,
+          "sha256": "1807b35419769544ddd9b9a609fff4c2b4a4e61053b5825eb320a14146350df2"
+        },
+        {
+          "path": "evidence/end_to_end-20261007T010658287274.json",
+          "exists": true,
+          "sha256": "e6b26eb03d2ea920d597a0cde5fcbb257a1819775a13add9d6bb439366f6df83"
+        },
+        {
+          "path": "evidence/end_to_end-20261007T012606134295.json",
+          "exists": true,
+          "sha256": "ce8f14884d9a55744bf3040b556d9dbd66368f166c37fe32ce99631bee480ea5"
+        },
+        {
+          "path": "evidence/end_to_end-20261007T012934165343.json",
+          "exists": true,
+          "sha256": "59c6711ba82e3b30efaa9217d37bc8ec4bbc2b016286d4e52cdb5853aa37fe18"
+        }
+      ],
+      "latest_command": [
+        {
+          "command": "python3 tests/end_to_end.py",
+          "exit_code": 2,
+          "start_time": "2026-10-07T01:29:19.524663+00:00",
+          "end_time": "2026-10-07T01:29:34.165331+00:00"
+        }
+      ],
+      "limitations": [
+        "Historical native engineering acceptance PASS verified; current Bionic chat usability separately BLOCKED by context overflow. Other previously tested subsystems and GitHub synchronization remain verified."
+      ],
+      "next_action": "Re-run integration only after current native usability is fixed, without promoting blocked results"
+    },
+    {
+      "id": "bionic_native",
+      "status": "PASS",
+      "source_status": "PASS",
+      "dependencies": [
+        "local_agent"
+      ],
+      "started_at": "2026-10-07T02:06:11.509448+00:00",
+      "verified_at": "2026-10-07T02:06:11.553287+00:00",
+      "verification": true,
+      "evidence": [
+        {
+          "path": "evidence/bionic_native-20261007T013449530284.json",
+          "exists": true,
+          "sha256": "15139042d5c05d0775d3f5ffe3218a1feb8e838fcbbb89a861f5e38bc2e6bf9b"
+        },
+        {
+          "path": "evidence/bionic_native-20261007T020611547142.json",
+          "exists": true,
+          "sha256": "dd19259b18638872efdb758785c2ac86c7ac8d3a33470842441b351d05d685e2"
+        }
+      ],
+      "latest_command": [
+        {
+          "command": "python3 scripts/verify-bionic-history.py",
+          "exit_code": 0,
+          "start_time": "2026-10-07T02:06:11.517548+00:00",
+          "end_time": "2026-10-07T02:06:11.547130+00:00"
+        }
+      ],
+      "limitations": [],
+      "next_action": "Preserve completed evidence; no commissioning rerun during checkpoint"
+    },
+    {
+      "id": "bionic_usability",
+      "status": "BLOCKED",
+      "source_status": "BLOCKED",
+      "dependencies": [
+        "bionic_native",
+        "gpu_llm"
+      ],
+      "started_at": "2026-10-07T02:56:02.989702+00:00",
+      "verified_at": "2026-10-07T02:56:03.157930+00:00",
+      "verification": false,
+      "evidence": [
+        {
+          "path": "evidence/bionic_usability-20261007T020611660287.json",
+          "exists": true,
+          "sha256": "c00756a7ec7a9b799efc86e183ba5a356d0df597aa240a4d94a25ae47f09f72f"
+        },
+        {
+          "path": "evidence/bionic_usability-20261007T020745796443.json",
+          "exists": true,
+          "sha256": "7a71f75e85e3b51dfde804fcdda870b8be4039caa0494fe234ac38584992a8e1"
+        },
+        {
+          "path": "evidence/bionic_usability-20261007T025603155903.json",
+          "exists": true,
+          "sha256": "0c4129baf48d036447f999e1a238d8ef2575aa861d75aa2f763d2034d62358e3"
+        }
+      ],
+      "latest_command": [
+        {
+          "command": "python3 scripts/inspect-bionic-context.py",
+          "exit_code": 2,
+          "start_time": "2026-10-07T02:56:02.998316+00:00",
+          "end_time": "2026-10-07T02:56:03.155887+00:00"
+        }
+      ],
+      "limitations": [
+        "Fresh native overflow and oversized Notion schemas recorded. Native GUI control and regular comparison unavailable; no scoped app change or successful native retest established. Core tools verified independently; preserve settings."
+      ],
+      "next_action": "Supported scoped optional-schema diagnosis and fresh native GUI comparison/retest; preserve current settings"
+    },
+    {
+      "id": "startup_helper_model_preservation",
+      "status": "NOT_TESTED",
+      "dependencies": [
+        "local_agent"
+      ],
+      "verification": false,
+      "evidence": [],
+      "limitations": [
+        "Source edited to avoid model reload; ShellCheck passed before interruption; end-to-end helper/model proof never ran."
+      ],
+      "next_action": "When authorized to resume, run the new handoff-proof task and compare actual load config before/after."
+    },
+    {
+      "id": "local_agent_handoff_proof",
+      "status": "NOT_TESTED",
+      "dependencies": [
+        "resume_engine",
+        "startup_helper_model_preservation"
+      ],
+      "verification": false,
+      "evidence": [],
+      "limitations": [
+        "Task file exists; intended transcript and proof artifact are absent. No running process."
+      ],
+      "next_action": "Use a fresh transcript/path; do not assume the aborted command executed."
+    },
+    {
+      "id": "integration_report_refresh",
+      "status": "NOT_TESTED",
+      "dependencies": [
+        "end_to_end"
+      ],
+      "verification": false,
+      "evidence": [],
+      "limitations": [
+        "tests/end_to_end.py and scripts/build_reports.py modified but full integration/report generation not run. Older completion reports may be stale; this handoff is authoritative."
+      ],
+      "next_action": "After review/verification, refresh reports with actual incomplete statuses; preserve prior evidence first."
+    }
+  ],
+  "running_commissioning_tasks": [],
+  "running_services": {
+    "regular_lmstudio_main_pid": 48608,
+    "llama_backend_pid": 51309,
+    "bionic_running": false,
+    "api": "127.0.0.1:1234",
+    "sdk": "127.0.0.1:41343",
+    "backend": "127.0.0.1:44311",
+    "other_processes": "Codex/session helpers and unrelated python3 PID11263 left untouched; purpose of unrelated Python unverified."
+  },
+  "current_configuration": {
+    "timestamp": "2026-10-07T02:58:47.939808+00:00",
+    "models": [
+      {
+        "identifier": "qwen/qwen3.8-27b",
+        "quantization": "Q4_K_M",
+        "context_length": 12544,
+        "parallel_slots": 1,
+        "gpu": {
+          "splitStrategy": "evenly",
+          "disabledGpus": [],
+          "ratio": "max",
+          "numCpuExpertLayersRatio": "off"
+        },
+        "kv_offload": true,
+        "k_cache_quantization": "q8_0",
+        "v_cache_quantization": "q8_0"
+      }
+    ],
+    "gpu": {
+      "exit_code": 0,
+      "stdout": "NVIDIA GeForce RTX 5090, 595.91.07, 32607 MiB, 19793 MiB, 12316 MiB"
+    },
+    "installed_versions": {
+      "python_system": {
+        "exit_code": 0,
+        "stdout": "Python 3.14.4"
+      },
+      "python_local_agent": {
+        "exit_code": 0,
+        "stdout": "Python 3.14.4"
+      },
+      "python_quant": {
+        "exit_code": 0,
+        "stdout": "Python 3.12.15"
+      },
+      "python_gpu": {
+        "exit_code": 0,
+        "stdout": "Python 3.12.15"
+      },
+      "node": {
+        "exit_code": 0,
+        "stdout": "v22.23.3"
+      },
+      "npm": {
+        "exit_code": 0,
+        "stdout": "10.9.9"
+      },
+      "npx": {
+        "exit_code": 0,
+        "stdout": "10.9.9"
+      },
+      "git": {
+        "exit_code": 0,
+        "stdout": "git version 2.53.0"
+      },
+      "github_cli": {
+        "exit_code": 0,
+        "stdout": "gh version 2.102.0 (2026-09-30)\nhttps://github.com/cli/cli/releases/tag/v2.102.0"
+      },
+      "lms_cli": {
+        "exit_code": 0,
+        "stdout": "CLI commit: 69d945a"
+      },
+      "uv": {
+        "exit_code": 0,
+        "stdout": "uv 0.12.23 (x86_64-unknown-linux-gnu)"
+      },
+      "rust": {
+        "exit_code": 0,
+        "stdout": "rustc 1.93.1 (01f6ddf75 2026-02-11) (built from a source tarball)"
+      },
+      "gcc": {
+        "exit_code": 0,
+        "stdout": "15.2.0"
+      },
+      "clipboard_package": {
+        "exit_code": 0,
+        "stdout": "install ok installed 2.2.1-2build1"
+      }
+    },
+    "app_versions": {
+      "bionic": "1.1.7+7",
+      "lmstudio": "0.4.25+1"
+    }
+  },
+  "git": {
+    "branch": "commissioning/main-work",
+    "base_commit_before_final_checkpoint": "d2b32fdf8af9165cc11baaa2044df00762b06468",
+    "repository": "https://github.com/Helminiak/engineering-workstation-commissioning",
+    "authorized_remote_matches": true,
+    "final_checkpoint_reference": "handoff/CHECKPOINT.json is created after committing; git log -1 is authoritative"
+  },
+  "last_verified_completed_stage": "github",
+  "last_verified_stage_timestamp": "2026-10-07T02:55:16.480484+00:00",
+  "next_unfinished_stage": "bionic_usability",
+  "next_actions": [
+    "On authorized resume, read this handoff and inspect actual host model/GPU/processes. Preserve current settings and any local-agent changes.",
+    "Verify the modified startup helper with the prepared short handoff-proof task and independently check its artifact; do not auto-load Q6/32K.",
+    "Resume bionic_usability: obtain a fresh regular GUI hello and Bionic hello on the same actually loaded model, capture exact timestamps/context/VRAM, and use supported per-session optional-tool selection/schema discovery. No native GUI controls are available to this Codex session.",
+    "Investigate Notion query schemas first; synthetic omission saves59873formatted tokens, but exact native filtering/module assembly remains unverified. Do not globally disable connectors/security or raise context blindly.",
+    "After native usability repair, execute end_to_end verifier and refresh completion reports; retain all earlier failures and benchmark scope.",
+    "Review/secret-scan/commit/push only commissioning/main-work to the existing authorized private remote; checkpoint after each major task."
+  ],
+  "pending_operator_approval": [],
+  "privilege_notes": [
+    "Earlier clipboard apt attempt stopped at sudo password; now dpkg verifies installed2.2.1-2build1. No installation by Codex is claimed.",
+    "No pending commissioning operation or sudo prompt. Driver/kernel/firmware, deleting existing data, security changes, network exposure, other repos/branches, merge/deployment still need explicit approval."
+  ],
+  "missing_paths_expected": [
+    "state/local-agent-handoff-proof-post-reboot.json",
+    "scratch/local-agent-handoff-proof-post-reboot.json"
+  ]
+}

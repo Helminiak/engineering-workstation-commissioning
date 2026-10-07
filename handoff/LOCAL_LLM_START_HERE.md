@@ -1,66 +1,14 @@
-# Reboot resume checkpoint
+# Local Qwen/Bionic: start here
 
-Checkpoint captured 2026-10-07T02:12:32.168563+00:00. Operator requested saving work and stopping new tasks. No reboot, shutdown, service stop, configuration restore, install, model reload, or new commissioning phase was initiated. No commissioning stage is IN_PROGRESS. Existing services remain running until the operator reboots. Resume only after the operator returns.
+Workspace: `/home/joe/LLM-Workspace`. You have no required conversation history. Codex stopped new work for its usage checkpoint. Resume engineering only when the operator invokes you to continue.
 
-## Verified state and current failure
+1. Read this file, `handoff/STATUS.md`, `handoff/progress.json`, `commissioning/AUTHORIZATION.json`. Run `scripts/show_status.sh`. Do not load all raw logs/catalogs into your context; use targeted excerpts. Full detail: `handoff/MASTER_HANDOFF.md`.
+2. Current host snapshot: regular LM Studio, Qwen Q4_K_M12544context/one slot/Q8KV; Bionic is not running. This is dated state—recheck before acting. Core API/MCP tools already passed10real calls and independent checks. Native Bionic usability is a separate BLOCKED stage, NOT an API failure.
+3. First independent pending work: verify source-edited `scripts/start-local-agent.sh` using the prepared task `tests/local-agent-handoff-proof-task.txt` and a NEW transcript filename. It preserves loaded settings; no reload should occur. Previous intended transcript/proof are missing; runtime NOT_TESTED. Inspect the resulting proof and compare load metadata before/after. Use existing quantPython for pytest: `venvs/quant/bin/python -m pytest`.
+4. Next commissioning stage: bionic_usability. Notion schemas dominate dynamic overhead. Latest dated native errors~123K against113152context; actual-template/catalog synthetic114825tokens, withoutNotion54952. These counts are NOT current12544 native request results. Obtain fresh same-model Bionic/regular GUI timestamps and supported scoped optional-schema selection; preserve core coding tools. No global connector/security changes or blind context increase.
+5. After native repair/retest, verify end_to_end and refresh reports. Never repeat completed native acceptance fixture, installs or historical benchmarks merely to fill context. Existing summary reports may be stale; this handoff wins.
+6. Checkpoint after each major task using `scripts/commission.py`; save commands/exits/proof to new evidence paths, preserve old evidence. Update the handoff files if the runner replaces them; latest operator stop/resume instruction always wins. A model's final claim is notPASS; independently verify artifacts. If interrupted with pending_tool/unanswered calls, reconcile audits before replay.
 
-Historical native Bionic acceptance remains PASS, independently verified from persisted native tool-call/result records: 11 shell commands, native file write/read, Bash, Python385, pytest2tests and scoped Git status/diff. Do not rerun or overwrite the fixture. Proof: reports/BIONIC_NATIVE_ACCEPTANCE.json; full owner-only trace: evidence/bionic-native-historical-trace.json.
+Allowed: safe authorized workspace development; existing private commissioning/main-work push after review/tests/secret scan. Not allowed without explicit approval: driver/kernel/firmware, data deletion, security weakening, exposed services, other remotes/branches, force-push, merge/deploy. Never read/print/upload credentials. Clipboard only if explicitly needed; no monitoring. Tools run with Joe account privileges, not an OS sandbox.
 
-Current Bionic usability is BLOCKED. Actual operator-loaded Qwen Q4_K_M has105472-token context, four parallel slots and full GPU offload. A hello turn at21:59:15 local produced122973 tokens, exceeding capacity by17501. Static base system text tokenizes474, stored message text167; the large dynamic payload is not attributed to a specific connector. Regular LM Studio CLI hello succeeds with36 prompt tokens, plain API control with13. Pristine Bionic-versus-regular GUI comparison remains unverified; Codex has no desktop UI controls. Read reports/BIONIC_CONTEXT_DIAGNOSIS.md and .json.
-
-Pre-reboot GPU snapshot: total32607MiB, used28228MiB, free3880MiB. Earlier diagnosis baseline free3421MiB; readings vary. No context increase or app/plugin/security configuration change was made during this diagnosis. Do not infer current Q4/four-slot feasibility from the historical Q6/32K benchmarks.
-
-## Preserved configuration and evidence
-
-Configuration backup directory: `/home/joe/LLM-Workspace/backups/bionic-context-20261007T015809Z`
-Manifest with original destinations and SHA-256: `/home/joe/LLM-Workspace/backups/bionic-context-20261007T015809Z/manifest.json`
-12 source files were copied; directory0700 and backup files0600. Settings/model data/backend preferences/MCP/project registry are included; credential values were not printed or committed. Read the manifest locally. Do not restore blindly or upload these backups.
-
-Fresh pre-reboot processes/listeners/model snapshot: `/home/joe/LLM-Workspace/state/reboot_snapshot.json`.
-Current exact commit and remote verification: `/home/joe/LLM-Workspace/state/latest_checkpoint.json` and `/home/joe/LLM-Workspace/evidence/github-remote-verification.json`.
-Raw logs remain local: `/home/joe/LLM-Workspace/evidence/bionic-context-log-excerpts.json`, `/home/joe/LLM-Workspace/logs/bionic-native-launch.log`, `/home/joe/.lmstudio/apps/bionic/server-logs/2026-10/2026-10-06.1.log` and `/home/joe/.config/Bionic/logs/main.log`. Read only targeted excerpts; do not dump requests/credentials.
-
-## Running at checkpoint
-
-- Bionic mainPID859204 and helperPIDs859217,859218,859221,859315,859318,860575. Main process owns loopback SDK port41343 and authenticated API1234. LM Studio desktop was not running.
-- llama-server PID866715, loopback44293, model IDLE in lms ps.
-- Local Workbench stdio MCP pythonPID859574 (workbench_mcp.py), attached to Bionic.
-- Python monitorPID289483 (monitor.py), loopback8765; unrelated PythonPID232059 purpose not verified. Both left untouched.
-- Codex/session processes listed in state/reboot_snapshot.json; current primaryPID622903 owns loopback44273. Other system loopback listeners include CUPS631 and DNS. No external-facing service was exposed by commissioning.
-- No active commissioning installation, benchmark, model generation or stage runner at capture. PIDs/ports are historical and will change after reboot. Transient checkpoint Python process in raw snapshot exits before handoff.
-
-## Exact next checks after reboot
-
-First command: `cd /home/joe/LLM-Workspace && scripts/show_status.sh`.
-
-```bash
-cd /home/joe/LLM-Workspace
-whoami
-pwd
-uname -r
-nvidia-smi --query-gpu=name,driver_version,memory.total,memory.used,memory.free --format=csv,noheader
-free -h
-lms ps
-lms server status
-ps -eo pid,comm
-ss -ltnp
-git status --short
-git log -1 --format='%H %s'
-python3 scripts/verify-github-remote.py
-```
-
-Read the backup manifest and diagnostic timestamps before acting. After reboot no model/API may be loaded; record this as NOT_TESTED/incomplete until the operator chooses an app/model. Do not start both apps blindly: a previous Bionic launch unloaded the commissioned model. Do not run scripts/start-local-agent.sh as an automatic resume step because it requests Q6/32K, differing from the saved Q4/105472/four-slot settings.
-
-Once the intended local app/model is available, read its *actual* load configuration and measure VRAM again. Then:
-```bash
-scripts/engineering-health-check --json evidence/health-after-reboot.json
-lms chat qwen/qwen3.8-27b --prompt hello --stats --reasoning off --dont-fetch-catalog
-python3 scripts/verify-bionic-history.py
-```
-
-Keep CLI/Codex controls separate from Bionic-native results. Operator should compare hello in pristine native Bionic and regular LM Studio GUI chats on the SAME local model, without attachments/settings changes; record timestamps and correlate fresh server counts. Inspect enabled tool/schema/instruction payload by project/provider. Existing inspect-bionic-context.py uses dated incident snapshots/logs; update its inputs and log date before treating it as a new post-reboot observation. Do not enlarge context or disable integrations based only on old data. Historical acceptance PASS stays intact while current usability remains BLOCKED until a fresh native retest succeeds.
-
-## Git, authorization and prohibited actions
-
-Private repository: https://github.com/Helminiak/engineering-workstation-commissioning
-Only approved branch: commissioning/main-work. Read AUTHORIZATION.json. Normal workspace work and this private task-branch push are authorized. Other repositories/branches, drivers/kernel/firmware, deleting existing data, security controls, network exposure, merge or deployment need approval. Never print credentials, merge, or force-push. Read local HEAD and remote verification for the exact checkpoint commit rather than assuming a hash embedded before commit is current.
+Git final SHA/repository: `handoff/CHECKPOINT.json` and `git log -1`. Machine task state: `handoff/progress.json`; full ledger: `commissioning/progress.json`. Local raw evidence/backups are excluded from Git; mark missing on another machine rather than inventing success.

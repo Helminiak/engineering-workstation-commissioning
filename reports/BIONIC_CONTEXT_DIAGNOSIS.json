@@ -1,276 +1,279 @@
 {
-  "timestamp": "2026-10-07T02:07:45.793276+00:00",
+  "timestamp": "2026-10-07T02:56:03.018664+00:00",
   "current_usability": "BLOCKED",
-  "historical_native_acceptance": "PASS; separately verified from persisted Bionic tool trace",
-  "loaded_model": {
-    "timestamp": "2026-10-07T01:58:09.474Z",
-    "initiator": "Codex",
-    "models": [
-      {
-        "identifier": "qwen/qwen3.8-27b",
-        "path": "qwen/qwen3.8-27b",
-        "quantization": "Q4_K_M",
-        "contextLength": 105472,
-        "config": {
-          "contextLength": 105472,
-          "maxParallelPredictions": 4,
-          "useUnifiedKvCache": true,
-          "evalBatchSize": 2048,
-          "flashAttention": true,
-          "gpu": {
-            "splitStrategy": "evenly",
-            "disabledGpus": [],
-            "ratio": 1,
-            "numCpuExpertLayersRatio": "off"
-          },
-          "llamaKCacheQuantizationType": false,
-          "llamaVCacheQuantizationType": false
-        }
-      }
-    ]
-  },
+  "historical_native_acceptance": "PASS; retained independently, not rerun",
+  "actual_loaded_models": [
+    {
+      "identifier": "qwen/qwen3.8-27b",
+      "quantization": "Q4_K_M",
+      "context_length": 12544,
+      "parallel_slots": 1,
+      "gpu_offload_ratio": "max",
+      "kv_offload": true
+    }
+  ],
   "vram_mib": {
     "total": 32607,
-    "used": 28190,
-    "free": 3919
+    "used": 19821,
+    "free": 12288
   },
-  "backup": {
-    "directory": "backups/bionic-context-20261007T015809Z",
-    "files": 12
-  },
-  "bionic_server_errors": [
+  "telemetry_status": "PASS",
+  "latest_native_context_rejections": [
     {
-      "line": 30874,
-      "log_timestamp": "2026-10-06 19:16:23",
-      "request_tokens": 131244,
-      "available_context": 104704,
-      "excess_tokens": 26540
-    },
-    {
-      "line": 31249,
-      "log_timestamp": "2026-10-06 19:29:30",
-      "request_tokens": 123017,
-      "available_context": 106496,
-      "excess_tokens": 16521
-    },
-    {
+      "source": "/home/joe/.lmstudio/apps/bionic/server-logs/2026-10/2026-10-06.1.log",
       "line": 31995,
-      "log_timestamp": "0.49.875.571 E srv    send_error: task id = 0, error: request (122946 tokens) exceeds the available context size (16384 tokens), try increasing it",
+      "timestamp_local": "2026-10-06 21:38:38",
       "request_tokens": 122946,
       "available_context": 16384,
       "excess_tokens": 106562
     },
     {
+      "source": "/home/joe/.lmstudio/apps/bionic/server-logs/2026-10/2026-10-06.1.log",
       "line": 32025,
-      "log_timestamp": "1.00.659.728 E srv    send_error: task id = 3, error: request (122946 tokens) exceeds the available context size (16384 tokens), try increasing it",
+      "timestamp_local": "2026-10-06 21:38:49",
       "request_tokens": 122946,
       "available_context": 16384,
       "excess_tokens": 106562
     },
     {
+      "source": "/home/joe/.lmstudio/apps/bionic/server-logs/2026-10/2026-10-06.1.log",
       "line": 33003,
-      "log_timestamp": "2026-10-06 21:46:43",
+      "timestamp_local": "2026-10-06 21:46:43",
       "request_tokens": 123134,
       "available_context": 103936,
       "excess_tokens": 19198
     },
     {
+      "source": "/home/joe/.lmstudio/apps/bionic/server-logs/2026-10/2026-10-06.1.log",
       "line": 33372,
-      "log_timestamp": "2026-10-06 21:52:47",
+      "timestamp_local": "2026-10-06 21:52:47",
       "request_tokens": 123134,
       "available_context": 104192,
       "excess_tokens": 18942
     },
     {
+      "source": "/home/joe/.lmstudio/apps/bionic/server-logs/2026-10/2026-10-06.1.log",
       "line": 33530,
-      "log_timestamp": "2026-10-06 21:54:25",
+      "timestamp_local": "2026-10-06 21:54:25",
       "request_tokens": 122988,
       "available_context": 104192,
       "excess_tokens": 18796
     },
     {
+      "source": "/home/joe/.lmstudio/apps/bionic/server-logs/2026-10/2026-10-06.1.log",
       "line": 33617,
-      "log_timestamp": "2026-10-06 21:55:19",
+      "timestamp_local": "2026-10-06 21:55:19",
       "request_tokens": 123079,
       "available_context": 105472,
       "excess_tokens": 17607
     },
     {
+      "source": "/home/joe/.lmstudio/apps/bionic/server-logs/2026-10/2026-10-06.1.log",
       "line": 33679,
-      "log_timestamp": "2026-10-06 21:55:54",
+      "timestamp_local": "2026-10-06 21:55:54",
       "request_tokens": 123119,
       "available_context": 105472,
       "excess_tokens": 17647
     },
     {
+      "source": "/home/joe/.lmstudio/apps/bionic/server-logs/2026-10/2026-10-06.1.log",
       "line": 33701,
-      "log_timestamp": "2026-10-06 21:56:05",
+      "timestamp_local": "2026-10-06 21:56:05",
       "request_tokens": 123158,
       "available_context": 105472,
       "excess_tokens": 17686
     },
     {
+      "source": "/home/joe/.lmstudio/apps/bionic/server-logs/2026-10/2026-10-06.1.log",
       "line": 33715,
-      "log_timestamp": "2026-10-06 21:56:10",
+      "timestamp_local": "2026-10-06 21:56:10",
       "request_tokens": 123160,
       "available_context": 105472,
       "excess_tokens": 17688
     },
     {
+      "source": "/home/joe/.lmstudio/apps/bionic/server-logs/2026-10/2026-10-06.1.log",
       "line": 34022,
-      "log_timestamp": "2026-10-06 21:59:15",
+      "timestamp_local": "2026-10-06 21:59:15",
       "request_tokens": 122973,
       "available_context": 105472,
       "excess_tokens": 17501
+    },
+    {
+      "source": "/home/joe/.lmstudio/apps/bionic/server-logs/2026-10/2026-10-06.1.log",
+      "line": 35773,
+      "timestamp_local": "2026-10-06 22:38:08",
+      "request_tokens": 122973,
+      "available_context": 113152,
+      "excess_tokens": 9821
+    },
+    {
+      "source": "/home/joe/.lmstudio/apps/bionic/server-logs/2026-10/2026-10-06.1.log",
+      "line": 35865,
+      "timestamp_local": "2026-10-06 22:41:18",
+      "request_tokens": 122975,
+      "available_context": 113152,
+      "excess_tokens": 9823
     }
   ],
-  "bionic_hello_entries": [
-    {
-      "entry_id": "34711aba-0bfc-429d-ba2a-6f0295dc1cdf",
-      "previous_entry_count": 2,
-      "created_timestamp": 1791338355064,
-      "utc": "2026-10-07T01:59:15.064000+00:00",
-      "project_database": "/home/joe/.lmstudio/apps/bionic/projects/d49037d8-47f4-5808-9028-c707de117f8f/.internal/ng-sessions.sqlite",
-      "user_input": "hello",
-      "children": [
-        {
-          "type": "error",
-          "message_characters": 255
-        }
-      ],
-      "previous_entry_types": [
-        "stateChange",
-        "message"
-      ],
-      "previous_user_messages": 1,
-      "native_error_text": "The selected model was loaded with a context length that is too small for this request.\n\nTry one of the following:\n\u2022 Reduce load on your machine (close apps you're not using) and re-load the model.\n\u2022 Start with a shorter request or reduce attachment size."
+  "payload_measurement": {
+    "timestamp": "2026-10-07T02:40:32.661Z",
+    "catalog_timestamp": "2026-10-07T02:37:12.268454+00:00",
+    "initiator": "Codex read-only loaded-model tokenizer; no generation or native submission",
+    "model": {
+      "identifier": "qwen/qwen3.8-27b",
+      "quantization": "Q4_K_M",
+      "context_length": 113152,
+      "max_parallel_predictions": 4,
+      "gpu": {
+        "splitStrategy": "evenly",
+        "disabledGpus": [],
+        "ratio": 1,
+        "numCpuExpertLayersRatio": "off"
+      },
+      "unified_kv_cache": true,
+      "offload_kv_cache_to_gpu": true,
+      "k_cache_quantization": false,
+      "v_cache_quantization": false,
+      "template_sha256": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041",
+      "template_inlines_each_tool_json": true
     },
-    {
-      "entry_id": "dbef5ad9-6176-42e9-ace0-d39180e26297",
-      "previous_entry_count": 10,
-      "created_timestamp": 1791338170384,
-      "utc": "2026-10-07T01:56:10.384000+00:00",
-      "project_database": "/home/joe/.lmstudio/apps/bionic/projects/14effd21-51b5-4082-a3d7-d977b6a57ef1/.internal/ng-sessions.sqlite",
-      "user_input": "hello",
-      "children": [
-        {
-          "type": "error",
-          "message_characters": 255
-        }
-      ]
-    },
-    {
-      "entry_id": "e2c442a5-b877-4fee-a74a-64eb04dc8531",
-      "previous_entry_count": 61,
-      "created_timestamp": 1791337599938,
-      "utc": "2026-10-07T01:46:39.938000+00:00",
-      "project_database": "/home/joe/.lmstudio/apps/bionic/projects/14effd21-51b5-4082-a3d7-d977b6a57ef1/.internal/ng-sessions.sqlite",
-      "user_input": "hello",
-      "children": [
-        {
-          "type": "error",
-          "message_characters": 255
-        }
-      ]
-    }
-  ],
-  "session_overhead_metadata": [
-    {
-      "session_id": "cfdca7d2-907a-4253-ac5c-ee0407af45d4",
-      "updated_timestamp": 1791338509213,
-      "base_system_prompt_characters": 2238,
-      "module_count": 24,
-      "user_tool_specifier_count": 0,
-      "ui_context_estimate": 561
-    },
-    {
-      "session_id": "19c4fba2-f5d0-49c0-9215-d9acc7acc189",
-      "updated_timestamp": 1791338355070,
-      "base_system_prompt_characters": 2238,
-      "module_count": 24,
-      "user_tool_specifier_count": 0,
-      "ui_context_estimate": 6186
-    },
-    {
-      "session_id": "66b5fc62-073c-429e-bf3b-195245a98ec8",
-      "updated_timestamp": 1791338170394,
-      "base_system_prompt_characters": 2238,
-      "module_count": 24,
-      "user_tool_specifier_count": 0,
-      "ui_context_estimate": 6470
-    },
-    {
-      "session_id": "b2bdc1f8-4206-455c-bcf8-4058b4ec833a",
-      "updated_timestamp": 1791337963195,
-      "base_system_prompt_characters": 2238,
-      "module_count": 24,
-      "user_tool_specifier_count": 0,
-      "ui_context_estimate": 131704
-    }
-  ],
-  "tokenized_text_components": {
-    "initiator": "Codex",
-    "source": "Read-only persisted native session plus loaded-model tokenizer",
-    "components": [
+    "gpu_csv": "32607, 28888, 3220",
+    "providers": [
       {
-        "component": "Persisted base system prompt",
-        "characters": 2238,
-        "tokens": 474
+        "provider": "Linear",
+        "tool_count": 68,
+        "compact_function_json_tokens": 20446,
+        "instructions_tokens": 36,
+        "largest_input_schema": {
+          "name": "save_issue",
+          "tokens": 1981
+        }
       },
       {
-        "component": "Stored text parts through latest hello",
-        "characters": 465,
-        "tokens": 167
+        "provider": "Notion",
+        "tool_count": 47,
+        "compact_function_json_tokens": 51547,
+        "instructions_tokens": 416,
+        "largest_input_schema": {
+          "name": "notion-query-data-sources",
+          "tokens": 16284
+        }
       },
       {
-        "component": "hello alone",
-        "characters": 5,
-        "tokens": 1
+        "provider": "Sentry",
+        "tool_count": 14,
+        "compact_function_json_tokens": 8913,
+        "instructions_tokens": 0,
+        "largest_input_schema": {
+          "name": "update_issue",
+          "tokens": 774
+        }
+      },
+      {
+        "provider": "GitHub",
+        "tool_count": 46,
+        "compact_function_json_tokens": 11214,
+        "instructions_tokens": 385,
+        "largest_input_schema": {
+          "name": "issue_write",
+          "tokens": 765
+        }
+      },
+      {
+        "provider": "Workspace Files",
+        "tool_count": 14,
+        "compact_function_json_tokens": 1737,
+        "instructions_tokens": 0,
+        "largest_input_schema": {
+          "name": "edit_file",
+          "tokens": 116
+        }
+      },
+      {
+        "provider": "Playwright Browser",
+        "tool_count": 25,
+        "compact_function_json_tokens": 3899,
+        "instructions_tokens": 0,
+        "largest_input_schema": {
+          "name": "browser_take_screenshot",
+          "tokens": 273
+        }
+      },
+      {
+        "provider": "Local Workbench",
+        "tool_count": 5,
+        "compact_function_json_tokens": 686,
+        "instructions_tokens": 41,
+        "largest_input_schema": {
+          "name": "run_python",
+          "tokens": 73
+        }
+      },
+      {
+        "provider": "Context7 Docs",
+        "tool_count": 2,
+        "compact_function_json_tokens": 1010,
+        "instructions_tokens": 128,
+        "largest_input_schema": {
+          "name": "query-docs",
+          "tokens": 277
+        }
+      },
+      {
+        "provider": "Cloudflare Docs",
+        "tool_count": 2,
+        "compact_function_json_tokens": 271,
+        "instructions_tokens": 0,
+        "largest_input_schema": {
+          "name": "search_cloudflare_documentation",
+          "tokens": 38
+        }
       }
     ],
-    "stored_message_part_types": [
-      "text",
-      "text"
-    ],
-    "limitation": "Individual text token counts are not additive full-chat counts. Dynamic tools/instructions, project files, attachments and formatting not reconstructed. Raw text not saved or printed."
-  },
-  "plain_api_control": {
-    "timestamp": "2026-10-07T02:00:33.997791+00:00",
-    "initiator": "Codex",
-    "comparison": "Fresh one-message API control, no tools/history; NOT a regular LM Studio GUI chat",
-    "user_input": "hello",
-    "status": "PASS",
-    "seconds": 0.3011038029981137,
-    "reply": "Hello! How can I help you today?",
-    "usage": {
-      "prompt_tokens": 13,
-      "completion_tokens": 10,
-      "total_tokens": 23,
-      "completion_tokens_details": {
-        "reasoning_tokens": 0
+    "combined_compact_function_json_tokens": 99706,
+    "synthetic_template_measurements": [
+      {
+        "label": "hello_no_tools",
+        "tools": 0,
+        "formatted_prompt_tokens": 53,
+        "formatted_prompt_characters": 300
+      },
+      {
+        "label": "hello_all_measured_mcp_catalogs",
+        "tools": 223,
+        "formatted_prompt_tokens": 114825,
+        "formatted_prompt_characters": 447979
+      },
+      {
+        "label": "hello_measured_catalogs_without_notion",
+        "tools": 176,
+        "formatted_prompt_tokens": 54952,
+        "formatted_prompt_characters": 214197
+      },
+      {
+        "label": "hello_local_workbench_catalog_only",
+        "tools": 5,
+        "formatted_prompt_tokens": 1067,
+        "formatted_prompt_characters": 4321
       }
-    },
-    "payload_characters": 145
+    ],
+    "limits": [
+      "Measured current catalog text, not the complete native request.",
+      "Bionic filtering/name rewriting, native modules, template JSON formatting and session context are additional factors.",
+      "Per-component token counts do not exactly add to complete chat counts.",
+      "Synthetic hello template measurements do not submit a GUI request or execute tools; native Bionic module/system content is absent."
+    ]
   },
-  "regular_lmstudio_cli_control": {
-    "initiator": "Codex",
-    "comparison": "Regular LM Studio CLI fresh chat; not GUI",
-    "command": "lms chat qwen/qwen3.8-27b --prompt hello --stats --reasoning off --dont-fetch-catalog",
-    "exit_code": 0,
-    "reply": "Hello! How can I help you today?",
-    "prompt_tokens": 36,
-    "predicted_tokens": 10,
-    "ttft_seconds": 0.163,
-    "tokens_per_second": 102.91
+  "backup": {
+    "timestamp": "2026-10-07T02:41:34.218461+00:00",
+    "manifest": "/home/joe/LLM-Workspace/backups/bionic-context-20261007T024134Z/manifest.json",
+    "files": 12,
+    "context": "Operator-loaded Q4_K_M113152/four slots, preserved before any diagnostic setting change"
   },
-  "regular_lmstudio_fresh_gui_comparison": "NOT_TESTED: no desktop controls; operator comparison requested",
-  "analysis": {
-    "confirmed": "Bionic assembled requests around123K tokens exceed loaded105472-token context; generation is rejected. Same model answers a no-tool API hello with13 prompt tokens and regular CLI hello with36.",
-    "component_attribution": "System/tool/history contributions cannot be split exactly from redacted server request logs. Native base prompts are2238 characters and24 module specifiers were persisted. These are metadata, not complete assembled requests.",
-    "inference": "Large Bionic-specific request overhead dominates the small input. Optional MCP schemas/instructions and project/session context are candidates; no particular connector is proven responsible.",
-    "freshness_limit": "Stored hello entries include earlier entries. API/CLI controls are fresh. Pristine Bionic-versus-LM-Studio GUI comparison is still required.",
-    "memory_decision": "No context increase attempted: only about3.3GiB VRAM free under current large-context/four-slot Q4 configuration. Do not reuse earlier Q6/32K memory estimates for this different configuration."
-  },
-  "changes": "Workspace evidence/checkpoint writes only. No model, context, plugin, security or app configuration changes.",
-  "next_action": "Compare pristine Bionic and regular LM Studio GUI hello requests on the same loaded model. Then measure enabled tool payload per project/provider and test a minimal core-only project without changing global security controls."
+  "regular_gui_comparison": "NOT_TESTED: no native GUI controls or identified regular GUI result",
+  "reason": "Native hello overflow recorded; no fresh successful native repair/retest established.",
+  "freshness": "Load/VRAM sampled now; each native error and catalog sample retains its own timestamp.",
+  "changes": "No model/context/plugin/security/driver changes. Current report writes only.",
+  "next": "Preserve controls/coding tools. Supported scoped schema experiment and native retest need UI control. Core API/MCP execution can be verified independently."
 }

@@ -1,0 +1,519 @@
+{
+  "timestamp": "2026-10-07T03:03:14.610259+00:00",
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "required_file",
+      "path": "handoff/MASTER_HANDOFF.md",
+      "pass": true,
+      "sha256": "262c38b4b619dff8a57b676321e7394458f720d1884da24e55001722567dbb27"
+    },
+    {
+      "check": "required_file",
+      "path": "handoff/LOCAL_LLM_START_HERE.md",
+      "pass": true,
+      "sha256": "65b46139d0022c91af2a5a024b1bab90b65715d0a62443a2ce20450a51a1abe8"
+    },
+    {
+      "check": "required_file",
+      "path": "handoff/CODEX_RESUME.md",
+      "pass": true,
+      "sha256": "8553543669a6fe564b12562fc1ff24fe31a0ddc47dc2b2853de726d88b492f24"
+    },
+    {
+      "check": "required_file",
+      "path": "handoff/STATUS.md",
+      "pass": true,
+      "sha256": "087a0ba50562d714f94049f846d657e95d01bbc2e5e7c5db79fa3be4443a747f"
+    },
+    {
+      "check": "required_file",
+      "path": "handoff/progress.json",
+      "pass": true,
+      "sha256": "7f81cc150d79c6055f83cc4956cd5bc29c1c74be938e27907bd997479c00e20d"
+    },
+    {
+      "check": "required_file",
+      "path": "handoff/FAILURES.md",
+      "pass": true,
+      "sha256": "0891cb1ed8f034ece1d904279ba7e8994fc1d43e4671e488b87d0d25231f3ffb"
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/execution-20261006T195919664576.json",
+      "pass": true
+    },
+    {
+      "check": "stage_success_exit",
+      "task": "execution",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/local_agent-20261006T200028544357.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/local_agent-20261007T000952581269.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/local_agent-20261007T010807156789.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/local_agent-20261007T025321846839.json",
+      "pass": true
+    },
+    {
+      "check": "stage_success_exit",
+      "task": "local_agent",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/resume_engine-20261006T200049692660.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/resume_engine-20261007T025235722389.json",
+      "pass": true
+    },
+    {
+      "check": "stage_success_exit",
+      "task": "resume_engine",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/development-20261007T005227163055.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/development-20261007T005625124624.json",
+      "pass": true
+    },
+    {
+      "check": "stage_success_exit",
+      "task": "development",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/github-20261007T012853631993.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/github-20261007T025516478022.json",
+      "pass": true
+    },
+    {
+      "check": "stage_success_exit",
+      "task": "github",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/gpu_llm-20261006T200720454223.json",
+      "pass": true
+    },
+    {
+      "check": "stage_success_exit",
+      "task": "gpu_llm",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/scientific-20261006T200743799069.json",
+      "pass": true
+    },
+    {
+      "check": "stage_success_exit",
+      "task": "scientific",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/forensics-20261006T200601555207.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/forensics-20261007T005853904493.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/forensics-20261007T010029000684.json",
+      "pass": true
+    },
+    {
+      "check": "stage_success_exit",
+      "task": "forensics",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/mbo-20261007T005718584140.json",
+      "pass": true
+    },
+    {
+      "check": "stage_success_exit",
+      "task": "mbo",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/security-20261007T001442043751.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/security-20261007T010718024753.json",
+      "pass": true
+    },
+    {
+      "check": "stage_success_exit",
+      "task": "security",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/rag-20261006T200733510434.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/rag-20261007T010444028156.json",
+      "pass": true
+    },
+    {
+      "check": "stage_success_exit",
+      "task": "rag",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/end_to_end-20261007T001423446485.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/end_to_end-20261007T001703407609.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/end_to_end-20261007T010658287274.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/end_to_end-20261007T012606134295.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/end_to_end-20261007T012934165343.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/bionic_native-20261007T013449530284.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/bionic_native-20261007T020611547142.json",
+      "pass": true
+    },
+    {
+      "check": "stage_success_exit",
+      "task": "bionic_native",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/bionic_usability-20261007T020611660287.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/bionic_usability-20261007T020745796443.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_path_and_hash",
+      "path": "evidence/bionic_usability-20261007T025603155903.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/bionic_native-20261007T013449530284.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/bionic_native-20261007T020611547142.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/bionic_usability-20261007T020611660287.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/bionic_usability-20261007T020745796443.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/bionic_usability-20261007T025603155903.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/checkpoint-host-20261007T025847Z.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/development-20261007T005227163055.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/development-20261007T005625124624.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/end_to_end-20261007T001423446485.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/end_to_end-20261007T001703407609.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/end_to_end-20261007T010658287274.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/end_to_end-20261007T012606134295.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/end_to_end-20261007T012934165343.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/execution-20261006T195919664576.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/forensics-20261006T200601555207.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/forensics-20261007T005853904493.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/forensics-20261007T010029000684.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/github-20261007T012853631993.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/github-20261007T025516478022.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/gpu_llm-20261006T200720454223.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/health-autonomous-resume.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/local-llm-acceptance-post-reboot.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/local_agent-20261006T200028544357.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/local_agent-20261007T000952581269.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/local_agent-20261007T010807156789.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/local_agent-20261007T025321846839.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/mbo-20261007T005718584140.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/rag-20261006T200733510434.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/rag-20261007T010444028156.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/resume_engine-20261006T200049692660.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/resume_engine-20261007T025235722389.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/scientific-20261006T200743799069.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/security-20261007T001442043751.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "evidence/security-20261007T010718024753.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "reports/BIONIC_CONTEXT_DIAGNOSIS.json",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "reports/BIONIC_CONTEXT_POST_REBOOT.md",
+      "pass": true
+    },
+    {
+      "check": "reference_exists",
+      "path": "tests/local-agent-handoff-proof-task.txt",
+      "pass": true
+    },
+    {
+      "check": "clearly_marked_missing",
+      "path": "state/local-agent-handoff-proof-post-reboot.json",
+      "pass": true
+    },
+    {
+      "check": "clearly_marked_missing",
+      "path": "scratch/local-agent-handoff-proof-post-reboot.json",
+      "pass": true
+    },
+    {
+      "check": "handoff_secret_pattern",
+      "path": "handoff/FAILURES.md",
+      "pass": true
+    },
+    {
+      "check": "handoff_secret_pattern",
+      "path": "handoff/progress.json",
+      "pass": true
+    },
+    {
+      "check": "handoff_secret_pattern",
+      "path": "handoff/BIONIC_NATIVE_TASK.txt",
+      "pass": true
+    },
+    {
+      "check": "handoff_secret_pattern",
+      "path": "handoff/REFERENCE_MANIFEST.json",
+      "pass": true
+    },
+    {
+      "check": "handoff_secret_pattern",
+      "path": "handoff/STATUS.md",
+      "pass": true
+    },
+    {
+      "check": "handoff_secret_pattern",
+      "path": "handoff/MASTER_HANDOFF.md",
+      "pass": true
+    },
+    {
+      "check": "handoff_secret_pattern",
+      "path": "handoff/CODEX_RESUME.md",
+      "pass": true
+    },
+    {
+      "check": "handoff_secret_pattern",
+      "path": "handoff/BIONIC_NATIVE_VERIFICATION.md",
+      "pass": true
+    },
+    {
+      "check": "handoff_secret_pattern",
+      "path": "handoff/REBOOT_RESUME.md",
+      "pass": true
+    },
+    {
+      "check": "handoff_secret_pattern",
+      "path": "handoff/CODEX_RESUME_PROMPT.txt",
+      "pass": true
+    },
+    {
+      "check": "handoff_secret_pattern",
+      "path": "handoff/LOCAL_LLM_PROMPT.txt",
+      "pass": true
+    },
+    {
+      "check": "handoff_secret_pattern",
+      "path": "handoff/VERIFIED_EVIDENCE.json",
+      "pass": true
+    },
+    {
+      "check": "handoff_secret_pattern",
+      "path": "handoff/LOCAL_LLM_START_HERE.md",
+      "pass": true
+    }
+  ],
+  "git_receipt": "CHECKPOINT.json will be created after content commit/push; final ignored evidence validation verifies receipt existence and remote SHA.",
+  "scope": "Handoff/file/evidence validation only; no commissioning stage started."
+}

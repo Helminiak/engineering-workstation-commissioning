@@ -89,7 +89,11 @@ report = {
     "known_answer": {"sum_squares_1000": actual, "expected": 333833500},
     "artifact_sha256": hashlib.sha256(p.read_bytes()).hexdigest(),
     "results": rows,
-    "local_llm_evidence": "evidence/local-llm-acceptance.json",
+    "local_llm_evidence": (
+        "evidence/local-llm-acceptance-post-reboot.json"
+        if (ROOT / 'evidence/local-llm-acceptance-post-reboot.json').exists()
+        else "evidence/local-llm-acceptance.json"
+    ),
     "limitations": "Local LLM evidence is independently checked; Private remote write/commit verification passes; historical native acceptance passes; current Bionic context usability remains blocked. No proprietary data or trading strategy.",
 }
 (ROOT / "evidence/end-to-end.json").write_text(json.dumps(report, indent=2) + "\n")

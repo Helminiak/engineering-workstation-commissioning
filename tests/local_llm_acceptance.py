@@ -1,6 +1,7 @@
 """Local model drives actual MCP tools; independent artifact validation follows."""
 
 import asyncio
+import argparse
 import datetime
 import json
 import subprocess
@@ -18,6 +19,7 @@ FIX = (
     / "scratch/local-agent-acceptance"
     / datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%S%f")
 )
+EVIDENCE = ROOT / 'evidence/local-llm-acceptance.json'
 
 
 async def main():
@@ -127,7 +129,7 @@ async def main():
                         {"tool": name, "arguments": args, "result": json.loads(content)}
                     )
                     print("tool:", name, "result error:", result.is_error, flush=True)
-                (ROOT / "evidence/local-llm-acceptance.json").write_text(
+                EVIDENCE.write_text(
                     json.dumps(transcript, indent=2) + "\n"
                 )
                 if not msg.get("tool_calls"):
@@ -166,4 +168,12 @@ async def main():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--evidence', type=Path, default=EVIDENCE)
+    args = parser.parse_args()
+    EVIDENCE = args.evidence.resolve()
+    if not EVIDENCE.is_relative_to(ROOT / 'evidence'):
+        raise ValueError('Acceptance evidence must stay in workspace evidence/')
+    if EVIDENCE.exists():
+        raise ValueError('Preserve existing acceptance evidence; select a new filename')
     asyncio.run(main())

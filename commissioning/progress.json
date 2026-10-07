@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-07T02:13:21.495216+00:00",
+  "updated_at": "2026-10-07T03:02:12.743797+00:00",
   "objective": "Commission a verified, resumable Ubuntu RTX 5090 engineering workstation. Prioritize local execution before expansion.",
   "stages": {
     "execution": {
@@ -26,8 +26,8 @@
     "local_agent": {
       "phase": "1",
       "status": "PASS_WITH_LIMITATIONS",
-      "start_time": "2026-10-07T01:07:43.626231+00:00",
-      "end_time": "2026-10-07T01:08:07.163196+00:00",
+      "start_time": "2026-10-07T02:52:59.942697+00:00",
+      "end_time": "2026-10-07T02:53:21.849196+00:00",
       "commands": [
         {
           "command": ".venv/bin/python tests/local_llm_acceptance.py",
@@ -46,12 +46,19 @@
           "exit_code": 0,
           "start_time": "2026-10-07T01:07:43.636481+00:00",
           "end_time": "2026-10-07T01:08:07.156772+00:00"
+        },
+        {
+          "command": ".venv/bin/python tests/local_llm_acceptance.py --evidence evidence/local-llm-acceptance-post-reboot.json && .venv/bin/python tests/test_bridge.py && .venv/bin/python tests/test_mcp_isolation.py",
+          "exit_code": 0,
+          "start_time": "2026-10-07T02:52:59.950767+00:00",
+          "end_time": "2026-10-07T02:53:21.846820+00:00"
         }
       ],
       "evidence": [
         "evidence/local_agent-20261006T200028544357.json",
         "evidence/local_agent-20261007T000952581269.json",
-        "evidence/local_agent-20261007T010807156789.json"
+        "evidence/local_agent-20261007T010807156789.json",
+        "evidence/local_agent-20261007T025321846839.json"
       ],
       "verification": true,
       "repair_attempts": [
@@ -70,24 +77,31 @@
         }
       ],
       "remaining_issues": [
-        "Historical API/MCP and native engineering acceptance verified. Current Bionic chat usability is separately BLOCKED by request/context mismatch. Joe-account shell is not an OS sandbox."
+        "Fresh API/MCP core engineering tools and optional-failure isolation verified on operator-loaded model. Native Bionic current usability remains a separate blocked stage. Joe-account tools are not an OS sandbox."
       ]
     },
     "resume_engine": {
       "phase": "2",
       "status": "PASS",
-      "start_time": "2026-10-07T00:00:48.475159+00:00",
-      "end_time": "2026-10-07T00:00:49.701778+00:00",
+      "start_time": "2026-10-07T02:52:34.485086+00:00",
+      "end_time": "2026-10-07T02:52:35.727605+00:00",
       "commands": [
         {
           "command": "python3 tests/test_runner.py && scripts/resume_commissioning.sh",
           "exit_code": 0,
           "start_time": "2026-10-07T00:00:48.483147+00:00",
           "end_time": "2026-10-07T00:00:49.692646+00:00"
+        },
+        {
+          "command": "python3 tests/test_runner.py && scripts/resume_commissioning.sh",
+          "exit_code": 0,
+          "start_time": "2026-10-07T02:52:34.491271+00:00",
+          "end_time": "2026-10-07T02:52:35.722376+00:00"
         }
       ],
       "evidence": [
-        "evidence/resume_engine-20261006T200049692660.json"
+        "evidence/resume_engine-20261006T200049692660.json",
+        "evidence/resume_engine-20261007T025235722389.json"
       ],
       "verification": true,
       "repair_attempts": [],
@@ -123,23 +137,30 @@
     "github": {
       "phase": "4",
       "status": "PASS_WITH_LIMITATIONS",
-      "start_time": "2026-10-07T01:28:51.434298+00:00",
-      "end_time": "2026-10-07T01:28:53.641979+00:00",
+      "start_time": "2026-10-07T02:55:14.827816+00:00",
+      "end_time": "2026-10-07T02:55:16.480484+00:00",
       "commands": [
         {
           "command": "python3 scripts/verify-github-remote.py",
           "exit_code": 0,
           "start_time": "2026-10-07T01:28:51.442526+00:00",
           "end_time": "2026-10-07T01:28:53.631925+00:00"
+        },
+        {
+          "command": "python3 scripts/verify-github-remote.py",
+          "exit_code": 0,
+          "start_time": "2026-10-07T02:55:14.833210+00:00",
+          "end_time": "2026-10-07T02:55:16.478004+00:00"
         }
       ],
       "evidence": [
-        "evidence/github-20261007T012853631993.json"
+        "evidence/github-20261007T012853631993.json",
+        "evidence/github-20261007T025516478022.json"
       ],
       "verification": true,
       "repair_attempts": [],
       "remaining_issues": [
-        "Authorized private repository/task branch push and remote commit verified. PR creation, merge and deployment not tested or authorized."
+        "Existing authentication, private repository, authorized task branch and matching commit verified. PR creation/merge/deploy are outside authorization."
       ]
     },
     "gpu_llm": {
@@ -182,7 +203,7 @@
         }
       ],
       "remaining_issues": [
-        "Historical Q6_K16K/32K benchmark scope retained. Current operator-loaded Q4_K_M105472/four-slot configuration differs; Bionic request around123K exceeds it. 48K/64K Q6 tests not performed."
+        "Historical Q6 16K/32K benchmark evidence retained. Current operator-loaded Q4/four-slot config is sampled in BIONIC_CONTEXT_DIAGNOSIS.json; no reload or blind context increase performed. Optional 48K/64K Q6 benchmarks not required for current native overhead diagnosis."
       ]
     },
     "scientific": {
@@ -430,8 +451,8 @@
     "bionic_usability": {
       "phase": "1-current-usability",
       "status": "BLOCKED",
-      "start_time": "2026-10-07T02:07:45.728686+00:00",
-      "end_time": "2026-10-07T02:07:45.801950+00:00",
+      "start_time": "2026-10-07T02:56:02.989702+00:00",
+      "end_time": "2026-10-07T02:56:03.157930+00:00",
       "commands": [
         {
           "command": "python3 scripts/inspect-bionic-context.py",
@@ -444,17 +465,27 @@
           "exit_code": 2,
           "start_time": "2026-10-07T02:07:45.737229+00:00",
           "end_time": "2026-10-07T02:07:45.796430+00:00"
+        },
+        {
+          "command": "python3 scripts/inspect-bionic-context.py",
+          "exit_code": 2,
+          "start_time": "2026-10-07T02:56:02.998316+00:00",
+          "end_time": "2026-10-07T02:56:03.155887+00:00"
         }
       ],
       "evidence": [
         "evidence/bionic_usability-20261007T020611660287.json",
-        "evidence/bionic_usability-20261007T020745796443.json"
+        "evidence/bionic_usability-20261007T020745796443.json",
+        "evidence/bionic_usability-20261007T025603155903.json"
       ],
       "verification": false,
       "repair_attempts": [],
       "remaining_issues": [
-        "Current Bionic chat BLOCKED by122973-token request versus105472 context. Base prompt474 and stored message text167 tokens; dynamic overhead remains unattributed. Historical native acceptance PASS preserved; fresh GUI comparison pending."
+        "Fresh native overflow and oversized Notion schemas recorded. Native GUI control and regular comparison unavailable; no scoped app change or successful native retest established. Core tools verified independently; preserve settings."
       ]
     }
-  }
+  },
+  "operator_work_status": "STOPPED_FOR_USAGE_CHECKPOINT",
+  "active_work": [],
+  "checkpoint_note": "Urgent stop: no new stages. Complete sanitized handoff, verify and push authorized checkpoint only."
 }

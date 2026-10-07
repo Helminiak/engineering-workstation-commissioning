@@ -28,6 +28,16 @@ def now():
     return datetime.datetime.now(datetime.timezone.utc).isoformat()
 
 
+def unfinished(p):
+    pending = [k for k, v in p['stages'].items()
+               if v['status'] not in ('PASS', 'PASS_WITH_LIMITATIONS')]
+    for priority in ['bionic_native', 'bionic_usability']:
+        if priority in pending:
+            pending.remove(priority)
+            pending.insert(0, priority)
+    return pending
+
+
 def atomic(path, obj):
     fd, name = tempfile.mkstemp(dir=path.parent)
     with os.fdopen(fd, "w") as f:
@@ -46,17 +56,24 @@ def checkpoint(p, note):
         for k, v in p["stages"].items()
         if v["status"] in ("PASS", "PASS_WITH_LIMITATIONS")
     ]
-    pending = [
-        k
-        for k, v in p["stages"].items()
-        if v["status"] not in ("PASS", "PASS_WITH_LIMITATIONS")
-    ]
-    for priority in ["bionic_native", "bionic_usability"]:
-        if priority in pending:
-            pending.remove(priority)
-            pending.insert(0, priority)
+    pending = unfinished(p)
+    diagnosis_path = ROOT / 'reports/BIONIC_CONTEXT_DIAGNOSIS.json'
+    if not diagnosis_path.exists():
+        diagnosis_path = ROOT / 'reports/BIONIC_CONTEXT_POST_REBOOT.json'
+    diagnosis = json.loads(diagnosis_path.read_text()) if diagnosis_path.exists() else {}
+    model = (diagnosis.get('actual_loaded_models') or
+             [diagnosis.get('host_status', {}).get('model', {})])[0]
+    diagnostic_summary = (
+        f"Current diagnostic report: reports/BIONIC_CONTEXT_DIAGNOSIS.md/json; "
+        f"measured context {model.get('context_length', 'unavailable')}. "
+        "Dated schema attribution: reports/BIONIC_CONTEXT_POST_REBOOT.md/json. "
+        "Notion is the largest measured MCP schema contributor. Full native request assembly "
+        "and regular GUI comparison remain unverified. Saved measurements have their own timestamps; "
+        "capture actual load config and VRAM before any model experiment."
+        if diagnosis else "Current Bionic diagnosis: reports/BIONIC_CONTEXT_DIAGNOSIS.json."
+    )
     next_action = (
-        "Inspect reports/BIONIC_CONTEXT_DIAGNOSIS.json and private configuration backups. Operator: compare pristine Bionic/regular GUI hello with same loaded model. Measure assembled tool/instruction payload before any context increase; preserve historical native acceptance PASS. Do not reload or disable integrations blindly."
+        "Read reports/BIONIC_CONTEXT_POST_REBOOT.md/json and preserved configurations. Native UI control is unavailable: record this blocker, continue independent authorized foundation work, and never substitute API/MCP controls for a native GUI result. Do not raise context blindly or disable integrations/security controls."
         if pending and pending[0] == "bionic_usability"
         else (
             "Operator: submit handoff/BIONIC_NATIVE_TASK.txt in native Bionic Allow coding project for the existing fixture repository; preserve native tool transcript and actual exits. Codex: independently review evidence afterward. Do not substitute API/MCP probes for native execution."
@@ -115,9 +132,11 @@ Working branch: {branch}.
 Currently running stages: {json.dumps(running)}. An IN_PROGRESS record may reflect interruption; inspect process list before reverify. LM Studio localhost API and model are persistent services, see machine_state.json.
 First command: scripts/show_status.sh
 Read commissioning/MISSION.md for the durable operator requirements.
+Current scope: operator resumed autonomous commissioning; continue safe authorized stages without waiting between verified tasks. Preserve credentials, controls, audit logs and completed fixtures. Read the latest AUTHORIZATION.json; older reboot-stop instructions are historical.
 Reproduce current blocker: native Bionic UI requires operator verification; read handoff/BIONIC_NATIVE_VERIFICATION.md. Verify private GitHub state with python3 scripts/verify-github-remote.py after authorized pushes. Health checks CLI authentication separately from remote writes. Development passes; do not repeat apt installation.
 Next: {next_action}
-Bionic launch state: state/bionic-native-launch.json; inspect its PID before another launch. Fresh native fixture: state/bionic-native-case.json; do not recreate it or replace existing data. Historical native acceptance PASS is recorded separately in reports/BIONIC_NATIVE_ACCEPTANCE.json; current usability is in reports/BIONIC_CONTEXT_DIAGNOSIS.json.
+{diagnostic_summary}
+Bionic launch state: state/bionic-native-launch.json is historical; inspect actual host processes before another launch. Native fixture: state/bionic-native-case.json; do not recreate it or replace existing data. Historical native acceptance PASS is recorded separately in reports/BIONIC_NATIVE_ACCEPTANCE.json. Preserve raw backups/catalogs outside Git; backup manifests are referenced by state/bionic-context-loaded-backup.json.
 Reproduce: python3 scripts/commission.py verify STAGE --command 'VERIFIER' (inspect progress.json commands).
 Do not repeat: working NVIDIA driver, working Node, existing model downloads; do not replace existing integrations.
 Standing authorization: reviewed development sudo batch already approved and installed; normal workspace builds/tests/checkpoints authorized. Operator approved private Helminiak/engineering-workstation-commissioning creation and sanitized commissioning/main-work push. Read AUTHORIZATION.json.
@@ -156,11 +175,8 @@ def main():
             for k, v in p["stages"].items():
                 print(k, v["status"])
             print("Checkpoint:", p["updated_at"])
-            pending = [
-                (k, v)
-                for k, v in p["stages"].items()
-                if v["status"] not in ("PASS", "PASS_WITH_LIMITATIONS")
-            ]
+            pending = [(k, p['stages'][k]) for k in unfinished(p)]
+            print('Next unfinished stage:', pending[0][0] if pending else 'none')
             print(
                 "Current phase:", pending[0][1].get("phase") if pending else "complete"
             )

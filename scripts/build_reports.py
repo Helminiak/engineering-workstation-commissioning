@@ -167,6 +167,7 @@ benchmarks = {
     for n in [16384, 32768]
 }
 benchmarks["recommended_context"] = 32768
+benchmarks['recommended_context_scope'] = 'Historical Q6 API/MCP benchmark only; never automatically apply to current operator-loaded Q4/native Bionic.'
 benchmarks["mbo_python_mixed"] = read("evidence/mbo-mixed-benchmark.json")
 benchmarks["mbo_java_mixed"] = read("evidence/java-mbo-mixed-benchmark.json")
 benchmarks["mbo_benchmark_limits"] = (
@@ -248,7 +249,7 @@ Verified: Joe/5090FE/Ubuntu 26.04.1/RTX 5090; real shell and file writes; Node/n
 
 Historical API/MCP Qwen Q6_K recommendation: 32,768, tested with 25,729 input tokens. This is not a fix for current Bionic request overhead. Measured short benchmark peak VRAM 25,725 MiB of 32,607 MiB; median generation about 161 tokens/sec. Cache and short-prompt limits apply.
 
-Private Helminiak/engineering-workstation-commissioning created with operator approval; commissioning/main-work push verified by matching local HEAD, Git remote and GitHub API commits. CLI authentication as Helminiak and repository privacy/write permissions pass. Historical native Bionic engineering acceptance PASS is preserved and verified from persisted native tool results. Current usability is BLOCKED: requests around123K tokens exceed the currently loaded Q4_K_M105472-token/four-slot context. Regular CLI hello uses36 tokens and plain API hello13. GUI comparison and exact payload composition remain unverified; no context increase attempted with only about3.3GiB VRAM free. Read BIONIC_CONTEXT_DIAGNOSIS.json. Full integration remains incomplete. PR creation, merge and deployment were not authorized or performed. One unexplained Python3.14 streaming failure is recorded; controls pass and forensic verification is pinned to Python3.12. yq/fd and Gradle are absent and were not needed for verified workflows. No driver, kernel, firmware or security-control changes made. Only the approved private commissioning repository/task branch was created/pushed.
+Private Helminiak/engineering-workstation-commissioning created with operator approval; commissioning/main-work push verified by matching local HEAD, Git remote and GitHub API commits. CLI authentication and private repository permissions pass. Historical native acceptance PASS retained. Fresh post-reboot API/MCP acceptance passed independently with real shell/file/Bash/Python/Git/Node execution and optional-connector failure isolation. Native Bionic remains BLOCKED: fresh hello122973tokens exceeded operator-loaded Q4_K_M113152/four slots by9821. Measured catalogs contain223tools; actual-template synthetic hello114825tokens, without Notion54952. Notion is the largest measured contributor; full native assembly and regular GUI comparison remain unverified. No model/context/plugin/security changes made. Read BIONIC_CONTEXT_DIAGNOSIS.json for latest telemetry and BIONIC_CONTEXT_POST_REBOOT.md for dated payload attribution. Full integration remains incomplete. PR creation, merge/deploy remain outside authorization. One unexplained Python3.14 streaming failure remains recorded; forensic runtime is isolated Python3.12. Missing optional yq/fd/Gradle did not prevent verified workflows.
 
 Read commissioning/NEXT_AGENT.md and run scripts/show_status.sh. Detailed evidence is local in evidence/ and logs/. Sanitized reports, scripts and state are committed locally and pushed to the approved private repository. See git log -1 for the exact latest commit.
 """)
@@ -263,11 +264,11 @@ scripts/local_agent.py uses the loopback authenticated OpenAI-compatible API and
 
 scripts/commission.py persists stage start/end, command, exit status, stdout/stderr evidence, outcomes and issues. It updates handoffs and status; interrupted tool actions require reconciliation, not blind replay. transcripts in state/ and command audits in logs/local-agent/ are local and excluded from Git.
 
-Environments: .venv retains original local-agent tools; venvs/quant is Python 3.12 scientific/tooling; venvs/gpu is Python 3.12 with CUDA 13.0 PyTorch. Lock manifests are in configs/. Existing legacy startup helper still requests 64K; use scripts/start-local-agent.sh for commissioned 32K instead.
+Environments: .venv retains original local-agent tools; venvs/quant is Python 3.12 scientific/tooling; venvs/gpu is Python 3.12 with CUDA 13.0 PyTorch. Lock manifests are in configs/. Existing startup helpers can reload old context/quantization settings. Preserve the operator-loaded model; invoke .venv/bin/python scripts/local_agent.py directly for bounded core tasks when the model is already loaded. Do not start both native apps or change context blindly.
 """
 )
 (R / "SECURITY_REPORT.md").write_text("""# Security checkpoint
-Local API is bound to 127.0.0.1:1234 and uses the existing owner-only token. No persistent API token is included in reports, source, commits or prompts. An early SDK handle dump exposed transient client session fields in tool output; diagnostics now use whitelisted metadata. Those fields were not written into commissioning files. Original bridge backed up before changes. Command audits and local agent transcripts are owner-only and excluded from Git. Redaction is heuristic; never assume raw logs are safe to upload.
+Local API is bound to 127.0.0.1:1234 and uses the existing owner-only token. Credential values are excluded from saved reports, source and commits. An early SDK handle dump exposed transient session fields; a later metadata probe accidentally printed a credential-bearing auth field. Both incidents are recorded; corrected probes use whitelisted metadata. No credential values were written into checkpoints/Git and no credential changes made. Original bridge/configurations preserved. Audit logs/transcripts/raw catalogs remain owner-only and excluded from Git. Redaction is heuristic; never upload raw logs blindly.
 
 Core execution is Joe-account shell execution, not an OS sandbox. Cwd and document reads are scoped; arbitrary executable code can reach other user files. Agent prompts prohibit sudo and external actions, but prompts are not a hard security boundary. Privileged changes require operator approval. Historical native tool acceptance passed with recorded outputs/exits. Current Bionic usability is blocked separately; ongoing approval coverage remains limited.
 
@@ -280,8 +281,8 @@ Rollback: backups/workbench_mcp.*.py restores the original bridge; stop local ag
 cd /home/joe/LLM-Workspace
 scripts/show_status.sh
 scripts/engineering-health-check --json evidence/health-current.json
-scripts/start-local-agent.sh tests/local-agent-task.txt --transcript state/new-agent-task.json
-.venv/bin/python tests/local_llm_acceptance.py
+.venv/bin/python scripts/local_agent.py tests/local-agent-task.txt --transcript state/new-agent-task.json
+.venv/bin/python tests/local_llm_acceptance.py --evidence evidence/acceptance-NEW-UNUSED-NAME.json
 python3 tests/end_to_end.py
 scripts/verify-before-commit.sh
 git log -1

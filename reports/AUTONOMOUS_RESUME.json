@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-10-07T02:56:33.082451+00:00",
+  "health": "PASS: evidence/health-autonomous-resume.json",
+  "local_agent": "Fresh API/MCP acceptance PASS; ten real tool calls; artifacts/Bash/Python/exact Git diff independently verified",
+  "node": "Fresh C++/Java/Rust/Node/npm/npx/capability verification PASS; Nodev22.23.3",
+  "github": "Authenticated Helminiak/private task-branch checkpoint read verification PASS",
+  "resume_engine": "Checkpoint diagnosis freshness and pending-stage priority regression tests PASS",
+  "current_model": [
+    {
+      "identifier": "qwen/qwen3.8-27b",
+      "quantization": "Q4_K_M",
+      "context_length": 12544,
+      "parallel_slots": 1,
+      "gpu_offload_ratio": "max",
+      "kv_offload": true
+    }
+  ],
+  "current_vram_mib": {
+    "total": 32607,
+    "used": 19821,
+    "free": 12288
+  },
+  "load_change": "Current context12544/one slot differs from earlier113152/four slots. Codex issued no model load/reload; actor/reason not established. Preserve actual current configuration.",
+  "bionic_usability": "BLOCKED: last native error dated22:41:18 used113152context; do not describe that as a new12544 failure",
+  "clipboard": "Not needed for current shell/filesystem verification; no clipboard read/monitoring performed. Prior apt attempt required sudo authentication."
+}

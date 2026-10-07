@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-10-07T03:02:12.743797+00:00",
+  "evidence_sources": {
+    "health": {
+      "path": "evidence/health-autonomous-resume.json",
+      "exit_code": 0
+    },
+    "fresh_core": {
+      "path": "evidence/local_agent-20261007T025321846839.json",
+      "exit_code": 0
+    },
+    "runner": {
+      "path": "evidence/resume_engine-20261007T025235722389.json",
+      "exit_code": 0
+    },
+    "github": {
+      "path": "evidence/github-20261007T025516478022.json",
+      "exit_code": 0
+    },
+    "native_usability": {
+      "path": "evidence/bionic_usability-20261007T025603155903.json",
+      "exit_code": 2
+    }
+  },
+  "fresh_acceptance": {
+    "raw_path": "evidence/local-llm-acceptance-post-reboot.json",
+    "tool_calls": 10,
+    "independent_artifact_verifier": "PASS",
+    "fixture": "scratch/local-agent-acceptance/20261007T025300252510",
+    "outputs": [
+      "probe.txt",
+      "check.sh",
+      "calculate.py",
+      "test_calculate.py",
+      "report.md",
+      "tracked.txt"
+    ],
+    "checks": [
+      "Bash bash-ok",
+      "Python sum_squares(10)=385 and sum_squares(0)=0",
+      "scoped Git diff +commissioned",
+      "Nodev22.23.3",
+      "Python3.14.4"
+    ]
+  },
+  "additional_observed_tool_results": {
+    "development": "scripts/verify-development.sh unified exec session17479 exited0; C++/Java sum_squares385, Rust test, ShellCheck and Node/npm/npx/capability tests passed. Original tool stdout observed; no separate runner stage record was added for this repeat.",
+    "runner_followup": "tests/test_runner.py unified exec session77614 exited0, reconciled during checkpoint; last small live-diagnosis fallback edit occurred afterward and has not had another full regression run.",
+    "startup_helper_shellcheck": "ShellCheck exited0 before interrupted helper runtime command; runtime proof NOT_TESTED."
+  },
+  "evidence_preservation": "Raw logs/catalogs/transcripts/backup files remain local and excluded from Git. This sanitized summary does not copy request contents or credentials."
+}

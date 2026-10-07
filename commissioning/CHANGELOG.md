@@ -191,3 +191,21 @@
 - 2026-10-07T02:38:30.758775+00:00: Bionic context-only resume: reboot/private checkpoint verified; host GPU healthy/model unloaded; config hashes preserved; Notion nested query schema identified as largest measured dynamic catalog payload; fresh GUI comparison remains NOT_TESTED. No commissioning rerun or app settings changes.
 
 - 2026-10-07T02:41:34.218461+00:00: Fresh operator Bionic hello captured:122973request/113152context, Q4/four slots, VRAM3220MiB free. Loaded tokenizer/template attributes oversized catalog to Notion; all catalogs114825formatted tokens vs54952without Notion. No app settings changed; regular GUI comparison pending.
+
+- 2026-10-07T02:52:34.489968+00:00: resume_engine: verification started
+
+- 2026-10-07T02:52:35.731038+00:00: resume_engine: PASS
+
+- 2026-10-07T02:52:59.949237+00:00: local_agent: verification started
+
+- 2026-10-07T02:53:21.852777+00:00: local_agent: PASS_WITH_LIMITATIONS
+
+- 2026-10-07T02:55:14.832135+00:00: github: verification started
+
+- 2026-10-07T02:55:16.491320+00:00: github: PASS_WITH_LIMITATIONS
+
+- 2026-10-07T02:56:02.997003+00:00: bionic_usability: verification started
+
+- 2026-10-07T02:56:03.161100+00:00: bionic_usability: BLOCKED
+
+- 2026-10-07T03:02:12.743797+00:00: URGENT USAGE CHECKPOINT: new commissioning work stopped; no active stage/agent; fresh core/health/GitHub/runner evidence reconciled; native blocker and untested interrupted helper proof retained; complete six-file handoff generated with current regular-LM-Studio Q4/12544/one-slot snapshot.

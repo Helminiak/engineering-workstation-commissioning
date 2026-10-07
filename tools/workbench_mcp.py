@@ -104,7 +104,7 @@ def execute(argv: list[str], cwd: str, timeout: int) -> dict:
 
 @server.tool(annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=True))
 def run_command(command: str, cwd: str = ".", timeout_seconds: int = 60) -> dict:
-    """Run a bash command for local coding/builds/tests/git. Cwd must be in LLM-Workspace. This is full user-account code execution, not a sandbox; commands can access files elsewhere. Never deploy, push production changes, reveal credentials, or send messages without the user's explicit task authorization."""
+    """Run a bash command for local coding/builds/tests/git. For pytest use venvs/quant/bin/python -m pytest; the document-tool workspace Python has no pytest. Cwd must be in LLM-Workspace. This is full user-account code execution, not a sandbox; commands can access files elsewhere. Never deploy, push production changes, reveal credentials, or send messages without the user's explicit task authorization."""
     return execute(["/bin/bash", "-c", command], cwd, timeout_seconds)
 
 
@@ -112,7 +112,7 @@ def run_command(command: str, cwd: str = ".", timeout_seconds: int = 60) -> dict
 def run_python(
     code: str, cwd: str = ".", timeout_seconds: int = 60, runtime: str = "workspace"
 ) -> dict:
-    """Execute Python for data analysis and artifacts. runtime=quant selects NumPy/SciPy/pandas/Polars/DuckDB/sklearn; runtime=gpu selects CUDA PyTorch; default workspace retains document tools. Installed: pandas, openpyxl, xlsxwriter, matplotlib, Pillow, pypdf, python-docx, python-pptx, reportlab. Save deliverables in /home/joe/LLM-Workspace/outputs. This is user-account execution, not a sandbox. Do not read secrets or deploy."""
+    """Execute Python for data analysis and artifacts. runtime=quant selects NumPy/SciPy/pandas/Polars/DuckDB/sklearn and pytest; runtime=gpu selects CUDA PyTorch; default workspace retains document tools. Installed: pandas, openpyxl, xlsxwriter, matplotlib, Pillow, pypdf, python-docx, python-pptx, reportlab. Save deliverables in /home/joe/LLM-Workspace/outputs. This is user-account execution, not a sandbox. Do not read secrets or deploy."""
     runtimes = {
         "workspace": PYTHON,
         "quant": ROOT / "venvs/quant/bin/python",
