@@ -2,17 +2,17 @@
   "recorded_at": "2026-10-07T00:49:48.314315+00:00",
   "authorized": [
     "Execute reviewed scripts/development-install-request.sh --operator-approved including required sudo package installations",
-    "Normal workspace reads/writes, builds, tests, diagnostics and checkpoints"
+    "Normal workspace reads/writes, builds, tests, diagnostics and checkpoints",
+    "2026-10-06 operator YES: create PRIVATE Helminiak/engineering-workstation-commissioning and push sanitized commissioning/main-work branch"
   ],
   "requires_new_approval": [
     "driver/kernel/firmware changes",
     "deleting existing data",
     "security-control changes",
     "network service exposure",
-    "repository creation",
-    "GitHub push",
     "merge",
-    "deployment"
+    "deployment",
+    "Any other repository creation or push beyond the approved private commissioning repository/branch"
   ],
   "credentials": "Never expose credentials"
 }

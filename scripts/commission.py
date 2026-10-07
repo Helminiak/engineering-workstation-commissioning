@@ -106,8 +106,8 @@ Reproduce current blockers: git remote -v (no remote until approved); gh repo vi
 Next: inspect evidence for {pending[0] if pending else "end_to_end"}; rerun recorded verifier before continuing.
 Reproduce: python3 scripts/commission.py verify STAGE --command 'VERIFIER' (inspect progress.json commands).
 Do not repeat: working NVIDIA driver, working Node, existing model downloads; do not replace existing integrations.
-Standing authorization: reviewed development sudo batch already approved and installed; normal workspace builds/tests/checkpoints authorized. Read AUTHORIZATION.json.
-New approval required: drivers/kernel/firmware, deleting existing data, security controls, network exposure, repository creation, GitHub push, merge/deploy.
+Standing authorization: reviewed development sudo batch already approved and installed; normal workspace builds/tests/checkpoints authorized. Operator approved private Helminiak/engineering-workstation-commissioning creation and sanitized commissioning/main-work push. Read AUTHORIZATION.json.
+New approval required: drivers/kernel/firmware, deleting existing data, security controls, network exposure, repository creation/push outside the approved private commissioning repository/branch, merge/deploy.
 Raw stdout/stderr/exit codes: evidence/*.json; tests: tests/; logs: logs/. Raw logs excluded from Git.
 Local bridge runs with Joe's full account privileges; workspace cwd is not a security sandbox.
 No credentials in Git. No production branch changes. No external uploads of private data.
