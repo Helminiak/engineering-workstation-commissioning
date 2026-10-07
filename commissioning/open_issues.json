@@ -1,9 +1,9 @@
 {
   "issues": [
     {
-      "id": "github-auth",
+      "id": "github-remote",
       "status": "MANUAL_REQUIRED",
-      "detail": "Connected GitHub app authentication and public repo metadata read PASS; no accessible dedicated commissioning repo found. CLI remains unauthenticated. Repo creation and push need new authorization. No token copied between systems."
+      "detail": "CLI authentication as Helminiak and account API read PASS; connected app read also PASS. Dedicated commissioning repository lookup unavailable and no remote configured. Repository creation/push still need new authorization. No credential copied or exposed."
     },
     {
       "id": "bionic-native",

@@ -29,7 +29,7 @@ commands = [
     ("local-agent Java evidence", "python3 tests/verify_agent_java_proof.py"),
     ("Java/C++/Rust", "scripts/verify-development.sh && scripts/verify-build-tools.sh"),
     ("CPU/RAM/filesystem", "python3 tests/validate_hardware.py"),
-    ("GitHub", "gh auth status"),
+    ("GitHub authentication", "gh api user --jq .login"),
     ("security/code validation", "scripts/verify-security.sh"),
     (
         "property tests",
@@ -52,7 +52,7 @@ for name, cmd in commands:
         if p.returncode == 0
         else (
             "MANUAL_REQUIRED"
-            if name == "GitHub"
+            if name == "GitHub authentication"
             else ("BLOCKED" if name == "health" and p.returncode == 2 else "FAIL")
         )
     )
@@ -68,6 +68,25 @@ for name, cmd in commands:
         }
     )
     print(name, status, flush=True)
+for category, reason in [
+    (
+        "GitHub remote writes",
+        "Private commissioning repository creation and push require operator approval; no remote configured.",
+    ),
+    (
+        "Bionic native UI",
+        "Native projects and approval behavior unavailable to automation; API/MCP tested separately.",
+    ),
+]:
+    rows.append(
+        {
+            "category": category,
+            "status": "MANUAL_REQUIRED",
+            "reason": reason,
+            "command": None,
+            "exit_code": None,
+        }
+    )
 p = ROOT / "artifacts/synthetic-engineering.csv"
 with p.open("w") as f:
     writer = csv.writer(f)
@@ -83,7 +102,7 @@ report = {
     "artifact_sha256": hashlib.sha256(p.read_bytes()).hexdigest(),
     "results": rows,
     "local_llm_evidence": "evidence/local-llm-acceptance.json",
-    "limitations": "Local LLM evidence is independently checked; GitHub CLI access gates integration completion. Native Bionic remains separately unverified. No proprietary data or trading strategy.",
+    "limitations": "Local LLM evidence is independently checked; Authorized GitHub remote writes and native Bionic verification gate full integration completion. Native Bionic remains separately unverified. No proprietary data or trading strategy.",
 }
 (ROOT / "evidence/end-to-end.json").write_text(json.dumps(report, indent=2) + "\n")
 (ROOT / "artifacts/engineering-report.json").write_text(

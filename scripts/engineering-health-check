@@ -57,8 +57,16 @@ def main():
             if p.returncode == 0
             else ("FAIL" if required else "MANUAL_REQUIRED"),
             "exit_code": p.returncode,
-            "stdout": p.stdout[:4000],
-            "stderr": p.stderr[:1000],
+            "stdout": "\n".join(
+                line
+                for line in p.stdout.splitlines()
+                if not line.lstrip().startswith("- Token:")
+            )[:4000],
+            "stderr": "\n".join(
+                line
+                for line in p.stderr.splitlines()
+                if not line.lstrip().startswith("- Token:")
+            )[:1000],
             "required": required,
         }
 

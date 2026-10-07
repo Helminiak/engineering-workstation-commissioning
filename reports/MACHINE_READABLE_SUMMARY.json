@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-10-07T01:08:38.867443+00:00",
+  "timestamp": "2026-10-07T01:26:26.844285+00:00",
   "status": "BLOCKED",
-  "base_commit": "509f54222479024dddca2a4852f80baa5dbbfd75",
+  "base_commit": "aa0e965792ce223ebe7e2f626fe1e6843116294a",
   "branch": "commissioning/main-work",
   "stages": {
     "execution": "PASS",
@@ -19,9 +19,9 @@
   },
   "open_issues": [
     {
-      "id": "github-auth",
+      "id": "github-remote",
       "status": "MANUAL_REQUIRED",
-      "detail": "Connected GitHub app authentication and public repo metadata read PASS; no accessible dedicated commissioning repo found. CLI remains unauthenticated. Repo creation and push need new authorization. No token copied between systems."
+      "detail": "CLI authentication as Helminiak and account API read PASS; connected app read also PASS. Dedicated commissioning repository lookup unavailable and no remote configured. Repository creation/push still need new authorization. No credential copied or exposed."
     },
     {
       "id": "bionic-native",
@@ -40,7 +40,7 @@
     }
   ],
   "verification": {
-    "timestamp": "2026-10-07T01:08:38.867443+00:00",
+    "timestamp": "2026-10-07T01:26:26.844285+00:00",
     "local_execution": "2026-10-06T23:58:41.825782+00:00",
     "local_agent": "PASS via API/MCP; native UI MANUAL_REQUIRED",
     "cuda": {
@@ -60,7 +60,7 @@
         "sm_100",
         "sm_120"
       ],
-      "runtime_s": 0.12222465200102306,
+      "runtime_s": 0.13049756799955503,
       "peak_allocation_bytes": 75497984,
       "transfer_verified": true,
       "max_absolute_error": 0.0,
@@ -69,8 +69,8 @@
     },
     "scientific": {
       "status": "PASS",
-      "runtime_s": 0.13483377200100222,
-      "max_rss_kib": 510344,
+      "runtime_s": 0.12886132299900055,
+      "max_rss_kib": 510116,
       "checks": {
         "linear_algebra_residual": {
           "actual": 1.7763568394002505e-15,
@@ -159,7 +159,7 @@
         75
       ],
       "change_at_sequence": 51,
-      "runtime_s": 0.002479209000739502,
+      "runtime_s": 0.0024845199986884836,
       "status": "PASS"
     },
     "mbo": {
@@ -178,8 +178,8 @@
         "trade/delta"
       ],
       "events": 20000,
-      "seconds": 0.10597788000086439,
-      "events_per_second": 188718.62694212107,
+      "seconds": 0.10639663300025859,
+      "events_per_second": 187975.87325861517,
       "peak_python_bytes": 9968,
       "fixture_sha256": "0245dd5357f669aa5ae0502c6e2aaab1fdf21ca3dcfbf5325227fc0e085f84d5",
       "limitations": "Trade-only timing is not full-book throughput; see separate mixed benchmarks and Java cross-language verification. No proprietary data."
@@ -205,14 +205,14 @@
         100000
       ],
       "clock_drift_ratio": 0.002000000000481115,
-      "runtime_s": 0.5592129840006237,
+      "runtime_s": 0.5597405029984657,
       "bounded_batch_records": 2000,
       "sqlite_cache_kib": 8192,
       "finding_limit": 100,
       "limitations": "Bounded output may truncate findings; ordering/dedup/drift only. No source modifications.",
       "status": "PASS",
-      "max_rss_kib": 30192,
-      "proc_vm_hwm_kib": 30192
+      "max_rss_kib": 30032,
+      "proc_vm_hwm_kib": 30032
     },
     "forensic_statistics": {
       "status": "PASS",
@@ -251,7 +251,7 @@
       "exit_code": 0
     },
     "local_agent_java": {
-      "timestamp": "2026-10-07T01:08:07.152799+00:00",
+      "timestamp": "2026-10-07T01:25:58.514403+00:00",
       "javac_exit_code": 0,
       "java_exit_code": 0,
       "result": 385,
@@ -275,6 +275,47 @@
       ],
       "credentials_returned": false
     },
+    "github_cli_read": {
+      "timestamp": "2026-10-07T01:25:21.564226+00:00",
+      "results": [
+        {
+          "command": [
+            "gh",
+            "api",
+            "user",
+            "--jq",
+            "{login: .login}"
+          ],
+          "exit_code": 0,
+          "stdout": "{\"login\":\"Helminiak\"}",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "gh",
+            "repo",
+            "view",
+            "Helminiak/engineering-workstation-commissioning",
+            "--json",
+            "nameWithOwner,isPrivate,url,viewerPermission"
+          ],
+          "exit_code": 1,
+          "stdout": "",
+          "stderr": "GraphQL: Could not resolve to a Repository with the name 'Helminiak/engineering-workstation-commissioning'. (repository)"
+        },
+        {
+          "command": [
+            "git",
+            "remote",
+            "-v"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "writes": "NOT_TESTED; repository creation/push require approval"
+    },
     "rag_formats": {
       "status": "PASS",
       "formats": [
@@ -287,7 +328,7 @@
       "pdf_semantic_citation": {
         "path": "datasets/rag-formats/inspection.pdf",
         "chunk": 0,
-        "sha256": "344433ff7c0e8789745b7085c3000aad63c93bd111a110bf5557f50c82881b96",
+        "sha256": "36d70d3e45f57e08b39fc9e49c3f0fb69ea8b479d7de2619d32016100523163e",
         "text": "Valve calibration interval is forty-two hours.\n",
         "score": 0.8588196326803669
       },
@@ -298,7 +339,7 @@
       "ram_bytes_exercised": 67108864,
       "filesystem_sha256": "281e519df3077b557c6b03f5da83c4e8d397219259615dd7c3308f89cae8f2a6",
       "cpu_sum_squares_1000000": 333333833333500000,
-      "runtime_s": 0.30579968899837695,
+      "runtime_s": 0.31434536400047364,
       "limitations": "Bounded single-process correctness test; does not replace memtest, storage SMART or long thermal stress."
     },
     "rag": {
@@ -309,7 +350,7 @@
       "stale_detection": true,
       "exact_retrieval": true,
       "source_citations": true,
-      "runtime_s": 0.09165434999886202,
+      "runtime_s": 0.04775660100131063,
       "limitations": "Local synthetic fixtures only; PDF extraction supported but OCR is not; no personal directories indexed."
     },
     "end_to_end": {
@@ -320,7 +361,7 @@
       },
       "artifact_sha256": "4e55804cd8493af06bdb7b124bb412c2e27edaa4995db0b9a1923bea3af88f70",
       "local_llm_evidence": "evidence/local-llm-acceptance.json",
-      "limitations": "Local LLM evidence is independently checked; GitHub CLI access gates integration completion. Native Bionic remains separately unverified. No proprietary data or trading strategy."
+      "limitations": "Local LLM evidence is independently checked; Authorized GitHub remote writes and native Bionic verification gate full integration completion. Native Bionic remains separately unverified. No proprietary data or trading strategy."
     },
     "health": {
       "GPU": "PASS",
@@ -336,7 +377,7 @@
       "npm": "PASS",
       "npx": "PASS",
       "Git": "PASS",
-      "GitHub": "MANUAL_REQUIRED",
+      "GitHub": "PASS",
       "Java": "PASS",
       "LM_Studio": "PASS",
       "dependencies": "PASS",

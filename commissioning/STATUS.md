@@ -1,6 +1,6 @@
 # Status
-Checkpoint: 2026-10-07T01:08:38.839783+00:00
-Final verified local checkpoint; no commissioning task running; GitHub CLI/remote and native Bionic remain operator prerequisites
+Checkpoint: 2026-10-07T01:26:26.803289+00:00
+Cancelled stale login; CLI/keyring Helminiak authenticated; account API and local health/integration checks pass; remote writes/native UI still manual
 
 - execution: PASS
 - local_agent: PASS_WITH_LIMITATIONS

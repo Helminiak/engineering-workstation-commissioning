@@ -9,6 +9,6 @@ python3 tests/end_to_end.py
 scripts/verify-before-commit.sh
 git log -1
 ```
-Current integration/health exit 2 means incomplete. Do not treat as success.
+Integration exit 2 means incomplete. Health checks mandatory local subsystems and CLI authentication; health exit 0 does not prove remote write access or native Bionic behavior.
 
-The reviewed apt batch is already approved, installed and verified; do not repeat it. Run scripts/verify-development.sh and scripts/verify-build-tools.sh for verification. Operator runs gh auth login. Creating a new private repository requires separate authorization. No automatic merge/deploy/push.
+The reviewed apt batch is already approved, installed and verified; do not repeat it. Run scripts/verify-development.sh and scripts/verify-build-tools.sh for verification. CLI authentication as Helminiak is verified. Creating a new private repository requires separate authorization. No automatic merge/deploy/push.

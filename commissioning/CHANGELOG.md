@@ -135,3 +135,13 @@
 - 2026-10-07T01:08:38.780529+00:00: github: MANUAL_REQUIRED: Connected GitHub app authentication/public metadata read PASS (evidence/github-connector.json); no accessible dedicated commissioning repository found. gh CLI remains unauthenticated. Operator sign-in and new repository/push authorization needed; remote writes NOT_TESTED.
 
 - 2026-10-07T01:08:38.847035+00:00: Final verified local checkpoint; no commissioning task running; GitHub CLI/remote and native Bionic remain operator prerequisites
+
+- 2026-10-07T01:13:10.429305+00:00: github: MANUAL_REQUIRED: GitHub CLI browser device login started at operator request; waiting for operator browser authorization. Do not start another login or expose codes/tokens. Connected app read previously verified; repository creation/push still require separate approval.
+
+- 2026-10-07T01:25:53.214311+00:00: github: MANUAL_REQUIRED: CLI authentication as Helminiak and account API read PASS; dedicated repository unavailable and no Git remote configured. Repository creation/push awaiting separate authorization; write access NOT_TESTED.
+
+- 2026-10-07T01:25:53.248349+00:00: end_to_end: verification started
+
+- 2026-10-07T01:26:06.151651+00:00: end_to_end: BLOCKED
+
+- 2026-10-07T01:26:26.813962+00:00: Cancelled stale login; CLI/keyring Helminiak authenticated; account API and local health/integration checks pass; remote writes/native UI still manual
