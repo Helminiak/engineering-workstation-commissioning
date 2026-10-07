@@ -1,3 +1,25 @@
+# Latest Bionic context checkpoint — 2026-10-07T02:41:34.218461+00:00
+
+Reboot/private checkpoint verified. Operator loaded Qwen Q4_K_M113152/four slots; Codex changed no settings. Fresh Bionic hello at22:38:08local rejected122973tokens (excess9821). Loaded VRAM latest28888used/3220free MiB of32607. Same-model regular LM Studio GUI result/time remains pending; native UI controls unavailable.
+
+Read [post-reboot diagnosis](../reports/BIONIC_CONTEXT_POST_REBOOT.md) and JSON. Oversized schemas identified:223 measured MCP tools,99706compact JSON tokens; loaded template with hello/catalogs114825tokens, already over context. Notion contributes51547compact tokens; synthetic formatted subtraction saves59873. Largest Notion query input schema16284tokens/78255characters. Exact complete native assembly still unverified. Configurations preserved, including operator-loaded state; raw catalogs/evidence remain owner-only and excluded from Git. Historical native acceptance PASS retained; never rerun fixture or commissioning stages.
+
+Second error correlates with Bionic log22:41:18:122975tokens/113152context; operator UI identity pending. No fresh regular GUI request found.
+
+Next only: regular GUI hello on same actual model/config, correlate logs and VRAM; then scoped payload diagnosis. No context increase, plugin/security/driver changes.
+
+---
+
+# Latest resume: Bionic context diagnosis only
+
+Updated 2026-10-07T02:38:30.758775+00:00. Operator resumed after reboot. Read [post-reboot diagnosis](../reports/BIONIC_CONTEXT_POST_REBOOT.md) and its JSON before the historical checkpoint below.
+
+Reboot verified; host NVIDIA healthy; Bionic running but no model loaded. Fresh GUI comparison NOT_TESTED: no native GUI controls and operator must select/load intended model. Do not raise context or start Q6/32K. Catalog measurements: 223 tools / 437608 function-JSON characters across nine providers. Notion is largest (226564); `notion-query-data-sources` input schema78255characters. Exact native token contribution remains unverified. Configurations backed up and hashes checked; no app/model/plugin/security/driver settings changed. Historical native acceptance PASS retained, no fixture rerun.
+
+Only remaining work is fresh same-model GUI comparison, loaded context/VRAM capture, tokenizer-level attribution and scoped payload diagnosis. No commissioning runner/stage is authorized by this resume. See report for raw-evidence/backup locations and credential-probe incident.
+
+---
+
 # Reboot resume checkpoint
 
 Checkpoint captured 2026-10-07T02:12:32.168563+00:00. Operator requested saving work and stopping new tasks. No reboot, shutdown, service stop, configuration restore, install, model reload, or new commissioning phase was initiated. No commissioning stage is IN_PROGRESS. Existing services remain running until the operator reboots. Resume only after the operator returns.

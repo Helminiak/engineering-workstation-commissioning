@@ -3,7 +3,7 @@
     {
       "id": "bionic-usability-context",
       "status": "BLOCKED",
-      "detail": "Historical Bionic native acceptance PASS verified from persisted shell/file tool trace. Current hello requests~123K tokens exceed loaded Q4_K_M105472 context/four slots. Same model regular CLI hello36tokens/API13tokens pass. Native error and server log correlate. VRAM before changes3421MiB free; no context/plugin/security changes made. Exact payload component attribution and pristine GUI comparison remain unverified. See reports/BIONIC_CONTEXT_DIAGNOSIS.json."
+      "detail": "Fresh post-reboot Bionic hello22:38:08local rejected122973tokens against operator-loaded Q4_K_M113152/four slots (excess9821). VRAM latest28888used/3220free MiB. MCP223tools tokenized99706compact; actual-template synthetic hello114825, without Notion54952. Notion largest contributor51547compact tokens; data-source schema16284. Regular GUI result/time pending; exact full native assembly unverified. Settings preserved/no changes, historical native acceptance PASS retained. See reports/BIONIC_CONTEXT_POST_REBOOT.md/json."
     },
     {
       "id": "security-coverage",

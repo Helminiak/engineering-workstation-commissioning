@@ -1,0 +1,639 @@
+{
+  "timestamp": "2026-10-07T02:44:55.009503+00:00",
+  "checkpoint_verified": {
+    "local_commit": "3bf90445792ac25bde35d5da6a9bd5d74b9d6c6b",
+    "remote_commit": "3bf90445792ac25bde35d5da6a9bd5d74b9d6c6b",
+    "branch": "commissioning/main-work",
+    "reboot_boot_time_local": "2026-10-06 22:16:56",
+    "boot_id": "4e055ab5-e768-4808-ad3a-4d31d76ef6e1"
+  },
+  "fresh_native_comparison": {
+    "bionic": {
+      "source": "/home/joe/.lmstudio/apps/bionic/server-logs/2026-10/2026-10-06.1.log",
+      "line": 35773,
+      "timestamp_local": "2026-10-06 22:38:08",
+      "request_tokens": 122973,
+      "available_context": 113152,
+      "excess_tokens": 9821,
+      "operator_result": "Bionic could not finish hello: selected model context too small",
+      "committed_chain": {
+        "session_id": "a7d2d496-e57e-4ce0-bd11-6dd1bee184b1",
+        "project_id": "d49037d8-47f4-5808-9028-c707de117f8f",
+        "head_chain_entries": [
+          {
+            "entry_type": "error",
+            "created_timestamp": null
+          },
+          {
+            "entry_type": "message",
+            "created_timestamp": 1791340685366,
+            "message_fields": [
+              "role",
+              "parts"
+            ],
+            "role": "user",
+            "serialized_characters": 62,
+            "contains_hello": true,
+            "content_fields": []
+          },
+          {
+            "entry_type": "stateChange",
+            "created_timestamp": null
+          },
+          {
+            "entry_type": "message",
+            "created_timestamp": 1791340685358,
+            "message_fields": [
+              "role",
+              "noAssistantResponse",
+              "noReplayPostCompaction",
+              "parts"
+            ],
+            "role": "user",
+            "serialized_characters": 586,
+            "contains_hello": false,
+            "content_fields": []
+          }
+        ],
+        "module_count": 24,
+        "base_system_prompt_characters": 2238,
+        "ui_context_estimate": {
+          "total": 6186
+        },
+        "scope": "Current committed chain only; no raw message/request content printed."
+      }
+    },
+    "regular_lmstudio": "NOT_TESTED: operator GUI result/time pending; native GUI automation unavailable"
+  },
+  "historical_failure": {
+    "request_tokens": 122973,
+    "loaded_context": 105472,
+    "not_a_fresh_measurement": true
+  },
+  "payload_attribution": {
+    "status": "OVERSIZED_DYNAMIC_MCP_SCHEMAS_IDENTIFIED; exact full native assembly not reconstructed",
+    "measurement_timestamp": "2026-10-07T02:37:12.268454+00:00",
+    "providers": [
+      {
+        "provider": "Linear",
+        "status": "PASS",
+        "tool_count": 68,
+        "function_json_characters": 86528,
+        "instructions_characters": 188,
+        "function_json_sha256": "d46f5b66e60c8224c2136a0f98d725f6fc28a048c9aabea1b2a58e1e2f2d6f13",
+        "largest_tools": [
+          {
+            "name": "save_issue",
+            "description_characters": 301,
+            "input_schema_characters": 7911
+          },
+          {
+            "name": "save_project",
+            "description_characters": 523,
+            "input_schema_characters": 6177
+          },
+          {
+            "name": "save_document",
+            "description_characters": 393,
+            "input_schema_characters": 3782
+          },
+          {
+            "name": "update_diff",
+            "description_characters": 268,
+            "input_schema_characters": 3501
+          },
+          {
+            "name": "save_release_note",
+            "description_characters": 293,
+            "input_schema_characters": 3362
+          }
+        ],
+        "raw_evidence": "evidence/bionic-mcp-catalog-20261007T023712Z/9b72c6d1-4f83-4a29-b5e7-18d6c3f0a942.json"
+      },
+      {
+        "provider": "Notion",
+        "status": "PASS",
+        "tool_count": 47,
+        "function_json_characters": 226564,
+        "instructions_characters": 2060,
+        "function_json_sha256": "993839e3c876b17264c148a8534ab714af9036a84582e47ea76ed920cc40554e",
+        "largest_tools": [
+          {
+            "name": "notion-query-data-sources",
+            "description_characters": 1977,
+            "input_schema_characters": 78255
+          },
+          {
+            "name": "notion-query-meeting-notes",
+            "description_characters": 1415,
+            "input_schema_characters": 20421
+          },
+          {
+            "name": "notion-query-sessions",
+            "description_characters": 379,
+            "input_schema_characters": 17238
+          },
+          {
+            "name": "notion-create-comment",
+            "description_characters": 1742,
+            "input_schema_characters": 8364
+          },
+          {
+            "name": "notion-update-page",
+            "description_characters": 1949,
+            "input_schema_characters": 7927
+          }
+        ],
+        "raw_evidence": "evidence/bionic-mcp-catalog-20261007T023712Z/35a90fd4-2245-40e5-945d-703ad908697f.json"
+      },
+      {
+        "provider": "Sentry",
+        "status": "PASS",
+        "tool_count": 14,
+        "function_json_characters": 38066,
+        "instructions_characters": 0,
+        "function_json_sha256": "a5272fa90da2c4168fa7a5956abeed10058a17fd8be5856d56c97be605a0113b",
+        "largest_tools": [
+          {
+            "name": "update_issue",
+            "description_characters": 1969,
+            "input_schema_characters": 3128
+          },
+          {
+            "name": "search_issues",
+            "description_characters": 1581,
+            "input_schema_characters": 1864
+          },
+          {
+            "name": "search_traces",
+            "description_characters": 1322,
+            "input_schema_characters": 1975
+          },
+          {
+            "name": "search_errors",
+            "description_characters": 1111,
+            "input_schema_characters": 1975
+          },
+          {
+            "name": "search_logs",
+            "description_characters": 1100,
+            "input_schema_characters": 1975
+          }
+        ],
+        "raw_evidence": "evidence/bionic-mcp-catalog-20261007T023712Z/7766064d-a7fe-419a-929a-d806fbad9499.json"
+      },
+      {
+        "provider": "Atlassian",
+        "status": "NOT_TESTED",
+        "reason": "no existing OAuth token; no login/refresh attempted"
+      },
+      {
+        "provider": "GitHub",
+        "status": "PASS",
+        "tool_count": 46,
+        "function_json_characters": 50863,
+        "instructions_characters": 1802,
+        "function_json_sha256": "4f0d38d4cc406f692826f20096966e052cece436973ec1f4a8578009243a6e61",
+        "largest_tools": [
+          {
+            "name": "issue_write",
+            "description_characters": 64,
+            "input_schema_characters": 3518
+          },
+          {
+            "name": "pull_request_read",
+            "description_characters": 64,
+            "input_schema_characters": 2438
+          },
+          {
+            "name": "list_issues",
+            "description_characters": 137,
+            "input_schema_characters": 2149
+          },
+          {
+            "name": "pull_request_review_write",
+            "description_characters": 1115,
+            "input_schema_characters": 970
+          },
+          {
+            "name": "search_issues",
+            "description_characters": 169,
+            "input_schema_characters": 1722
+          }
+        ],
+        "raw_evidence": "evidence/bionic-mcp-catalog-20261007T023712Z/f47ad76e-e468-4f89-951f-4f0ac7b78c32.json"
+      },
+      {
+        "provider": "Workspace Files",
+        "status": "PASS",
+        "tool_count": 14,
+        "function_json_characters": 8407,
+        "instructions_characters": 0,
+        "function_json_sha256": "8b2b34bd5052923157b549dae603dc2943e5f7903269fc520a6995254c042418",
+        "largest_tools": [
+          {
+            "name": "read_text_file",
+            "description_characters": 457,
+            "input_schema_characters": 322
+          },
+          {
+            "name": "edit_file",
+            "description_characters": 185,
+            "input_schema_characters": 489
+          },
+          {
+            "name": "search_files",
+            "description_characters": 424,
+            "input_schema_characters": 241
+          },
+          {
+            "name": "read_multiple_files",
+            "description_characters": 324,
+            "input_schema_characters": 294
+          },
+          {
+            "name": "list_directory_with_sizes",
+            "description_characters": 323,
+            "input_schema_characters": 241
+          }
+        ],
+        "raw_evidence": "evidence/bionic-mcp-catalog-20261007T023712Z/c93ade97-8c01-4be5-8be7-5cfa94fd5a47.json",
+        "source_note": "Installed cached CLI; configured npx command not invoked and no package fetched"
+      },
+      {
+        "provider": "Playwright Browser",
+        "status": "PASS",
+        "tool_count": 25,
+        "function_json_characters": 18341,
+        "instructions_characters": 0,
+        "function_json_sha256": "759110defd524b1b514a86162535fd5161951606d4b8557039951d69910bdfb7",
+        "largest_tools": [
+          {
+            "name": "browser_take_screenshot",
+            "description_characters": 123,
+            "input_schema_characters": 1331
+          },
+          {
+            "name": "browser_find",
+            "description_characters": 340,
+            "input_schema_characters": 711
+          },
+          {
+            "name": "browser_emulate_media",
+            "description_characters": 164,
+            "input_schema_characters": 855
+          },
+          {
+            "name": "browser_fill_form",
+            "description_characters": 25,
+            "input_schema_characters": 968
+          },
+          {
+            "name": "browser_drop",
+            "description_characters": 135,
+            "input_schema_characters": 766
+          }
+        ],
+        "raw_evidence": "evidence/bionic-mcp-catalog-20261007T023712Z/75be857d-a9cd-426a-8ce9-09b6c928580d.json",
+        "source_note": "Installed cached CLI; configured npx command not invoked and no package fetched"
+      },
+      {
+        "provider": "Local Workbench",
+        "status": "PASS",
+        "tool_count": 5,
+        "function_json_characters": 3130,
+        "instructions_characters": 216,
+        "function_json_sha256": "b1d55194e35d9ce12f44bccb09f16d9313bec99661ff174e475426b9353d7c8c",
+        "largest_tools": [
+          {
+            "name": "run_python",
+            "description_characters": 424,
+            "input_schema_characters": 318
+          },
+          {
+            "name": "read_document",
+            "description_characters": 277,
+            "input_schema_characters": 291
+          },
+          {
+            "name": "run_command",
+            "description_characters": 301,
+            "input_schema_characters": 260
+          },
+          {
+            "name": "search_web",
+            "description_characters": 246,
+            "input_schema_characters": 192
+          },
+          {
+            "name": "read_web",
+            "description_characters": 204,
+            "input_schema_characters": 194
+          }
+        ],
+        "raw_evidence": "evidence/bionic-mcp-catalog-20261007T023712Z/3da8e0f7-671d-4e0a-8eac-b129c1a3e4c1.json"
+      },
+      {
+        "provider": "Context7 Docs",
+        "status": "PASS",
+        "tool_count": 2,
+        "function_json_characters": 4646,
+        "instructions_characters": 632,
+        "function_json_sha256": "0b15d7f9cc72398119e734aa447c020de7133845a3723b3872e17f90b2d10a67",
+        "largest_tools": [
+          {
+            "name": "resolve-library-id",
+            "description_characters": 2006,
+            "input_schema_characters": 796
+          },
+          {
+            "name": "query-docs",
+            "description_characters": 429,
+            "input_schema_characters": 1202
+          }
+        ],
+        "raw_evidence": "evidence/bionic-mcp-catalog-20261007T023712Z/f4069656-6a94-4cb6-8aa3-0d900ce471f3.json"
+      },
+      {
+        "provider": "Cloudflare Docs",
+        "status": "PASS",
+        "tool_count": 2,
+        "function_json_characters": 1063,
+        "instructions_characters": 0,
+        "function_json_sha256": "8d2a730ec0df8955b037150d4d08928fbfbe484c0d00c7fe88bfa412bf1d9b19",
+        "largest_tools": [
+          {
+            "name": "search_cloudflare_documentation",
+            "description_characters": 538,
+            "input_schema_characters": 136
+          },
+          {
+            "name": "migrate_pages_to_workers_guide",
+            "description_characters": 66,
+            "input_schema_characters": 90
+          }
+        ],
+        "raw_evidence": "evidence/bionic-mcp-catalog-20261007T023712Z/5997a139-9bf2-47bf-8fd5-302340b4ccb7.json"
+      }
+    ],
+    "total_tools": 223,
+    "total_function_json_characters": 437608,
+    "total_instructions_characters": 4898,
+    "largest_provider": "Notion",
+    "notion_fraction_of_measured_function_characters": 0.5177327653973419,
+    "largest_tool": "notion-query-data-sources",
+    "largest_input_schema_characters": 78255,
+    "schema_structure": {
+      "maximum_nesting_depth": 32,
+      "description_instances": 537,
+      "unique_descriptions": 43,
+      "duplicated_description_characters": 24063
+    },
+    "interpretation": "All measured schemas with the actual loaded Qwen chat template already exceed current context before native Bionic module content. Notion contributes59873formatted tokens in synthetic subtraction. No plugin changes made; exact native filtering/name rewriting/module contribution remains unmeasured.",
+    "limits": [
+      "Catalog character counts are not Qwen token counts.",
+      "Fresh catalogs do not establish the exact historical or GUI-assembled request.",
+      "Bionic name rewriting, filtering, native tools, project context and chat template remain unmeasured."
+    ],
+    "loaded_qwen_tokenizer": {
+      "timestamp": "2026-10-07T02:40:32.661Z",
+      "catalog_timestamp": "2026-10-07T02:37:12.268454+00:00",
+      "initiator": "Codex read-only loaded-model tokenizer; no generation or native submission",
+      "model": {
+        "identifier": "qwen/qwen3.8-27b",
+        "quantization": "Q4_K_M",
+        "context_length": 113152,
+        "max_parallel_predictions": 4,
+        "gpu": {
+          "splitStrategy": "evenly",
+          "disabledGpus": [],
+          "ratio": 1,
+          "numCpuExpertLayersRatio": "off"
+        },
+        "unified_kv_cache": true,
+        "offload_kv_cache_to_gpu": true,
+        "k_cache_quantization": false,
+        "v_cache_quantization": false,
+        "template_sha256": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041",
+        "template_inlines_each_tool_json": true
+      },
+      "gpu_csv": "32607, 28888, 3220",
+      "providers": [
+        {
+          "provider": "Linear",
+          "tool_count": 68,
+          "compact_function_json_tokens": 20446,
+          "instructions_tokens": 36,
+          "largest_input_schema": {
+            "name": "save_issue",
+            "tokens": 1981
+          }
+        },
+        {
+          "provider": "Notion",
+          "tool_count": 47,
+          "compact_function_json_tokens": 51547,
+          "instructions_tokens": 416,
+          "largest_input_schema": {
+            "name": "notion-query-data-sources",
+            "tokens": 16284
+          }
+        },
+        {
+          "provider": "Sentry",
+          "tool_count": 14,
+          "compact_function_json_tokens": 8913,
+          "instructions_tokens": 0,
+          "largest_input_schema": {
+            "name": "update_issue",
+            "tokens": 774
+          }
+        },
+        {
+          "provider": "GitHub",
+          "tool_count": 46,
+          "compact_function_json_tokens": 11214,
+          "instructions_tokens": 385,
+          "largest_input_schema": {
+            "name": "issue_write",
+            "tokens": 765
+          }
+        },
+        {
+          "provider": "Workspace Files",
+          "tool_count": 14,
+          "compact_function_json_tokens": 1737,
+          "instructions_tokens": 0,
+          "largest_input_schema": {
+            "name": "edit_file",
+            "tokens": 116
+          }
+        },
+        {
+          "provider": "Playwright Browser",
+          "tool_count": 25,
+          "compact_function_json_tokens": 3899,
+          "instructions_tokens": 0,
+          "largest_input_schema": {
+            "name": "browser_take_screenshot",
+            "tokens": 273
+          }
+        },
+        {
+          "provider": "Local Workbench",
+          "tool_count": 5,
+          "compact_function_json_tokens": 686,
+          "instructions_tokens": 41,
+          "largest_input_schema": {
+            "name": "run_python",
+            "tokens": 73
+          }
+        },
+        {
+          "provider": "Context7 Docs",
+          "tool_count": 2,
+          "compact_function_json_tokens": 1010,
+          "instructions_tokens": 128,
+          "largest_input_schema": {
+            "name": "query-docs",
+            "tokens": 277
+          }
+        },
+        {
+          "provider": "Cloudflare Docs",
+          "tool_count": 2,
+          "compact_function_json_tokens": 271,
+          "instructions_tokens": 0,
+          "largest_input_schema": {
+            "name": "search_cloudflare_documentation",
+            "tokens": 38
+          }
+        }
+      ],
+      "combined_compact_function_json_tokens": 99706,
+      "synthetic_template_measurements": [
+        {
+          "label": "hello_no_tools",
+          "tools": 0,
+          "formatted_prompt_tokens": 53,
+          "formatted_prompt_characters": 300
+        },
+        {
+          "label": "hello_all_measured_mcp_catalogs",
+          "tools": 223,
+          "formatted_prompt_tokens": 114825,
+          "formatted_prompt_characters": 447979
+        },
+        {
+          "label": "hello_measured_catalogs_without_notion",
+          "tools": 176,
+          "formatted_prompt_tokens": 54952,
+          "formatted_prompt_characters": 214197
+        },
+        {
+          "label": "hello_local_workbench_catalog_only",
+          "tools": 5,
+          "formatted_prompt_tokens": 1067,
+          "formatted_prompt_characters": 4321
+        }
+      ],
+      "limits": [
+        "Measured current catalog text, not the complete native request.",
+        "Bionic filtering/name rewriting, native modules, template JSON formatting and session context are additional factors.",
+        "Per-component token counts do not exactly add to complete chat counts.",
+        "Synthetic hello template measurements do not submit a GUI request or execute tools; native Bionic module/system content is absent."
+      ]
+    }
+  },
+  "backup": {
+    "timestamp": "20261007T023211Z",
+    "manifest": "/home/joe/LLM-Workspace/backups/bionic-context-20261007T023211Z/manifest.json",
+    "files": 12
+  },
+  "changes": "No model reload, context increase, plugin change, driver change, security change or commissioning rerun. Workspace diagnostic/evidence writes only.",
+  "sandbox_limit": "Sandbox hides GPU devices, host processes and listeners; host escalation verified healthy NVIDIA and unloaded Bionic. Sandboxed lms timed out; do not treat as host outage.",
+  "credential_probe_incident": "A metadata probe printed a credential-bearing auth field to tool output. Value omitted from all saved reports and checkpoints; probe corrected. No credential changes performed.",
+  "backup_verification": "Both prior and current backup SHA-256 manifests verified; current directory0700 and backup files0600.",
+  "next_actions": [
+    "Obtain fresh regular LM Studio GUI hello result/time on same Q4_K_M113152/four-slot model; record actual load config/VRAM at that moment.",
+    "Correlate regular server prompt counts; do not call synthetic template or CLI results native GUI evidence.",
+    "If a repair is later requested, prefer scoped optional-tool selection/lazy schema discovery for Notion while preserving native coding tools. No global integrations/security changes have been made."
+  ],
+  "initial_host_status": {
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "driver": "595.91.07",
+    "vram_mib": {
+      "total": 32607,
+      "used": 1310,
+      "free": 30799
+    },
+    "model_loaded": false,
+    "loaded_context": null,
+    "bionic_main_pid": 12680,
+    "server": "running; loopback 1234; SDK loopback 41343",
+    "regular_lmstudio_gui_running": false,
+    "latest_vram_mib": {
+      "total": 32607,
+      "used": 1293,
+      "free": 30815
+    },
+    "latest_vram_note": "Second host sample, still no model; these values are not a loaded-model VRAM estimate."
+  },
+  "host_status": {
+    "model_loaded": true,
+    "model": {
+      "identifier": "qwen/qwen3.8-27b",
+      "quantization": "Q4_K_M",
+      "context_length": 113152,
+      "max_parallel_predictions": 4,
+      "gpu": {
+        "splitStrategy": "evenly",
+        "disabledGpus": [],
+        "ratio": 1,
+        "numCpuExpertLayersRatio": "off"
+      },
+      "unified_kv_cache": true,
+      "offload_kv_cache_to_gpu": true,
+      "k_cache_quantization": false,
+      "v_cache_quantization": false,
+      "template_sha256": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041",
+      "template_inlines_each_tool_json": true
+    },
+    "vram_mib": {
+      "total": 32607,
+      "used": 28888,
+      "free": 3220
+    },
+    "vram_timestamp": "2026-10-07T02:40:32.661Z",
+    "earlier_loaded_sample_mib": {
+      "total": 32607,
+      "used": 28645,
+      "free": 3464
+    },
+    "bionic_running": true,
+    "regular_lmstudio_gui_result": "NOT_TESTED; operator result/time pending"
+  },
+  "loaded_state_config_backup": {
+    "timestamp": "2026-10-07T02:41:34.218461+00:00",
+    "manifest": "/home/joe/LLM-Workspace/backups/bionic-context-20261007T024134Z/manifest.json",
+    "files": 12,
+    "context": "Operator-loaded Q4_K_M113152/four slots, preserved before any diagnostic setting change"
+  },
+  "second_operator_error": {
+    "operator_app_identity": "pending clarification",
+    "correlated_bionic_log": {
+      "timestamp_local": "2026-10-06 22:41:18",
+      "line": 35865,
+      "request_tokens": 122975,
+      "available_context": 113152,
+      "excess_tokens": 9823
+    },
+    "host_app_processes": "Bionic/llama-server present; regular LM Studio GUI absent at capture",
+    "vram_mib": {
+      "total": 32607,
+      "used": 28742,
+      "free": 3367
+    },
+    "regular_log_fresh_error": "none found; regular last rejection is historical2026-10-04, not current"
+  }
+}

@@ -187,3 +187,7 @@
 - 2026-10-07T02:08:26.947332+00:00: Historical native PASS preserved from real trace; current Bionic context overflow measured and blocked; configuration backed up; no context/plugin changes
 
 - 2026-10-07T02:13:21.506104+00:00: REBOOT CHECKPOINT: work saved; historical native acceptance PASS/current Bionic usability BLOCKED; no active commissioning jobs; no new tasks until operator resumes
+
+- 2026-10-07T02:38:30.758775+00:00: Bionic context-only resume: reboot/private checkpoint verified; host GPU healthy/model unloaded; config hashes preserved; Notion nested query schema identified as largest measured dynamic catalog payload; fresh GUI comparison remains NOT_TESTED. No commissioning rerun or app settings changes.
+
+- 2026-10-07T02:41:34.218461+00:00: Fresh operator Bionic hello captured:122973request/113152context, Q4/four slots, VRAM3220MiB free. Loaded tokenizer/template attributes oversized catalog to Notion; all catalogs114825formatted tokens vs54952without Notion. No app settings changed; regular GUI comparison pending.
