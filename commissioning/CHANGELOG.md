@@ -77,3 +77,5 @@
 - 2026-10-07T00:17:43.463294+00:00: Review-ready checkpoint: core agent, 32K context, CUDA, scientific and synthetic foundations verified. End-to-end and health incomplete; system sudo batch and GitHub login awaiting operator. No jobs running besides LM Studio services.
 
 - 2026-10-07T00:18:55.155069+00:00: Final checkpoint before commit: 32K loader reuses the verified instance and requires explicit idle reconfiguration; reports, lock manifests, hashes and handoffs refreshed. Awaiting approved system tools, GitHub sign-in and native UI checks.
+
+- 2026-10-07T00:21:17.111825+00:00: Durable operator mission checklist saved; native UI limitation evidence recorded. Operator approvals remain pending. First action: show_status.sh, then inspect prepared development batch; do not run sudo until approved.

@@ -1,6 +1,6 @@
 # Status
-Checkpoint: 2026-10-07T00:18:55.147352+00:00
-Final checkpoint before commit: 32K loader reuses the verified instance and requires explicit idle reconfiguration; reports, lock manifests, hashes and handoffs refreshed. Awaiting approved system tools, GitHub sign-in and native UI checks.
+Checkpoint: 2026-10-07T00:21:17.104821+00:00
+Durable operator mission checklist saved; native UI limitation evidence recorded. Operator approvals remain pending. First action: show_status.sh, then inspect prepared development batch; do not run sudo until approved.
 
 - execution: PASS
 - local_agent: PASS_WITH_LIMITATIONS

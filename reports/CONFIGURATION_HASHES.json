@@ -1,7 +1,7 @@
 {
   "scripts/bootstrap-client.sh": "6b8172cd7d73cef7d0156df2b2c42212fdceea8824ea03fd7f58c59f3dd52145",
   "scripts/build_reports.py": "8cbb07ad48e00f64e51029c4b8c0d27c6e1c02210f1e161698cd9b7842c4764a",
-  "scripts/commission.py": "50570651b527ac4e317f53e794ade248aa9f8633fce7815c385f0766f15a4cee",
+  "scripts/commission.py": "bf69c687101322371ae227a03703bcb3869d72150b31a32b0c09a6ca6ea93dd9",
   "scripts/create-task-branch.sh": "f362d56b4957bdbfbc59b31053393d335482886e3ae94c453234a68f1e90b3c3",
   "scripts/development-install-request.sh": "2d4450114b6bd65f787e71b31830c971d929b4bb3855ef52cae820b01d995ad0",
   "scripts/engineering-health-check": "59cd67d3c26103941cf390e6120104d7d233dceba8412626eb932e0c81836221",
@@ -14,7 +14,7 @@
   "scripts/resume_commissioning.sh": "12b072fa88b9e2679d94d93dfc9c618628561fe230ce4e936594628587ec93c2",
   "scripts/secret_scan.py": "ce7bc4ce82d9b3ca1f843268b9973c36aaa18f2f47961c21d767d6b4ae34dca4",
   "scripts/show_status.sh": "2b264e6f633e0420d01639d4cde0892eed8078b982c5a1855816cb4df0bc35a3",
-  "scripts/start-local-agent.sh": "6e7ff125cbef51bc9b5b2a412a0cbdae2e997599171b40c49ed3049b6a43f82f",
+  "scripts/start-local-agent.sh": "a74c9dfc9cc8beb800bc545d535fe94154e4cee88b881c2467960e30521f0628",
   "scripts/verify-before-commit.sh": "e630fc0ae23cfcfb4f3a833d3996d2d5d45ea8dcf6f6088d2894a49f916f180c",
   "scripts/verify-development.sh": "7bb2229af39d20f1b8b54415c73d3a396303131b9c969bfa9271ed144807382f",
   "scripts/verify-security.sh": "88849ba7183cabf02311b906084c8ed829a8d66f091a822f9ee569120caa7bc4",

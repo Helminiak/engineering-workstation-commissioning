@@ -101,6 +101,8 @@ Current base commit before this checkpoint: {commit}. Run git log -1 for latest 
 Working branch: {branch}.
 Currently running stages: {json.dumps(running)}. An IN_PROGRESS record may reflect interruption; inspect process list before reverify. LM Studio localhost API and model are persistent services, see machine_state.json.
 First command: scripts/show_status.sh
+Read commissioning/MISSION.md for the durable operator requirements.
+Reproduce current blockers: scripts/verify-development.sh (exit2 missing tools); gh auth status (exit1 no authenticated hosts); scripts/engineering-health-check --json evidence/health-current.json (exit2 incomplete).
 Next: inspect evidence for {pending[0] if pending else "end_to_end"}; rerun recorded verifier before continuing.
 Reproduce: python3 scripts/commission.py verify STAGE --command 'VERIFIER' (inspect progress.json commands).
 Do not repeat: working NVIDIA driver, working Node, existing model downloads; do not replace existing integrations.

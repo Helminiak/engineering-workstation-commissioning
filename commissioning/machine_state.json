@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-07T00:18:54.675409+00:00",
+  "timestamp": "2026-10-07T00:21:17.135395+00:00",
   "username": "joe",
   "hostname": "5090FE",
   "kernel": "7.0.0-38-generic",
@@ -7,8 +7,8 @@
   "cpu_model": "13th Gen Intel(R) Core(TM) i9-13900K",
   "logical_cpus": 32,
   "ram_kib": 64471312,
-  "disk_free_bytes": 373180309504,
-  "gpu": "NVIDIA GeForce RTX 5090, 595.91.07, 32607 MiB, 26826 MiB",
+  "disk_free_bytes": 373179932672,
+  "gpu": "NVIDIA GeForce RTX 5090, 595.91.07, 32607 MiB, 26930 MiB",
   "lmstudio_version": "0.4.25+1",
   "bionic_version": "NOT_TESTED: no separate version manifest or native UI verified",
   "loaded_llms": [
