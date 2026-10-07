@@ -15,3 +15,34 @@ commissioning/.runner.lock
 **/__pycache__/
 **/*.pyc
 reports/*raw*
+
+# Multi-LLM source-control hygiene (additive; existing exclusions retained)
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+build/
+dist/
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.swp
+model-weights/
+models/cache/
+*.gguf
+*.safetensors
+
+# Permit governance under the existing root allowlist
+!/README.md
+!/AGENTS.md
+!/SECURITY.md
+!/docs/
+!/.ai/
+!/.github/
