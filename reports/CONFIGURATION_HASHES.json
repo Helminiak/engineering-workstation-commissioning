@@ -1,9 +1,10 @@
 {
   "scripts/bootstrap-client.sh": "6b8172cd7d73cef7d0156df2b2c42212fdceea8824ea03fd7f58c59f3dd52145",
-  "scripts/build_reports.py": "5333fd0b6b937c4294903565a891d42c671a743224e86c0f7eb27d06d025cc1f",
-  "scripts/commission.py": "1b1312e0c14d136548a966f7903ee76691c41908dfd275ebf968671538842371",
+  "scripts/build_reports.py": "56dbe8891f0b4c9f7ae4a765de8c1a487e93c4ad0165c16960895b4c65a1d660",
+  "scripts/commission.py": "5f569cae83cbb0924bf8f10fbbc2f0fb075a973505e5073fa17f1fcb5b997007",
   "scripts/create-task-branch.sh": "f362d56b4957bdbfbc59b31053393d335482886e3ae94c453234a68f1e90b3c3",
   "scripts/development-install-request.sh": "2d4450114b6bd65f787e71b31830c971d929b4bb3855ef52cae820b01d995ad0",
+  "scripts/diagnose-bionic-native.py": "644453079c2962fec53ba38aaa74a7b676ecbbbbe53186d9b3563cd4ba0ad7c7",
   "scripts/engineering-health-check": "14717578a49706236d218478edf76fed213cb956b32eadb9c8d70b958eb5b81f",
   "scripts/git-status-report.sh": "c6ea0608608aeb180fa05f9340a7ed5d32ce835b0ae01b7d9537602bb7877ddc",
   "scripts/handoff-commit.sh": "74db69360e7a850b3dfa92343a03dd7d50ad4bed9eba7c1bf85329956aa431dd",

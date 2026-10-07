@@ -2,8 +2,8 @@
   "issues": [
     {
       "id": "bionic-native",
-      "status": "MANUAL_REQUIRED",
-      "detail": "No native UI surfaces exposed. Bionic native projects, approval behavior and independent native version remain unverified; API/MCP acceptance passes."
+      "status": "BLOCKED",
+      "detail": "Bionic 1.1.7+7 launched and running. cua.getState after launch returns apps=[], browsers=[]; no native session submission/approval surface available. Fresh existing-repo fixture and handoff/BIONIC_NATIVE_TASK.txt prepared by Codex. No Bionic acceptance commands submitted; native stdout/exit codes NOT_TESTED. Codex MCP initialization probes pass core and public documentation tools. Native log Atlassian OAuth failure has unverified impact; no connector disabled."
     },
     {
       "id": "security-coverage",

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-07T01:29:40.319020+00:00",
+  "timestamp": "2026-10-07T01:36:59.767372+00:00",
   "local_execution": "2026-10-06T23:58:41.825782+00:00",
   "local_agent": "PASS via API/MCP; native UI MANUAL_REQUIRED",
   "cuda": {
@@ -217,6 +217,98 @@
     "git_repository": "/home/joe/LLM-Workspace",
     "correction": "Initial wrong fixture repository rejected, commissioning repo corrected by agent."
   },
+  "bionic_native": {
+    "timestamp": "2026-10-07T01:34:49.462212+00:00",
+    "initiator": "Codex",
+    "bionic_version": "1.1.7+7",
+    "bionic_process_running": true,
+    "desktop_control": {
+      "timestamp": "2026-10-07T01:34:48.627121+00:00",
+      "initiator": "Codex",
+      "command": "cua.getState() after normal Bionic launch",
+      "result": {
+        "apps": [],
+        "browsers": []
+      }
+    },
+    "mcp_diagnostics": [
+      {
+        "name": "Local Workbench",
+        "initiator": "Codex",
+        "status": "PASS",
+        "tools": [
+          "run_command",
+          "run_python",
+          "search_web",
+          "read_web",
+          "read_document"
+        ],
+        "scope": "protocol initialization/list only; no Bionic native command execution"
+      },
+      {
+        "name": "Context7 Docs",
+        "initiator": "Codex",
+        "status": "PASS",
+        "tools": [
+          "resolve-library-id",
+          "query-docs"
+        ],
+        "scope": "protocol initialization/list only; no Bionic native command execution"
+      },
+      {
+        "name": "Cloudflare Docs",
+        "initiator": "Codex",
+        "status": "PASS",
+        "tools": [
+          "search_cloudflare_documentation",
+          "migrate_pages_to_workers_guide"
+        ],
+        "scope": "protocol initialization/list only; no Bionic native command execution"
+      },
+      {
+        "name": "Legacy Context7 OAuth endpoint, without native OAuth credentials",
+        "initiator": "Codex",
+        "status": "FAIL",
+        "error_types": [
+          "ExceptionGroup",
+          "ExceptionGroup",
+          "MCPError"
+        ]
+      }
+    ],
+    "native_log_observations": [
+      "Native Bionic launch reports Atlassian MCP authentication required. This does not establish that it blocks core tools.",
+      "Native Bionic launch reports duplicate GitHub tool names ignored; core execution impact unverified."
+    ],
+    "bionic_run_acceptance": {
+      "status": "BLOCKED",
+      "outputs": null,
+      "exit_codes": null,
+      "reason": "No desktop UI control or documented native agent submission interface exposed to Codex. Operator must submit handoff/BIONIC_NATIVE_TASK.txt in an Allow coding project. No native acceptance command has been submitted."
+    },
+    "limitations": [
+      "Codex protocol probes do not verify Bionic approvals or native tool calls.",
+      "Unauthenticated legacy OAuth endpoint probe does not verify Bionic stored OAuth credentials.",
+      "No connector disabled, credential modified, approval bypassed, or security control changed."
+    ],
+    "evidence": {
+      "launch_log": "logs/bionic-native-launch.log",
+      "fixture_setup": "state/bionic-native-case.json",
+      "native_task": "handoff/BIONIC_NATIVE_TASK.txt"
+    },
+    "codex_model_repair": {
+      "timestamp": "2026-10-07T01:36:39.404824+00:00",
+      "initiator": "Codex",
+      "scope": "API inference after native app launch/model restoration; not native Bionic acceptance",
+      "context": 32768,
+      "quantization": "Q6_K",
+      "expected": "42",
+      "actual": "42",
+      "seconds": 0.21027433100243798,
+      "status": "PASS"
+    },
+    "codex_health_after_launch": 0
+  },
   "github_connector": {
     "connector_authentication": "PASS",
     "connector_login": "Helminiak",
@@ -276,7 +368,7 @@
     "writes": "NOT_TESTED; repository creation/push require approval"
   },
   "github_remote": {
-    "timestamp": "2026-10-07T01:29:28.718622+00:00",
+    "timestamp": "2026-10-07T01:29:54.827769+00:00",
     "repository": "Helminiak/engineering-workstation-commissioning",
     "branch": "commissioning/main-work",
     "operation": "read-only verification",
@@ -288,9 +380,9 @@
       "url": "https://github.com/Helminiak/engineering-workstation-commissioning",
       "viewerPermission": "ADMIN"
     },
-    "local_commit": "2f8be1a93ee982b9cd67fd8b6dee13b463a95876",
-    "remote_commit": "2f8be1a93ee982b9cd67fd8b6dee13b463a95876",
-    "api_commit": "2f8be1a93ee982b9cd67fd8b6dee13b463a95876",
+    "local_commit": "f259f5f352988fc541a9e9da15d92ca50e4bb0cf",
+    "remote_commit": "f259f5f352988fc541a9e9da15d92ca50e4bb0cf",
+    "api_commit": "f259f5f352988fc541a9e9da15d92ca50e4bb0cf",
     "privacy": "PRIVATE",
     "limitation": "Read/branch/commit/push verified; PR creation, merge and deployment NOT_TESTED and not authorized."
   },

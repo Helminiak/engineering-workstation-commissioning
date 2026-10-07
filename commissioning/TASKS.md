@@ -12,5 +12,6 @@
 - security: PASS_WITH_LIMITATIONS
 - rag: PASS_WITH_LIMITATIONS
 - end_to_end: BLOCKED
+- bionic_native: BLOCKED
 
-Next unfinished: end_to_end
+Next unfinished: bionic_native

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-07T01:29:40.276275+00:00",
+  "updated_at": "2026-10-07T01:36:59.735503+00:00",
   "objective": "Commission a verified, resumable Ubuntu RTX 5090 engineering workstation. Prioritize local execution before expansion.",
   "stages": {
     "execution": {
@@ -383,6 +383,43 @@
       "repair_attempts": [],
       "remaining_issues": [
         "All tested local subsystems, CLI authentication and authorized private remote commit verification pass. Native Bionic UI/tool approval remains MANUAL_REQUIRED."
+      ]
+    },
+    "bionic_native": {
+      "phase": "1-native",
+      "status": "BLOCKED",
+      "start_time": "2026-10-07T01:34:48.668716+00:00",
+      "end_time": "2026-10-07T01:34:49.537685+00:00",
+      "commands": [
+        {
+          "command": ".venv/bin/python scripts/diagnose-bionic-native.py",
+          "exit_code": 2,
+          "start_time": "2026-10-07T01:34:48.677516+00:00",
+          "end_time": "2026-10-07T01:34:49.530263+00:00"
+        }
+      ],
+      "evidence": [
+        "evidence/bionic_native-20261007T013449530284.json"
+      ],
+      "verification": false,
+      "repair_attempts": [
+        {
+          "failure": "Bionic was not running; native UI surfaces unavailable",
+          "repair": "Normal Bionic launch, without security bypasses; UI surfaces rechecked",
+          "result": "Process running; desktop UI still inaccessible",
+          "evidence": "state/bionic-native-launch.json"
+        },
+        {
+          "executor": "Codex",
+          "failure": "After normal Bionic launch, CLI/SDK had no loaded model; launch mechanism not established",
+          "repair": "node scripts/load-commissioning-model.cjs 32768; authenticated localhost inference check",
+          "result": "Qwen Q6_K context32768 restored; result42 verified",
+          "command_exit_code": 0,
+          "evidence": "evidence/bionic-launch-inference-repair.json"
+        }
+      ],
+      "remaining_issues": [
+        "BLOCKED: Bionic is running but cua.getState exposes no desktop controls. Codex cannot submit/approve a native session. No Bionic-run acceptance output or exit codes exist. Operator must run handoff/BIONIC_NATIVE_TASK.txt in an Allow coding project for the prepared existing fixture repository."
       ]
     }
   }

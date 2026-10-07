@@ -28,4 +28,10 @@
 
 - Fresh acceptance retest rejected by independent verifier: model saw an old parent tracked-file diff and claimed it had appended the new case file without doing so. The new file remained baseline. Strengthened exact-case path instructions and scoped independent diff verification. Failed transcript preserved in evidence/local-llm-acceptance-failed-scope.json; model final claims are not proof.
 
+- Native Bionic acceptance BLOCKED at submission, not shell execution: normal launch of installed Bionic1.1.7+7 succeeded, but cua.getState still returned apps=[], browsers=[]. No native commands submitted; outputs/exit codes absent. Codex protocol probes of native-config core/Context7-public/Cloudflare pass. Actual launch reports Atlassian MCP authentication required and duplicate GitHub tool names ignored; impact on native core execution unverified. Legacy Context7 OAuth unauthenticated probe fails independently. Fresh existing-repo fixture and exact prompt saved. No security bypass or connector/config change attempted.
+
+- Normal Bionic launch coincided with unloaded commissioned Qwen model: lms ps reported no loaded models, SDK list returned[], GPU memory fell to1833MiB, and CLI commit changed from69d945a to1b7181b. Root mechanism unverified. Restoring existing commissioned Qwen Q6_K32K configuration with scripts/load-commissioning-model.cjs, then checking inference/health. Do not repeat app launches blindly; first inspect current process/model state.
+
+- Post-launch Qwen repair PASS: existing loader exit0 restored Q6_K32768; authenticated API returned expected42 in0.210s. Codex health check exit0. This does not change native Bionic acceptance BLOCKED. Evidence: bionic-launch-inference-repair.json and health-after-bionic-launch.json.
+
 Full integration exits 2 for unfinished native Bionic UI verification. CLI authentication and authorized private remote push verification pass. These are not PASS.

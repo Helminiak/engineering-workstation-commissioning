@@ -69,7 +69,7 @@
         "--version"
       ],
       "exit_code": 0,
-      "stdout": "CLI commit: 69d945a",
+      "stdout": "CLI commit: 1b7181b",
       "stderr": ""
     },
     "gcc": {

@@ -157,3 +157,15 @@
 - 2026-10-07T01:29:34.178763+00:00: end_to_end: BLOCKED
 
 - 2026-10-07T01:29:40.286913+00:00: Approved private repository created; reviewed task branch pushed; privacy/auth/read/write and matching Git/API commit verified; native Bionic remains manual
+
+- 2026-10-07T01:34:48.676246+00:00: bionic_native: verification started
+
+- 2026-10-07T01:34:49.545015+00:00: bionic_native: BLOCKED
+
+- 2026-10-07T01:35:23.025196+00:00: Native Bionic blocked by absent desktop session/approval control; actual native acceptance NOT_TESTED; Codex setup and MCP diagnostics kept separate
+
+- 2026-10-07T01:35:51.713889+00:00: Bionic native submission blocker diagnosed; exact operator next step, separate executor evidence and existing fixture preserved
+
+- 2026-10-07T01:36:31.860331+00:00: Bionic launch left Qwen unloaded; commissioned 32K reload in progress as Codex repair; native acceptance still blocked
+
+- 2026-10-07T01:36:59.742230+00:00: Post-launch Qwen32K restoration and Codex inference/health verified; Bionic native acceptance blocked at UI submission with no native outputs

@@ -1,0 +1,84 @@
+{
+  "timestamp": "2026-10-07T01:35:22.988189+00:00",
+  "executor": "Bionic native agent",
+  "status": "BLOCKED",
+  "checks": [
+    {
+      "check": "whoami",
+      "status": "NOT_TESTED",
+      "command_submitted": false,
+      "stdout": null,
+      "stderr": null,
+      "exit_code": null
+    },
+    {
+      "check": "pwd",
+      "status": "NOT_TESTED",
+      "command_submitted": false,
+      "stdout": null,
+      "stderr": null,
+      "exit_code": null
+    },
+    {
+      "check": "nvidia-smi",
+      "status": "NOT_TESTED",
+      "command_submitted": false,
+      "stdout": null,
+      "stderr": null,
+      "exit_code": null
+    },
+    {
+      "check": "workspace file write/read",
+      "status": "NOT_TESTED",
+      "command_submitted": false,
+      "stdout": null,
+      "stderr": null,
+      "exit_code": null
+    },
+    {
+      "check": "Bash script creation/execution",
+      "status": "NOT_TESTED",
+      "command_submitted": false,
+      "stdout": null,
+      "stderr": null,
+      "exit_code": null
+    },
+    {
+      "check": "Python script creation/execution",
+      "status": "NOT_TESTED",
+      "command_submitted": false,
+      "stdout": null,
+      "stderr": null,
+      "exit_code": null
+    },
+    {
+      "check": "Git status",
+      "status": "NOT_TESTED",
+      "command_submitted": false,
+      "stdout": null,
+      "stderr": null,
+      "exit_code": null
+    },
+    {
+      "check": "fresh tracked file modification/Git diff",
+      "status": "NOT_TESTED",
+      "command_submitted": false,
+      "stdout": null,
+      "stderr": null,
+      "exit_code": null
+    },
+    {
+      "check": "test execution",
+      "status": "NOT_TESTED",
+      "command_submitted": false,
+      "stdout": null,
+      "stderr": null,
+      "exit_code": null
+    }
+  ],
+  "blocker": "Bionic process running, but Codex desktop control inventory is empty. Native session/approval submission unavailable. No Bionic-run command output has been observed.",
+  "fixture": "/home/joe/LLM-Workspace/scratch/local-agent-acceptance/bionic-native-20261007T013341",
+  "codex_setup_evidence": "state/bionic-native-case.json",
+  "codex_diagnostics_evidence": "evidence/bionic-native-diagnostics.json",
+  "operator_prompt": "handoff/BIONIC_NATIVE_TASK.txt"
+}

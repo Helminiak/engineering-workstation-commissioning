@@ -14,5 +14,6 @@
 | security | PASS_WITH_LIMITATIONS | Heuristic secret scan and scoped type checks; GPU wheel advisory coverage incomplete. No private code uploaded. |
 | rag | PASS_WITH_LIMITATIONS | Local synthetic authorized directories; PDF text supported/tested, OCR not included. No personal or external data indexed. |
 | end_to_end | BLOCKED | All tested local subsystems, CLI authentication and authorized private remote commit verification pass. Native Bionic UI/tool approval remains MANUAL_REQUIRED. |
+| bionic_native | BLOCKED | BLOCKED: Bionic is running but cua.getState exposes no desktop controls. Codex cannot submit/approve a native session. No Bionic-run acceptance output or exit codes exist. Operator must run handoff/BIONIC_NATIVE_TASK.txt in an Allow coding project for the prepared existing fixture repository. |
 
 PASS applies only to recorded verifiers. MANUAL_REQUIRED and BLOCKED are unfinished. Raw per-command evidence remains local under evidence/.

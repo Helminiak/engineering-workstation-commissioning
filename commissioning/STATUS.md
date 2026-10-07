@@ -1,6 +1,6 @@
 # Status
-Checkpoint: 2026-10-07T01:29:40.276275+00:00
-Approved private repository created; reviewed task branch pushed; privacy/auth/read/write and matching Git/API commit verified; native Bionic remains manual
+Checkpoint: 2026-10-07T01:36:59.735503+00:00
+Post-launch Qwen32K restoration and Codex inference/health verified; Bionic native acceptance blocked at UI submission with no native outputs
 
 - execution: PASS
 - local_agent: PASS_WITH_LIMITATIONS
@@ -14,3 +14,4 @@ Approved private repository created; reviewed task branch pushed; privacy/auth/r
 - security: PASS_WITH_LIMITATIONS
 - rag: PASS_WITH_LIMITATIONS
 - end_to_end: BLOCKED
+- bionic_native: BLOCKED

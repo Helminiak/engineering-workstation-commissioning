@@ -1,0 +1,92 @@
+{
+  "timestamp": "2026-10-07T01:34:49.462212+00:00",
+  "initiator": "Codex",
+  "bionic_version": "1.1.7+7",
+  "bionic_process_running": true,
+  "desktop_control": {
+    "timestamp": "2026-10-07T01:34:48.627121+00:00",
+    "initiator": "Codex",
+    "command": "cua.getState() after normal Bionic launch",
+    "result": {
+      "apps": [],
+      "browsers": []
+    }
+  },
+  "mcp_diagnostics": [
+    {
+      "name": "Local Workbench",
+      "initiator": "Codex",
+      "status": "PASS",
+      "tools": [
+        "run_command",
+        "run_python",
+        "search_web",
+        "read_web",
+        "read_document"
+      ],
+      "scope": "protocol initialization/list only; no Bionic native command execution"
+    },
+    {
+      "name": "Context7 Docs",
+      "initiator": "Codex",
+      "status": "PASS",
+      "tools": [
+        "resolve-library-id",
+        "query-docs"
+      ],
+      "scope": "protocol initialization/list only; no Bionic native command execution"
+    },
+    {
+      "name": "Cloudflare Docs",
+      "initiator": "Codex",
+      "status": "PASS",
+      "tools": [
+        "search_cloudflare_documentation",
+        "migrate_pages_to_workers_guide"
+      ],
+      "scope": "protocol initialization/list only; no Bionic native command execution"
+    },
+    {
+      "name": "Legacy Context7 OAuth endpoint, without native OAuth credentials",
+      "initiator": "Codex",
+      "status": "FAIL",
+      "error_types": [
+        "ExceptionGroup",
+        "ExceptionGroup",
+        "MCPError"
+      ]
+    }
+  ],
+  "native_log_observations": [
+    "Native Bionic launch reports Atlassian MCP authentication required. This does not establish that it blocks core tools.",
+    "Native Bionic launch reports duplicate GitHub tool names ignored; core execution impact unverified."
+  ],
+  "bionic_run_acceptance": {
+    "status": "BLOCKED",
+    "outputs": null,
+    "exit_codes": null,
+    "reason": "No desktop UI control or documented native agent submission interface exposed to Codex. Operator must submit handoff/BIONIC_NATIVE_TASK.txt in an Allow coding project. No native acceptance command has been submitted."
+  },
+  "limitations": [
+    "Codex protocol probes do not verify Bionic approvals or native tool calls.",
+    "Unauthenticated legacy OAuth endpoint probe does not verify Bionic stored OAuth credentials.",
+    "No connector disabled, credential modified, approval bypassed, or security control changed."
+  ],
+  "evidence": {
+    "launch_log": "logs/bionic-native-launch.log",
+    "fixture_setup": "state/bionic-native-case.json",
+    "native_task": "handoff/BIONIC_NATIVE_TASK.txt"
+  },
+  "codex_model_repair": {
+    "timestamp": "2026-10-07T01:36:39.404824+00:00",
+    "initiator": "Codex",
+    "scope": "API inference after native app launch/model restoration; not native Bionic acceptance",
+    "context": 32768,
+    "quantization": "Q6_K",
+    "expected": "42",
+    "actual": "42",
+    "seconds": 0.21027433100243798,
+    "status": "PASS"
+  },
+  "codex_health_after_launch": 0
+}

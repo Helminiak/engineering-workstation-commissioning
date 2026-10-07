@@ -120,7 +120,9 @@ machine = {
     "lmstudio_version": json.loads(
         Path("/opt/LM-Studio/resources/app/package.json").read_text()
     )["version"],
-    "bionic_version": "NOT_TESTED: no separate version manifest or native UI verified",
+    "bionic_version": json.loads(
+        Path("/opt/Bionic/resources/app/package.json").read_text()
+    )["version"],
     "loaded_llms": json.loads(info.stdout) if info.returncode == 0 else [],
     "model_hashes": read("evidence/model-hashes.json"),
     "cuda_toolkit_nvcc": shutil.which("nvcc")
@@ -139,6 +141,7 @@ verification = {
     "forensic_statistics": read("evidence/forensic-statistics.json"),
     "cross_language_replay": read("evidence/cross-language-replay.json"),
     "local_agent_java": read("evidence/local-agent-java-verification.json"),
+    "bionic_native": read("evidence/bionic-native-diagnostics.json"),
     "github_connector": read("evidence/github-connector.json"),
     "github_cli_read": read("evidence/github-cli-read.json"),
     "github_remote": read("evidence/github-remote-verification.json"),
@@ -244,7 +247,7 @@ Verified: Joe/5090FE/Ubuntu 26.04.1/RTX 5090; real shell and file writes; Node/n
 
 Recommended Qwen Q6_K context: 32,768, tested with 25,729 input tokens. Measured short benchmark peak VRAM 25,725 MiB of 32,607 MiB; median generation about 161 tokens/sec. Cache and short-prompt limits apply.
 
-Private Helminiak/engineering-workstation-commissioning created with operator approval; commissioning/main-work push verified by matching local HEAD, Git remote and GitHub API commits. CLI authentication as Helminiak and repository privacy/write permissions pass. Incomplete: native Bionic projects/tool approval and full integration completion. PR creation, merge and deployment were not authorized or performed. One unexplained Python3.14 streaming failure is recorded; controls pass and forensic verification is pinned to Python3.12. yq/fd and Gradle are absent and were not needed for verified workflows. No driver, kernel, firmware or security-control changes made. Only the approved private commissioning repository/task branch was created/pushed.
+Private Helminiak/engineering-workstation-commissioning created with operator approval; commissioning/main-work push verified by matching local HEAD, Git remote and GitHub API commits. CLI authentication as Helminiak and repository privacy/write permissions pass. Incomplete: native Bionic projects/tool approval and full integration completion. Installed Bionic1.1.7+7 launched successfully, but native acceptance submission is BLOCKED because this session exposes no desktop UI controls. No Bionic-run output or exit codes exist; Codex-only MCP diagnostics are separate in BIONIC_NATIVE_DIAGNOSIS.json. PR creation, merge and deployment were not authorized or performed. One unexplained Python3.14 streaming failure is recorded; controls pass and forensic verification is pinned to Python3.12. yq/fd and Gradle are absent and were not needed for verified workflows. No driver, kernel, firmware or security-control changes made. Only the approved private commissioning repository/task branch was created/pushed.
 
 Read commissioning/NEXT_AGENT.md and run scripts/show_status.sh. Detailed evidence is local in evidence/ and logs/. Sanitized reports, scripts and state are committed locally and pushed to the approved private repository. See git log -1 for the exact latest commit.
 """)
