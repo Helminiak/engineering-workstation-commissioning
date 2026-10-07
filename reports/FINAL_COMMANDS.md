@@ -11,4 +11,4 @@ git log -1
 ```
 Current integration/health exit 2 means incomplete. Do not treat as success.
 
-After operator approval only: scripts/development-install-request.sh --operator-approved; then scripts/verify-development.sh. Operator runs gh auth login. Creating a new private repository requires separate authorization. No automatic merge/deploy/push.
+The reviewed apt batch is already approved, installed and verified; do not repeat it. Run scripts/verify-development.sh and scripts/verify-build-tools.sh for verification. Operator runs gh auth login. Creating a new private repository requires separate authorization. No automatic merge/deploy/push.

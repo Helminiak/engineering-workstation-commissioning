@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-07T00:21:17.135395+00:00",
+  "timestamp": "2026-10-07T01:08:38.867443+00:00",
   "local_execution": "2026-10-06T23:58:41.825782+00:00",
   "local_agent": "PASS via API/MCP; native UI MANUAL_REQUIRED",
   "cuda": {
@@ -19,7 +19,7 @@
       "sm_100",
       "sm_120"
     ],
-    "runtime_s": 0.12439426999844727,
+    "runtime_s": 0.12222465200102306,
     "peak_allocation_bytes": 75497984,
     "transfer_verified": true,
     "max_absolute_error": 0.0,
@@ -28,8 +28,8 @@
   },
   "scientific": {
     "status": "PASS",
-    "runtime_s": 0.13053433100139955,
-    "max_rss_kib": 510368,
+    "runtime_s": 0.13483377200100222,
+    "max_rss_kib": 510344,
     "checks": {
       "linear_algebra_residual": {
         "actual": 1.7763568394002505e-15,
@@ -118,7 +118,7 @@
       75
     ],
     "change_at_sequence": 51,
-    "runtime_s": 0.0022625649980909657,
+    "runtime_s": 0.002479209000739502,
     "status": "PASS"
   },
   "mbo": {
@@ -137,11 +137,128 @@
       "trade/delta"
     ],
     "events": 20000,
-    "seconds": 0.10566494500017143,
-    "events_per_second": 189277.53191910102,
+    "seconds": 0.10597788000086439,
+    "events_per_second": 188718.62694212107,
     "peak_python_bytes": 9968,
     "fixture_sha256": "0245dd5357f669aa5ae0502c6e2aaab1fdf21ca3dcfbf5325227fc0e085f84d5",
-    "limitations": "Python reference book only; trade-only throughput is not full order-book throughput. Java pending approved JDK installation. No proprietary data."
+    "limitations": "Trade-only timing is not full-book throughput; see separate mixed benchmarks and Java cross-language verification. No proprietary data."
+  },
+  "streaming_forensics": {
+    "sha256": "f9f25f398f72dbb04a6bf57fc54a9840240a51607f994e9eed0a4844cff62882",
+    "records": 200000,
+    "duplicate_groups": 1,
+    "duplicates": [
+      [
+        50000,
+        2
+      ]
+    ],
+    "missing_count": 1,
+    "missing_ranges": [
+      [
+        12345,
+        12345
+      ]
+    ],
+    "out_of_order_positions": [
+      100000
+    ],
+    "clock_drift_ratio": 0.002000000000481115,
+    "runtime_s": 0.5592129840006237,
+    "bounded_batch_records": 2000,
+    "sqlite_cache_kib": 8192,
+    "finding_limit": 100,
+    "limitations": "Bounded output may truncate findings; ordering/dedup/drift only. No source modifications.",
+    "status": "PASS",
+    "max_rss_kib": 30192,
+    "proc_vm_hwm_kib": 30192
+  },
+  "forensic_statistics": {
+    "status": "PASS",
+    "correlation": 1.0,
+    "planted_regression": {
+      "baseline_median": 1,
+      "current_median": 2,
+      "relative_change": 1.0,
+      "threshold": 0.1,
+      "regression": true,
+      "method": "Median ratio; descriptive flag, not a statistical significance test"
+    },
+    "stable_case": {
+      "baseline_median": 1,
+      "current_median": 1.01,
+      "relative_change": 0.010000000000000009,
+      "threshold": 0.1,
+      "regression": false,
+      "method": "Median ratio; descriptive flag, not a statistical significance test"
+    }
+  },
+  "cross_language_replay": {
+    "status": "PASS",
+    "expected": [
+      "sequence=10",
+      "volume=10",
+      "delta=6",
+      "order=b,bid,100,1,10"
+    ],
+    "java_actual": [
+      "sequence=10",
+      "volume=10",
+      "delta=6",
+      "order=b,bid,100,1,10"
+    ],
+    "exit_code": 0
+  },
+  "local_agent_java": {
+    "timestamp": "2026-10-07T01:08:07.152799+00:00",
+    "javac_exit_code": 0,
+    "java_exit_code": 0,
+    "result": 385,
+    "git_repository": "/home/joe/LLM-Workspace",
+    "correction": "Initial wrong fixture repository rejected, commissioning repo corrected by agent."
+  },
+  "github_connector": {
+    "connector_authentication": "PASS",
+    "connector_login": "Helminiak",
+    "public_repository_metadata_read": "PASS",
+    "public_repository": "cli/cli",
+    "commissioning_repository_lookup": "NOT_FOUND_OR_NOT_ACCESSIBLE",
+    "commissioning_repository_http_status": 404,
+    "matching_installed_repositories": 0,
+    "CLI_authentication": "MANUAL_REQUIRED",
+    "remote_write": "NOT_TESTED; creation and push require operator authorization",
+    "tool_calls": [
+      "github_get_user_login",
+      "github_search_installed_repositories_v2",
+      "github_get_repo"
+    ],
+    "credentials_returned": false
+  },
+  "rag_formats": {
+    "status": "PASS",
+    "formats": [
+      "PDF text",
+      "Java code",
+      "CSV",
+      "JSON",
+      "plain text"
+    ],
+    "pdf_semantic_citation": {
+      "path": "datasets/rag-formats/inspection.pdf",
+      "chunk": 0,
+      "sha256": "344433ff7c0e8789745b7085c3000aad63c93bd111a110bf5557f50c82881b96",
+      "text": "Valve calibration interval is forty-two hours.\n",
+      "score": 0.8588196326803669
+    },
+    "no_OCR": true
+  },
+  "hardware": {
+    "status": "PASS",
+    "ram_bytes_exercised": 67108864,
+    "filesystem_sha256": "281e519df3077b557c6b03f5da83c4e8d397219259615dd7c3308f89cae8f2a6",
+    "cpu_sum_squares_1000000": 333333833333500000,
+    "runtime_s": 0.30579968899837695,
+    "limitations": "Bounded single-process correctness test; does not replace memtest, storage SMART or long thermal stress."
   },
   "rag": {
     "status": "PASS",
@@ -151,7 +268,7 @@
     "stale_detection": true,
     "exact_retrieval": true,
     "source_citations": true,
-    "runtime_s": 0.13686749300177325,
+    "runtime_s": 0.09165434999886202,
     "limitations": "Local synthetic fixtures only; PDF extraction supported but OCR is not; no personal directories indexed."
   },
   "end_to_end": {
@@ -162,7 +279,7 @@
     },
     "artifact_sha256": "4e55804cd8493af06bdb7b124bb412c2e27edaa4995db0b9a1923bea3af88f70",
     "local_llm_evidence": "evidence/local-llm-acceptance.json",
-    "limitations": "Local LLM acceptance is separately rerunnable; Java/system tools and GitHub gate completion. No proprietary data or trading strategy."
+    "limitations": "Local LLM evidence is independently checked; GitHub CLI access gates integration completion. Native Bionic remains separately unverified. No proprietary data or trading strategy."
   },
   "health": {
     "GPU": "PASS",
@@ -179,7 +296,7 @@
     "npx": "PASS",
     "Git": "PASS",
     "GitHub": "MANUAL_REQUIRED",
-    "Java": "NOT_TESTED",
+    "Java": "PASS",
     "LM_Studio": "PASS",
     "dependencies": "PASS",
     "workspace": "PASS",

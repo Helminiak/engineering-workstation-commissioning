@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(commissioning_fixture LANGUAGES CXX)
+add_executable(sum_squares sum_squares.cpp)
+target_compile_features(sum_squares PRIVATE cxx_std_20)
+target_compile_options(sum_squares PRIVATE -Wall -Wextra -Werror)
+enable_testing()
+add_test(NAME known_sum COMMAND sum_squares)

@@ -1,2 +1,4 @@
 # Security
 Never print or commit credentials. Raw evidence stays local. No sudo, system driver/kernel/firmware changes, network exposure, security-control changes, merge, force push, deployment, or new GitHub repository without operator approval. Read-only diagnostics and workspace writes authorized. Existing shell bridge has full Joe-account privileges, even though cwd and document reads are scoped; it is not a security sandbox. Back up important configuration before edits.
+
+Standing authorization recorded in AUTHORIZATION.json: reviewed development apt batch is approved, including required sudo. Normal workspace work/builds/tests/checkpoints are approved. The operator ran the approved batch in their terminal; completed apt history and package state were verified. Do not repeat the installation or ask for a password in chat. New repositories (including new test repositories) and GitHub pushes still require approval.

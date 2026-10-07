@@ -3,16 +3,16 @@
 | Phase | Status | Scope / remaining work |
 |---|---|---|
 | execution | PASS | Recorded verifier evidence in progress.json |
-| local_agent | PASS_WITH_LIMITATIONS | Native Bionic UI projects, shell and approval behavior require operator verification. API/MCP agent and optional connector failure isolation verified. |
+| local_agent | PASS_WITH_LIMITATIONS | Actual API/MCP execution verified independently; native Bionic UI and approval behavior remain MANUAL_REQUIRED. Joe-account shell is not an OS sandbox. |
 | resume_engine | PASS | Recorded verifier evidence in progress.json |
-| development | MANUAL_REQUIRED | Inventory and apt simulation saved. Node/Python/Git functional. Missing C/C++/Java/Rust and utilities require operator-approved sudo apt batch. |
-| github | MANUAL_REQUIRED | gh installed and SHA-256 verified. gh auth status exits 1: no logged-in GitHub hosts. Operator sign-in needed; no remote created. |
+| development | PASS | Recorded verifier evidence in progress.json |
+| github | MANUAL_REQUIRED | Connected GitHub app authentication/public metadata read PASS (evidence/github-connector.json); no accessible dedicated commissioning repository found. gh CLI remains unauthenticated. Operator sign-in and new repository/push authorization needed; remote writes NOT_TESTED. |
 | gpu_llm | PASS_WITH_LIMITATIONS | 16K/32K measured; 48K/64K not tested. Short inference performance only. CLI/SDK allocation registry differs from native REST. Bionic native UI unverified. |
 | scientific | PASS | Recorded verifier evidence in progress.json |
-| forensics | PASS_WITH_LIMITATIONS | Synthetic baseline validates known anomalies; current JSONL analyzer loads records in memory and is not yet a large-log streaming implementation. |
-| mbo | MANUAL_REQUIRED | Python synthetic reference book unit tests pass; Java implementation and compilation require JDK approval. Full order-book throughput, liquidity/regime analysis not yet commissioned. |
-| security | PASS_WITH_LIMITATIONS | Heuristic secret scan, limited domain mypy and package audits only. GPU vendor advisory coverage incomplete; native approval and hard execution sandbox unverified; ShellCheck pending JDK/tool batch. |
-| rag | PASS_WITH_LIMITATIONS | Tested synthetic authorized directory; no OCR, long-document retrieval benchmark or personal-data indexing. |
-| end_to_end | BLOCKED | Available subsystems verified; Java/C++/Rust and GitHub are mandatory unfinished gates. |
+| forensics | PASS_WITH_LIMITATIONS | 200K synthetic streaming record verification. Descriptive statistics only. One unexplained Python 3.14 failure retained; controls pass and commissioned forensic interpreter is isolated Python 3.12. |
+| mbo | PASS_WITH_LIMITATIONS | Synthetic Java/Python foundation, not a CME decoder. Queue/persistence are reference rules; regimes describe volume imbalance, not trading strategies. Measured 200-order depth, not exchange-scale load. |
+| security | PASS_WITH_LIMITATIONS | Heuristic secret scan and scoped type checks; GPU wheel advisory coverage incomplete. No private code uploaded. |
+| rag | PASS_WITH_LIMITATIONS | Local synthetic authorized directories; PDF text supported/tested, OCR not included. No personal or external data indexed. |
+| end_to_end | BLOCKED | GitHub CLI authentication and authorized remote workflow remain incomplete; native Bionic UI is separately MANUAL_REQUIRED. |
 
 PASS applies only to recorded verifiers. MANUAL_REQUIRED and BLOCKED are unfinished. Raw per-command evidence remains local under evidence/.

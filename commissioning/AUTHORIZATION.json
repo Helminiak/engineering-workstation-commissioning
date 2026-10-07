@@ -1,0 +1,18 @@
+{
+  "recorded_at": "2026-10-07T00:49:48.314315+00:00",
+  "authorized": [
+    "Execute reviewed scripts/development-install-request.sh --operator-approved including required sudo package installations",
+    "Normal workspace reads/writes, builds, tests, diagnostics and checkpoints"
+  ],
+  "requires_new_approval": [
+    "driver/kernel/firmware changes",
+    "deleting existing data",
+    "security-control changes",
+    "network service exposure",
+    "repository creation",
+    "GitHub push",
+    "merge",
+    "deployment"
+  ],
+  "credentials": "Never expose credentials"
+}

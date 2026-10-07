@@ -14,6 +14,6 @@ python3 -c 'assert sum(range(11)) == 55; print("python verified")'
 node -e 'if ([1,2,3].reduce((a,b)=>a+b,0)!==6) process.exit(1); console.log("node verified")'
 npm --version
 npx --version
-git init -q "$tmp/repo"
-git -C "$tmp/repo" status --porcelain
+test "$(git -C "$ROOT" rev-parse --is-inside-work-tree)" = true
+git -C "$ROOT" status --porcelain
 printf 'PASS: shell/filesystem/Python/Node/npm/npx/Git/workspace permissions\n'

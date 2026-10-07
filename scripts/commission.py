@@ -102,11 +102,12 @@ Working branch: {branch}.
 Currently running stages: {json.dumps(running)}. An IN_PROGRESS record may reflect interruption; inspect process list before reverify. LM Studio localhost API and model are persistent services, see machine_state.json.
 First command: scripts/show_status.sh
 Read commissioning/MISSION.md for the durable operator requirements.
-Reproduce current blockers: scripts/verify-development.sh (exit2 missing tools); gh auth status (exit1 no authenticated hosts); scripts/engineering-health-check --json evidence/health-current.json (exit2 incomplete).
+Reproduce current blockers: gh auth status (exit1 if not authenticated); scripts/engineering-health-check --json evidence/health-current.json (exit2 when GitHub incomplete). Development now passes; do not repeat apt installation.
 Next: inspect evidence for {pending[0] if pending else "end_to_end"}; rerun recorded verifier before continuing.
 Reproduce: python3 scripts/commission.py verify STAGE --command 'VERIFIER' (inspect progress.json commands).
 Do not repeat: working NVIDIA driver, working Node, existing model downloads; do not replace existing integrations.
-Approvals required: sudo/system/security changes; new GitHub repository; merge/force push/deploy.
+Standing authorization: reviewed development sudo batch already approved and installed; normal workspace builds/tests/checkpoints authorized. Read AUTHORIZATION.json.
+New approval required: drivers/kernel/firmware, deleting existing data, security controls, network exposure, repository creation, GitHub push, merge/deploy.
 Raw stdout/stderr/exit codes: evidence/*.json; tests: tests/; logs: logs/. Raw logs excluded from Git.
 Local bridge runs with Joe's full account privileges; workspace cwd is not a security sandbox.
 No credentials in Git. No production branch changes. No external uploads of private data.
@@ -169,7 +170,7 @@ def main():
             )
             print(
                 "Next recommended action:",
-                "Read prepared development-install-request.sh; await operator sudo approval. Run verify-development.sh to reproduce missing tools."
+                "Read AUTHORIZATION.json and existing installation evidence; run verify-development.sh before considering any additional package changes."
                 if pending and pending[0][0] == "development"
                 else "Read NEXT_AGENT.md and run next stage verifier.",
             )

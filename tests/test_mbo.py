@@ -91,7 +91,7 @@ r = {
     "events_per_second": 20000 / elapsed,
     "peak_python_bytes": peak,
     "fixture_sha256": hashlib.sha256(p.read_bytes()).hexdigest(),
-    "limitations": "Python reference book only; trade-only throughput is not full order-book throughput. Java pending approved JDK installation. No proprietary data.",
+    "limitations": "Trade-only timing is not full-book throughput; see separate mixed benchmarks and Java cross-language verification. No proprietary data.",
 }
 (ROOT / "evidence/mbo-validation.json").write_text(json.dumps(r, indent=2) + "\n")
 print(json.dumps(r, indent=2))

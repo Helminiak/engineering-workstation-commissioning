@@ -13,11 +13,22 @@ commands = [
     ("Linux/Bash/Node/Git", "scripts/local-agent-capability-test.sh"),
     ("state/handoff", "python3 tests/test_runner.py"),
     ("statistics/data", "venvs/quant/bin/python tests/validate_scientific.py"),
-    ("forensics", "python3 tests/test_forensics.py"),
-    ("MBO Python", "python3 tests/test_mbo.py"),
+    (
+        "forensics",
+        "venvs/quant/bin/python tests/test_forensics.py && venvs/quant/bin/python tests/test_streaming_forensics.py && venvs/quant/bin/python tests/test_forensic_statistics.py",
+    ),
+    (
+        "MBO Java/Python",
+        "python3 tests/test_mbo.py && scripts/verify-java-mbo.sh && python3 tests/test_cross_language_replay.py && python3 tests/test_mbo_analysis.py",
+    ),
     ("GPU/CUDA", "venvs/gpu/bin/python tests/validate_cuda.py"),
-    ("RAG", ".venv/bin/python tests/test_rag.py"),
-    ("Java/C++/Rust", "scripts/verify-development.sh"),
+    (
+        "RAG",
+        ".venv/bin/python tests/test_rag.py && .venv/bin/python tests/test_rag_formats.py",
+    ),
+    ("local-agent Java evidence", "python3 tests/verify_agent_java_proof.py"),
+    ("Java/C++/Rust", "scripts/verify-development.sh && scripts/verify-build-tools.sh"),
+    ("CPU/RAM/filesystem", "python3 tests/validate_hardware.py"),
     ("GitHub", "gh auth status"),
     ("security/code validation", "scripts/verify-security.sh"),
     (
@@ -41,7 +52,7 @@ for name, cmd in commands:
         if p.returncode == 0
         else (
             "MANUAL_REQUIRED"
-            if name in ["Java/C++/Rust", "GitHub"]
+            if name == "GitHub"
             else ("BLOCKED" if name == "health" and p.returncode == 2 else "FAIL")
         )
     )
@@ -72,7 +83,7 @@ report = {
     "artifact_sha256": hashlib.sha256(p.read_bytes()).hexdigest(),
     "results": rows,
     "local_llm_evidence": "evidence/local-llm-acceptance.json",
-    "limitations": "Local LLM acceptance is separately rerunnable; Java/system tools and GitHub gate completion. No proprietary data or trading strategy.",
+    "limitations": "Local LLM evidence is independently checked; GitHub CLI access gates integration completion. Native Bionic remains separately unverified. No proprietary data or trading strategy.",
 }
 (ROOT / "evidence/end-to-end.json").write_text(json.dumps(report, indent=2) + "\n")
 (ROOT / "artifacts/engineering-report.json").write_text(

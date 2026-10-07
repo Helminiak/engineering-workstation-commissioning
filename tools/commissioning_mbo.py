@@ -101,3 +101,77 @@ class Book:
             "traded_volume": self.traded_volume,
             "delta": self.delta,
         }
+
+
+def book_metrics(book):
+    """Descriptive synthetic book metrics; no trading signals or strategy."""
+    levels = book.levels()
+    bid = sum(levels["bid"].values())
+    ask = sum(levels["ask"].values())
+    imbalance = (bid - ask) / (bid + ask) if bid + ask else 0.0
+    regime = (
+        "bid_heavy"
+        if imbalance > 0.2
+        else "ask_heavy"
+        if imbalance < -0.2
+        else "balanced"
+    )
+    return {
+        "bid_volume": bid,
+        "ask_volume": ask,
+        "imbalance": imbalance,
+        "descriptive_regime": regime,
+        "executed_delta": book.delta,
+        "traded_volume": book.traded_volume,
+    }
+
+
+def persistence_events(snapshots):
+    """Order presence measured in sequence intervals, not exchange wall-clock time."""
+    current = {}
+    episodes = []
+    previous = -1
+    for frame in snapshots:
+        seq = frame["sequence"]
+        if seq <= previous:
+            raise ValueError("Snapshot sequence must increase")
+        ids = set(frame["orders"])
+        for oid in list(current):
+            if oid not in ids:
+                start = current.pop(oid)
+                episodes.append(
+                    {
+                        "id": oid,
+                        "start_sequence": start,
+                        "end_sequence": seq,
+                        "duration_events": seq - start,
+                        "right_censored": False,
+                    }
+                )
+        for oid in ids:
+            if oid not in current:
+                current[oid] = seq
+        previous = seq
+    for oid, start in current.items():
+        episodes.append(
+            {
+                "id": oid,
+                "start_sequence": start,
+                "end_sequence": previous,
+                "duration_events": previous - start,
+                "right_censored": True,
+            }
+        )
+    return sorted(episodes, key=lambda e: (e["start_sequence"], e["id"]))
+
+
+def replay_jsonl(path):
+    """Streaming deterministic replay of synthetic event JSONL."""
+    import json
+
+    book = Book()
+    with open(path) as f:
+        for line in f:
+            if line.strip():
+                book.apply(json.loads(line))
+    return book

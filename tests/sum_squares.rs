@@ -1,9 +1,11 @@
+fn sum_squares(n: u64) -> u64 {
+    (1..=n).map(|x| x * x).sum()
+}
 fn main() {
-    let result: u64 = (1..=10).map(|x| x*x).sum();
-    assert_eq!(result, 385);
+    assert_eq!(sum_squares(10), 385);
     println!("Rust PASS: sum_squares(10)=385");
 }
 #[test]
 fn empty_sum() {
-    assert_eq!((1..=0u64).map(|x| x*x).sum::<u64>(), 0);
+    assert_eq!(sum_squares(0), 0);
 }

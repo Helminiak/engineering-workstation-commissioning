@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-07T00:21:17.104821+00:00",
+  "updated_at": "2026-10-07T01:08:38.839783+00:00",
   "objective": "Commission a verified, resumable Ubuntu RTX 5090 engineering workstation. Prioritize local execution before expansion.",
   "stages": {
     "execution": {
@@ -26,8 +26,8 @@
     "local_agent": {
       "phase": "1",
       "status": "PASS_WITH_LIMITATIONS",
-      "start_time": "2026-10-07T00:09:37.638462+00:00",
-      "end_time": "2026-10-07T00:09:52.587541+00:00",
+      "start_time": "2026-10-07T01:07:43.626231+00:00",
+      "end_time": "2026-10-07T01:08:07.163196+00:00",
       "commands": [
         {
           "command": ".venv/bin/python tests/local_llm_acceptance.py",
@@ -40,11 +40,18 @@
           "exit_code": 0,
           "start_time": "2026-10-07T00:09:37.646277+00:00",
           "end_time": "2026-10-07T00:09:52.581251+00:00"
+        },
+        {
+          "command": ".venv/bin/python tests/local_llm_acceptance.py && .venv/bin/python tests/test_bridge.py && python3 tests/verify_agent_java_proof.py",
+          "exit_code": 0,
+          "start_time": "2026-10-07T01:07:43.636481+00:00",
+          "end_time": "2026-10-07T01:08:07.156772+00:00"
         }
       ],
       "evidence": [
         "evidence/local_agent-20261006T200028544357.json",
-        "evidence/local_agent-20261007T000952581269.json"
+        "evidence/local_agent-20261007T000952581269.json",
+        "evidence/local_agent-20261007T010807156789.json"
       ],
       "verification": true,
       "repair_attempts": [
@@ -54,10 +61,16 @@
           "exit_code": 1,
           "cause": "MCP inputSchema/isError naming differs from installed SDK; changed to input_schema/is_error",
           "retest": "PASS; recorded local_agent verifier evidence"
+        },
+        {
+          "failure": "Fresh-case model reused parent Git diff without modifying case tracked file",
+          "repair": "Explicit absolute case paths and case-scoped independent Git diff; fresh full acceptance rerun",
+          "result": "PASS",
+          "evidence": "evidence/local-llm-acceptance-failed-scope.json"
         }
       ],
       "remaining_issues": [
-        "Native Bionic UI projects, shell and approval behavior require operator verification. API/MCP agent and optional connector failure isolation verified."
+        "Actual API/MCP execution verified independently; native Bionic UI and approval behavior remain MANUAL_REQUIRED. Joe-account shell is not an OS sandbox."
       ]
     },
     "resume_engine": {
@@ -82,16 +95,30 @@
     },
     "development": {
       "phase": "3",
-      "status": "MANUAL_REQUIRED",
-      "start_time": null,
-      "end_time": null,
-      "commands": [],
-      "evidence": [],
-      "verification": null,
+      "status": "PASS",
+      "start_time": "2026-10-07T00:56:20.775520+00:00",
+      "end_time": "2026-10-07T00:56:25.136070+00:00",
+      "commands": [
+        {
+          "command": "scripts/verify-development.sh",
+          "exit_code": 0,
+          "start_time": "2026-10-07T00:52:26.188631+00:00",
+          "end_time": "2026-10-07T00:52:27.163041+00:00"
+        },
+        {
+          "command": "scripts/verify-development.sh && scripts/verify-build-tools.sh",
+          "exit_code": 0,
+          "start_time": "2026-10-07T00:56:20.784508+00:00",
+          "end_time": "2026-10-07T00:56:25.124592+00:00"
+        }
+      ],
+      "evidence": [
+        "evidence/development-20261007T005227163055.json",
+        "evidence/development-20261007T005625124624.json"
+      ],
+      "verification": true,
       "repair_attempts": [],
-      "remaining_issues": [
-        "Inventory and apt simulation saved. Node/Python/Git functional. Missing C/C++/Java/Rust and utilities require operator-approved sudo apt batch."
-      ]
+      "remaining_issues": []
     },
     "github": {
       "phase": "4",
@@ -103,7 +130,7 @@
       "verification": null,
       "repair_attempts": [],
       "remaining_issues": [
-        "gh installed and SHA-256 verified. gh auth status exits 1: no logged-in GitHub hosts. Operator sign-in needed; no remote created."
+        "Connected GitHub app authentication/public metadata read PASS (evidence/github-connector.json); no accessible dedicated commissioning repository found. gh CLI remains unauthenticated. Operator sign-in and new repository/push authorization needed; remote writes NOT_TESTED."
       ]
     },
     "gpu_llm": {
@@ -172,87 +199,138 @@
     "forensics": {
       "phase": "7",
       "status": "PASS_WITH_LIMITATIONS",
-      "start_time": "2026-10-07T00:06:01.521147+00:00",
-      "end_time": "2026-10-07T00:06:01.561314+00:00",
+      "start_time": "2026-10-07T01:00:28.016692+00:00",
+      "end_time": "2026-10-07T01:00:29.006947+00:00",
       "commands": [
         {
           "command": "python3 tests/test_forensics.py",
           "exit_code": 0,
           "start_time": "2026-10-07T00:06:01.529091+00:00",
           "end_time": "2026-10-07T00:06:01.555200+00:00"
+        },
+        {
+          "command": "python3 tests/test_forensics.py && python3 tests/test_streaming_forensics.py && python3 tests/test_forensic_statistics.py",
+          "exit_code": 1,
+          "start_time": "2026-10-07T00:58:53.334975+00:00",
+          "end_time": "2026-10-07T00:58:53.904482+00:00"
+        },
+        {
+          "command": "venvs/quant/bin/python tests/test_forensics.py && venvs/quant/bin/python tests/test_streaming_forensics.py && venvs/quant/bin/python tests/test_forensic_statistics.py",
+          "exit_code": 0,
+          "start_time": "2026-10-07T01:00:28.024743+00:00",
+          "end_time": "2026-10-07T01:00:29.000666+00:00"
         }
       ],
       "evidence": [
-        "evidence/forensics-20261006T200601555207.json"
+        "evidence/forensics-20261006T200601555207.json",
+        "evidence/forensics-20261007T005853904493.json",
+        "evidence/forensics-20261007T010029000684.json"
       ],
       "verification": true,
-      "repair_attempts": [],
+      "repair_attempts": [
+        {
+          "failure": "One unexplained Python 3.14 KeyError in streaming verifier",
+          "repair": "Unchanged control reruns; pin commissioned verifier to isolated Python 3.12; preserve unresolved cause",
+          "result": "PASS_WITH_LIMITATIONS",
+          "evidence": "commissioning/FAILURES.md"
+        }
+      ],
       "remaining_issues": [
-        "Synthetic baseline validates known anomalies; current JSONL analyzer loads records in memory and is not yet a large-log streaming implementation."
+        "200K synthetic streaming record verification. Descriptive statistics only. One unexplained Python 3.14 failure retained; controls pass and commissioned forensic interpreter is isolated Python 3.12."
       ]
     },
     "mbo": {
       "phase": "8",
-      "status": "MANUAL_REQUIRED",
-      "start_time": null,
-      "end_time": null,
-      "commands": [],
-      "evidence": [],
-      "verification": null,
-      "repair_attempts": [],
+      "status": "PASS_WITH_LIMITATIONS",
+      "start_time": "2026-10-07T00:57:17.755091+00:00",
+      "end_time": "2026-10-07T00:57:18.590163+00:00",
+      "commands": [
+        {
+          "command": "python3 tests/test_mbo.py && scripts/verify-java-mbo.sh && python3 tests/test_cross_language_replay.py && python3 tests/test_mbo_analysis.py && venvs/quant/bin/python -m pytest -q tests/test_orderbook_properties.py",
+          "exit_code": 0,
+          "start_time": "2026-10-07T00:57:17.765548+00:00",
+          "end_time": "2026-10-07T00:57:18.584125+00:00"
+        }
+      ],
+      "evidence": [
+        "evidence/mbo-20261007T005718584140.json"
+      ],
+      "verification": true,
+      "repair_attempts": [
+        {
+          "failure": "Java trade event null order ID caused TreeMap.get(null)",
+          "repair": "Guard null ID and validate nullable side/aggressor; original regression and JUnit rerun",
+          "result": "PASS",
+          "evidence": "evidence/mbo-java-attempt1.json"
+        }
+      ],
       "remaining_issues": [
-        "Python synthetic reference book unit tests pass; Java implementation and compilation require JDK approval. Full order-book throughput, liquidity/regime analysis not yet commissioned."
+        "Synthetic Java/Python foundation, not a CME decoder. Queue/persistence are reference rules; regimes describe volume imbalance, not trading strategies. Measured 200-order depth, not exchange-scale load."
       ]
     },
     "security": {
       "phase": "9",
       "status": "PASS_WITH_LIMITATIONS",
-      "start_time": "2026-10-07T00:14:41.516585+00:00",
-      "end_time": "2026-10-07T00:14:42.053335+00:00",
+      "start_time": "2026-10-07T01:07:17.882594+00:00",
+      "end_time": "2026-10-07T01:07:18.030795+00:00",
       "commands": [
         {
           "command": "scripts/verify-security.sh",
           "exit_code": 0,
           "start_time": "2026-10-07T00:14:41.526017+00:00",
           "end_time": "2026-10-07T00:14:42.043738+00:00"
+        },
+        {
+          "command": "scripts/verify-security.sh",
+          "exit_code": 0,
+          "start_time": "2026-10-07T01:07:17.891194+00:00",
+          "end_time": "2026-10-07T01:07:18.024742+00:00"
         }
       ],
       "evidence": [
-        "evidence/security-20261007T001442043751.json"
+        "evidence/security-20261007T001442043751.json",
+        "evidence/security-20261007T010718024753.json"
       ],
       "verification": true,
       "repair_attempts": [],
       "remaining_issues": [
-        "Heuristic secret scan, limited domain mypy and package audits only. GPU vendor advisory coverage incomplete; native approval and hard execution sandbox unverified; ShellCheck pending JDK/tool batch."
+        "Heuristic secret scan and scoped type checks; GPU wheel advisory coverage incomplete. No private code uploaded."
       ]
     },
     "rag": {
       "phase": "10",
       "status": "PASS_WITH_LIMITATIONS",
-      "start_time": "2026-10-07T00:07:33.393353+00:00",
-      "end_time": "2026-10-07T00:07:33.516316+00:00",
+      "start_time": "2026-10-07T01:04:43.757599+00:00",
+      "end_time": "2026-10-07T01:04:44.033869+00:00",
       "commands": [
         {
           "command": ".venv/bin/python tests/test_rag.py",
           "exit_code": 0,
           "start_time": "2026-10-07T00:07:33.401776+00:00",
           "end_time": "2026-10-07T00:07:33.510410+00:00"
+        },
+        {
+          "command": ".venv/bin/python tests/test_rag.py && .venv/bin/python tests/test_rag_formats.py",
+          "exit_code": 0,
+          "start_time": "2026-10-07T01:04:43.765852+00:00",
+          "end_time": "2026-10-07T01:04:44.028142+00:00"
         }
       ],
       "evidence": [
-        "evidence/rag-20261006T200733510434.json"
+        "evidence/rag-20261006T200733510434.json",
+        "evidence/rag-20261007T010444028156.json"
       ],
       "verification": true,
       "repair_attempts": [],
       "remaining_issues": [
-        "Tested synthetic authorized directory; no OCR, long-document retrieval benchmark or personal-data indexing."
+        "Local synthetic authorized directories; PDF text supported/tested, OCR not included. No personal or external data indexed."
       ]
     },
     "end_to_end": {
       "phase": "11",
       "status": "BLOCKED",
-      "start_time": "2026-10-07T00:16:56.105958+00:00",
-      "end_time": "2026-10-07T00:17:03.413982+00:00",
+      "start_time": "2026-10-07T01:06:45.693594+00:00",
+      "end_time": "2026-10-07T01:06:58.292137+00:00",
       "commands": [
         {
           "command": "python3 tests/end_to_end.py",
@@ -265,16 +343,23 @@
           "exit_code": 2,
           "start_time": "2026-10-07T00:16:56.114374+00:00",
           "end_time": "2026-10-07T00:17:03.407592+00:00"
+        },
+        {
+          "command": "python3 tests/end_to_end.py",
+          "exit_code": 2,
+          "start_time": "2026-10-07T01:06:45.702020+00:00",
+          "end_time": "2026-10-07T01:06:58.287257+00:00"
         }
       ],
       "evidence": [
         "evidence/end_to_end-20261007T001423446485.json",
-        "evidence/end_to_end-20261007T001703407609.json"
+        "evidence/end_to_end-20261007T001703407609.json",
+        "evidence/end_to_end-20261007T010658287274.json"
       ],
       "verification": false,
       "repair_attempts": [],
       "remaining_issues": [
-        "Available subsystems verified; Java/C++/Rust and GitHub are mandatory unfinished gates."
+        "GitHub CLI authentication and authorized remote workflow remain incomplete; native Bionic UI is separately MANUAL_REQUIRED."
       ]
     }
   }

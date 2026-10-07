@@ -1,14 +1,9 @@
 {
   "issues": [
     {
-      "id": "system-development",
-      "status": "MANUAL_REQUIRED",
-      "detail": "Concrete apt batch and successful simulation prepared. Await operator sudo approval; run scripts/development-install-request.sh --operator-approved only after approval."
-    },
-    {
       "id": "github-auth",
       "status": "MANUAL_REQUIRED",
-      "detail": "gh 2.102.0 installed and official SHA-256 verified; gh auth status exits 1. Operator sign-in and private repository authorization pending. No remote pushes or PRs tested."
+      "detail": "Connected GitHub app authentication and public repo metadata read PASS; no accessible dedicated commissioning repo found. CLI remains unauthenticated. Repo creation and push need new authorization. No token copied between systems."
     },
     {
       "id": "bionic-native",
@@ -16,19 +11,14 @@
       "detail": "No native UI surfaces exposed. Bionic native projects, approval behavior and independent native version remain unverified; API/MCP acceptance passes."
     },
     {
-      "id": "mbo-java",
-      "status": "MANUAL_REQUIRED",
-      "detail": "Python reference cases and hypothesis tests pass. Java book, full-book benchmark, liquidity persistence and regime analysis remain unfinished."
-    },
-    {
-      "id": "forensic-scale",
-      "status": "NOT_TESTED",
-      "detail": "In-memory JSONL reference fixture verified. Streaming large-log scale and broad regression/correlation toolkit remain unfinished."
-    },
-    {
       "id": "security-coverage",
       "status": "PASS_WITH_LIMITATIONS",
-      "detail": "ruff, limited mypy, dependency audits, SBOM and staged secret heuristics verified. Gitleaks not installed; ShellCheck awaits approval; GPU vendor advisory coverage limited."
+      "detail": "ShellCheck, clang analysis, Java lint/JUnit, Rust clippy, ruff, limited mypy, SBOM and dependency audits pass. Secret scan remains heuristic; GPU vendor advisory coverage limited."
+    },
+    {
+      "id": "forensic-runtime",
+      "status": "PASS_WITH_LIMITATIONS",
+      "detail": "One unexplained Python 3.14 streaming failure; control and Python 3.12 tests pass. Forensic verification pinned to Python 3.12. Root cause undetermined; failed evidence preserved."
     }
   ]
 }

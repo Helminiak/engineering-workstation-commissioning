@@ -45,6 +45,22 @@ for name, args in {
     "python": ["python3", "--version"],
     "uv": ["uv", "--version"],
     "lmstudio_cli": ["lms", "--version"],
+    "gcc": ["gcc", "--version"],
+    "g++": ["g++", "--version"],
+    "clang": ["clang", "--version"],
+    "java": ["java", "-version"],
+    "javac": ["javac", "-version"],
+    "maven": ["mvn", "-version"],
+    "rustc": ["rustc", "--version"],
+    "cargo": ["cargo", "--version"],
+    "rustfmt": ["rustfmt", "--version"],
+    "shellcheck": ["shellcheck", "--version"],
+    "cmake": ["cmake", "--version"],
+    "ninja": ["ninja", "--version"],
+    "gdb": ["gdb", "--version"],
+    "valgrind": ["valgrind", "--version"],
+    "ccache": ["ccache", "--version"],
+    "hyperfine": ["hyperfine", "--version"],
 }.items():
     versions[name] = command(args)
 packages = {}
@@ -65,7 +81,8 @@ manifest = {
     "timestamp": now,
     "tools": versions,
     "python_environments": packages,
-    "changes": "User-local gh installed with official SHA-256; isolated quant and gpu environments installed; existing Node, local-agent environment, drivers and integrations preserved.",
+    "reviewed_system_packages": read("evidence/development-package-state.json"),
+    "changes": "User-local gh installed with official SHA-256; isolated quant and gpu environments installed; reviewed system development batch installed and functionally verified; existing Node, local-agent environment, drivers and integrations preserved.",
 }
 write(R / "INSTALL_MANIFEST.json", manifest)
 write(C / "installed_tools.json", {"tools": versions, "python_environments": packages})
@@ -118,6 +135,13 @@ verification = {
     "scientific": read("evidence/scientific-validation.json"),
     "forensics": read("evidence/forensics-validation.json"),
     "mbo": read("evidence/mbo-validation.json"),
+    "streaming_forensics": read("evidence/streaming-forensics.json"),
+    "forensic_statistics": read("evidence/forensic-statistics.json"),
+    "cross_language_replay": read("evidence/cross-language-replay.json"),
+    "local_agent_java": read("evidence/local-agent-java-verification.json"),
+    "github_connector": read("evidence/github-connector.json"),
+    "rag_formats": read("evidence/rag-formats.json"),
+    "hardware": read("evidence/hardware-validation.json"),
     "rag": {
         k: v for k, v in read("evidence/rag-validation.json").items() if k != "results"
     },
@@ -137,6 +161,12 @@ benchmarks = {
     for n in [16384, 32768]
 }
 benchmarks["recommended_context"] = 32768
+benchmarks["mbo_python_mixed"] = read("evidence/mbo-mixed-benchmark.json")
+benchmarks["mbo_java_mixed"] = read("evidence/java-mbo-mixed-benchmark.json")
+benchmarks["mbo_benchmark_limits"] = (
+    "200-order synthetic depth, different Python/Java implementations; not an exchange-scale or apples-to-apples language benchmark. Java trials show JIT/GC variability."
+)
+
 benchmarks["long_input_tokens"] = read("evidence/long-context.json").get("input_tokens")
 benchmarks["notes"] = (
     "Generation and TTFT include shared-prefix cache effects. Long-input run initially took 10.073s; repeat was cached. No cold prompt-throughput or 48K/64K claim."
@@ -191,6 +221,10 @@ hashes = {
     for p in sorted((ROOT / folder).rglob("*"))
     if p.is_file() and "__pycache__" not in str(p)
 }
+for p in sorted((ROOT / "tools").glob("commissioning*.py")) + [
+    ROOT / "tools/workbench_mcp.py"
+]:
+    hashes[str(p.relative_to(ROOT))] = hashlib.sha256(p.read_bytes()).hexdigest()
 write(R / "CONFIGURATION_HASHES.json", hashes)
 rows = "\n".join(
     f"| {k} | {v['status']} | {'; '.join(v['remaining_issues']) or 'Recorded verifier evidence in progress.json'} |"
@@ -204,17 +238,17 @@ rows = "\n".join(
 (R / "EXECUTIVE_REPORT.md").write_text("""# Commissioning checkpoint report
 The core local-agent execution and persistent handoff infrastructure is operational and verified. Full workstation commissioning remains incomplete.
 
-Verified: Joe/5090FE/Ubuntu 26.04.1/RTX 5090; real shell and file writes; Node/npm/npx; local Git branching and commits; Qwen independent engineering acceptance via API/MCP; Context7 public initialization and optional-connector failure isolation; rerunnable stage engine with timeout/failure evidence; PyTorch CUDA kernels and transfers; deterministic scientific validation; synthetic forensic and Python order-book fixtures; local embedding retrieval and stale-index detection.
+Verified: Joe/5090FE/Ubuntu 26.04.1/RTX 5090; real shell and file writes; Node/npm/npx; local Git branching and commits; Qwen independent engineering acceptance via API/MCP; Context7 public initialization and optional-connector failure isolation; rerunnable stage engine with timeout/failure evidence; PyTorch CUDA kernels and transfers; deterministic scientific validation; 200K-record disk-backed forensic analysis and correlation/regression fixtures; Java/Python order-book agreement, Maven/JUnit, CMake/Ninja, clang analysis, Valgrind, GDB, Rust/clippy and ShellCheck; local-agent Java compilation; local embedding retrieval and stale-index detection.
 
 Recommended Qwen Q6_K context: 32,768, tested with 25,729 input tokens. Measured short benchmark peak VRAM 25,725 MiB of 32,607 MiB; median generation about 161 tokens/sec. Cache and short-prompt limits apply.
 
-Incomplete: approved system development-tool installation; Java/C++/Rust verification; GitHub sign-in, private remote authorization and push/PR verification; native Bionic projects/tool approval; large-log streaming and broader MBO analytics; full integration completion. No driver, kernel, firmware or security-control changes made. No GitHub repository created or pushed.
+Incomplete: GitHub CLI sign-in, private remote authorization and push/PR verification (connected app authentication and public metadata read already pass); native Bionic projects/tool approval; full integration completion. One unexplained Python3.14 streaming failure is recorded; controls pass and forensic verification is pinned to Python3.12. yq/fd and Gradle are absent and were not needed for verified workflows. No driver, kernel, firmware or security-control changes made. No GitHub repository created or pushed.
 
 Read commissioning/NEXT_AGENT.md and run scripts/show_status.sh. Detailed evidence is local in evidence/ and logs/. Sanitized reports, scripts and state are committed locally. See git log -1 for the exact latest commit.
 """)
 (R / "FAILURE_REPORT.md").write_text(
     (C / "FAILURES.md").read_text()
-    + "\nFull integration exits 2 for unfinished system tools and GitHub authentication; these are not PASS.\n"
+    + "\nFull integration exits 2 for unfinished GitHub CLI authentication; native UI verification remains separately MANUAL_REQUIRED. These are not PASS.\n"
 )
 (R / "SYSTEM_ARCHITECTURE.md").write_text(
     (C / "ARCHITECTURE.md").read_text()
@@ -231,7 +265,7 @@ Local API is bound to 127.0.0.1:1234 and uses the existing owner-only token. No 
 
 Core execution is Joe-account shell execution, not an OS sandbox. Cwd and document reads are scoped; arbitrary executable code can reach other user files. Agent prompts prohibit sudo and external actions, but prompts are not a hard security boundary. Privileged changes require operator approval. Native Bionic approval behavior remains MANUAL_REQUIRED.
 
-ruff and limited mypy checks are recorded. Quant and local-agent pip-audit scans and npm audit found no known vulnerabilities at scan time. The GPU vendor wheel index is not fully covered by PyPI advisory scanning. The staged secret scan is heuristic and does not replace Gitleaks. ShellCheck awaits approved installation. No private code was sent to third-party scanners; dependency auditing queried public package names.
+ruff and limited mypy checks are recorded. Quant and local-agent pip-audit scans and npm audit found no known vulnerabilities at scan time. The GPU vendor wheel index is not fully covered by PyPI advisory scanning. The staged secret scan is heuristic and does not replace Gitleaks. ShellCheck, clang analysis, Java lint/JUnit and Rust clippy now pass. No private code was sent to third-party scanners; dependency auditing queried public package names.
 
 Rollback: backups/workbench_mcp.*.py restores the original bridge; stop local agent before restoring. New isolated environments can be retired independently after confirming no tasks use them. The user-local gh binary is independent of system packages. No account integrations were removed, credentials changed, or ports exposed.
 """)
@@ -248,7 +282,7 @@ git log -1
 ```
 Current integration/health exit 2 means incomplete. Do not treat as success.
 
-After operator approval only: scripts/development-install-request.sh --operator-approved; then scripts/verify-development.sh. Operator runs gh auth login. Creating a new private repository requires separate authorization. No automatic merge/deploy/push.
+The reviewed apt batch is already approved, installed and verified; do not repeat it. Run scripts/verify-development.sh and scripts/verify-build-tools.sh for verification. Operator runs gh auth login. Creating a new private repository requires separate authorization. No automatic merge/deploy/push.
 """)
 (R / "REPRODUCIBILITY_REPORT.md").write_text("""# Reproducibility
 Exact currently installed Python versions are frozen in configs/*-requirements.lock. Recreate isolated Python 3.12 environments with uv venv, then install the matching lock; the GPU lock requires the official cu130 PyTorch wheel index. Locks list versions but do not lock every wheel hash; platform-specific reproducibility is limited. CONFIGURATION_HASHES.json records source/config hashes and SBOM.cdx.json records packages per environment. SHA-256 source-evidence hashes and seeded validation are recorded locally. Raw datasets are excluded from Git; tests regenerate synthetic fixtures.

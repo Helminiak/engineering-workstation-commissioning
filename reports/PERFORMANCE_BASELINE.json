@@ -18,6 +18,62 @@
     "limitations": "Short ~3K input benchmark; capacity allocation and inference verified, near-limit long-context accuracy and prompt throughput not measured."
   },
   "recommended_context": 32768,
+  "mbo_python_mixed": {
+    "status": "PASS",
+    "mixed_events": [
+      "add",
+      "modify",
+      "partial fill",
+      "full fill"
+    ],
+    "repeats": 3,
+    "rows": [
+      {
+        "seconds": 1.0645969600009266,
+        "events": 4000,
+        "depth": 200
+      },
+      {
+        "seconds": 1.080228391001583,
+        "events": 4000,
+        "depth": 200
+      },
+      {
+        "seconds": 1.0550534760004666,
+        "events": 4000,
+        "depth": 200
+      }
+    ],
+    "median_seconds": 1.0645969600009266,
+    "median_events_per_second": 3757.29045853796,
+    "peak_python_bytes_in_separate_memory_trial": 154134,
+    "memory_trial": {
+      "seconds": 0.592891183001484,
+      "events": 800,
+      "depth": 200
+    },
+    "limitations": "Reference implementation copies the book transactionally; synthetic 200-order depth. Memory instrumentation excluded from throughput trials."
+  },
+  "mbo_java_mixed": {
+    "status": "PASS",
+    "mixed_events": [
+      "add",
+      "modify",
+      "partial fill",
+      "full fill"
+    ],
+    "repeats": 3,
+    "depth": 200,
+    "events_per_trial": 4000,
+    "median_seconds": 0.013315959,
+    "median_events_per_second": 300391.4,
+    "seconds": [
+      0.005818758,
+      0.013315959,
+      0.018002612
+    ]
+  },
+  "mbo_benchmark_limits": "200-order synthetic depth, different Python/Java implementations; not an exchange-scale or apples-to-apples language benchmark. Java trials show JIT/GC variability.",
   "long_input_tokens": 25729,
   "notes": "Generation and TTFT include shared-prefix cache effects. Long-input run initially took 10.073s; repeat was cached. No cold prompt-throughput or 48K/64K claim."
 }

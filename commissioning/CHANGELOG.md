@@ -79,3 +79,59 @@
 - 2026-10-07T00:18:55.155069+00:00: Final checkpoint before commit: 32K loader reuses the verified instance and requires explicit idle reconfiguration; reports, lock manifests, hashes and handoffs refreshed. Awaiting approved system tools, GitHub sign-in and native UI checks.
 
 - 2026-10-07T00:21:17.111825+00:00: Durable operator mission checklist saved; native UI limitation evidence recorded. Operator approvals remain pending. First action: show_status.sh, then inspect prepared development batch; do not run sudo until approved.
+
+- 2026-10-07T00:49:48.358835+00:00: Operator-approved system package installation starting
+
+- 2026-10-07T00:50:48.055819+00:00: development: MANUAL_REQUIRED: Reviewed apt batch authorized; sudo requires operator authentication. No packages installed. Run approved script in operator terminal, then verify.
+
+- 2026-10-07T00:50:57.125826+00:00: Operator-approved system package installation starting
+
+- 2026-10-07T00:52:01.681234+00:00: Approved apt operation finished; verify tools before marking PASS
+
+- 2026-10-07T00:52:26.141850+00:00: Post-privileged-change checkpoint: all reviewed apt packages confirmed installed, matching completed apt history found. No repeat installation; begin functional development verification.
+
+- 2026-10-07T00:52:26.187251+00:00: development: verification started
+
+- 2026-10-07T00:52:27.176366+00:00: development: PASS
+
+- 2026-10-07T00:56:20.783124+00:00: development: verification started
+
+- 2026-10-07T00:56:25.148203+00:00: development: PASS
+
+- 2026-10-07T00:57:17.764110+00:00: mbo: verification started
+
+- 2026-10-07T00:57:18.596792+00:00: mbo: PASS_WITH_LIMITATIONS
+
+- 2026-10-07T00:58:53.333626+00:00: forensics: verification started
+
+- 2026-10-07T00:58:53.917285+00:00: forensics: FAIL
+
+- 2026-10-07T01:00:28.023633+00:00: forensics: verification started
+
+- 2026-10-07T01:00:29.014752+00:00: forensics: PASS_WITH_LIMITATIONS
+
+- 2026-10-07T01:02:11.507945+00:00: Reviewed system batch installed; C++/Java/Rust, Maven3 JUnit tests, debug/build tools and cross-language order-book replay verified. Local Qwen Java task independently verified after correcting wrong repo. Standing approval saved; no further package approval requests.
+
+- 2026-10-07T01:04:43.764634+00:00: rag: verification started
+
+- 2026-10-07T01:04:44.041199+00:00: rag: PASS_WITH_LIMITATIONS
+
+- 2026-10-07T01:06:45.700708+00:00: end_to_end: verification started
+
+- 2026-10-07T01:06:58.299119+00:00: end_to_end: BLOCKED
+
+- 2026-10-07T01:07:17.889929+00:00: security: verification started
+
+- 2026-10-07T01:07:18.037769+00:00: security: PASS_WITH_LIMITATIONS
+
+- 2026-10-07T01:07:43.584519+00:00: Independent local-model acceptance rejected reused parent diff; exact fixture instructions repaired, retest pending
+
+- 2026-10-07T01:07:43.634533+00:00: local_agent: verification started
+
+- 2026-10-07T01:08:07.171225+00:00: local_agent: PASS_WITH_LIMITATIONS
+
+- 2026-10-07T01:08:23.213314+00:00: Development batch and build toolchain verified; Java/Python MBO, disk-backed forensics and fresh local-model acceptance pass; GitHub/native gates retained
+
+- 2026-10-07T01:08:38.780529+00:00: github: MANUAL_REQUIRED: Connected GitHub app authentication/public metadata read PASS (evidence/github-connector.json); no accessible dedicated commissioning repository found. gh CLI remains unauthenticated. Operator sign-in and new repository/push authorization needed; remote writes NOT_TESTED.
+
+- 2026-10-07T01:08:38.847035+00:00: Final verified local checkpoint; no commissioning task running; GitHub CLI/remote and native Bionic remain operator prerequisites

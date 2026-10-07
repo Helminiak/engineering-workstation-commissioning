@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-07T00:21:17.135395+00:00",
+  "timestamp": "2026-10-07T01:08:38.867443+00:00",
   "tools": {
     "git": {
       "command": [
@@ -71,6 +71,150 @@
       ],
       "exit_code": 0,
       "stdout": "CLI commit: 69d945a",
+      "stderr": ""
+    },
+    "gcc": {
+      "command": [
+        "gcc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+      "stderr": ""
+    },
+    "g++": {
+      "command": [
+        "g++",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+      "stderr": ""
+    },
+    "clang": {
+      "command": [
+        "clang",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Ubuntu clang version 21.1.8 (6ubuntu1)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/lib/llvm-21/bin",
+      "stderr": ""
+    },
+    "java": {
+      "command": [
+        "java",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "openjdk version \"25.0.4.1\" 2026-08-18\nOpenJDK Runtime Environment (build 25.0.4.1+1-1-26.04.4-Ubuntu)\nOpenJDK 64-Bit Server VM (build 25.0.4.1+1-1-26.04.4-Ubuntu, mixed mode, sharing)"
+    },
+    "javac": {
+      "command": [
+        "javac",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "javac 25.0.4.1",
+      "stderr": ""
+    },
+    "maven": {
+      "command": [
+        "mvn",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stdout": "\u001b[1mApache Maven 3.9.12\u001b[m\nMaven home: /usr/share/maven\nJava version: 25.0.4.1, vendor: Ubuntu, runtime: /usr/lib/jvm/java-25-openjdk-amd64\nDefault locale: en, platform encoding: UTF-8\nOS name: \"linux\", version: \"7.0.0-38-generic\", arch: \"amd64\", family: \"unix\"",
+      "stderr": ""
+    },
+    "rustc": {
+      "command": [
+        "rustc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "rustc 1.93.1 (01f6ddf75 2026-02-11) (built from a source tarball)",
+      "stderr": ""
+    },
+    "cargo": {
+      "command": [
+        "cargo",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "cargo 1.93.1 (083ac5135 2025-12-15) (built from a source tarball)",
+      "stderr": ""
+    },
+    "rustfmt": {
+      "command": [
+        "rustfmt",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "rustfmt 1.8.0",
+      "stderr": ""
+    },
+    "shellcheck": {
+      "command": [
+        "shellcheck",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "ShellCheck - shell script analysis tool\nversion: 0.11.0\nlicense: GNU General Public License, version 3\nwebsite: https://www.shellcheck.net",
+      "stderr": ""
+    },
+    "cmake": {
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "cmake version 4.2.3\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).",
+      "stderr": ""
+    },
+    "ninja": {
+      "command": [
+        "ninja",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "1.13.2",
+      "stderr": ""
+    },
+    "gdb": {
+      "command": [
+        "gdb",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GNU gdb (Ubuntu 17.1-2ubuntu1) 17.1\nCopyright (C) 2025 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.",
+      "stderr": ""
+    },
+    "valgrind": {
+      "command": [
+        "valgrind",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "valgrind-3.26.0",
+      "stderr": ""
+    },
+    "ccache": {
+      "command": [
+        "ccache",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "ccache version 4.12.3\nFeatures: avx2 file-storage http-storage redis+unix-storage redis-storage\n\nCopyright (C) 2002-2007 Andrew Tridgell\nCopyright (C) 2009-2026 Joel Rosdahl and other contributors\n\nSee <https://ccache.dev/credits.html> for a complete list of contributors.\n\nThis program is free software; you can redistribute it and/or modify it under\nthe terms of the GNU General Public License as published by the Free Software\nFoundation; either version 3 of the License, or (at your option) any later\nversion.",
+      "stderr": ""
+    },
+    "hyperfine": {
+      "command": [
+        "hyperfine",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "hyperfine 1.19.0",
       "stderr": ""
     }
   },
@@ -1086,5 +1230,122 @@
       }
     ]
   },
-  "changes": "User-local gh installed with official SHA-256; isolated quant and gpu environments installed; existing Node, local-agent environment, drivers and integrations preserved."
+  "reviewed_system_packages": {
+    "timestamp": "2026-10-07T00:52:26.096690+00:00",
+    "all_reviewed_packages_installed": true,
+    "matching_completed_apt_history": true,
+    "packages": [
+      {
+        "package": "build-essential",
+        "exit_code": 0,
+        "state": "install ok installed\t12.12ubuntu2.26.04.2"
+      },
+      {
+        "package": "clang",
+        "exit_code": 0,
+        "state": "install ok installed\t1:21.1.6-71"
+      },
+      {
+        "package": "llvm",
+        "exit_code": 0,
+        "state": "install ok installed\t1:21.1.6-71"
+      },
+      {
+        "package": "cmake",
+        "exit_code": 0,
+        "state": "install ok installed\t4.2.3-2ubuntu2"
+      },
+      {
+        "package": "ninja-build",
+        "exit_code": 0,
+        "state": "install ok installed\t1.13.2-1"
+      },
+      {
+        "package": "gdb",
+        "exit_code": 0,
+        "state": "install ok installed\t17.1-2ubuntu1"
+      },
+      {
+        "package": "valgrind",
+        "exit_code": 0,
+        "state": "install ok installed\t1:3.26.0-0ubuntu1"
+      },
+      {
+        "package": "ccache",
+        "exit_code": 0,
+        "state": "install ok installed\t4.12.3-1"
+      },
+      {
+        "package": "openjdk-25-jdk",
+        "exit_code": 0,
+        "state": "install ok installed\t25.0.4.1+1-1~26.04.4"
+      },
+      {
+        "package": "maven",
+        "exit_code": 0,
+        "state": "install ok installed\t3.9.12-1"
+      },
+      {
+        "package": "rustc",
+        "exit_code": 0,
+        "state": "install ok installed\t1.93.1ubuntu1"
+      },
+      {
+        "package": "cargo",
+        "exit_code": 0,
+        "state": "install ok installed\t1.93.1ubuntu1"
+      },
+      {
+        "package": "rustfmt",
+        "exit_code": 0,
+        "state": "install ok installed\t1.93.1ubuntu1"
+      },
+      {
+        "package": "rust-clippy",
+        "exit_code": 0,
+        "state": "install ok installed\t1.93.1ubuntu1"
+      },
+      {
+        "package": "shellcheck",
+        "exit_code": 0,
+        "state": "install ok installed\t0.11.0-2"
+      },
+      {
+        "package": "hyperfine",
+        "exit_code": 0,
+        "state": "install ok installed\t1.19.0-2ubuntu1"
+      },
+      {
+        "package": "tmux",
+        "exit_code": 0,
+        "state": "install ok installed\t3.6a-2ubuntu0.1"
+      },
+      {
+        "package": "htop",
+        "exit_code": 0,
+        "state": "install ok installed\t3.4.1-5build2"
+      },
+      {
+        "package": "tree",
+        "exit_code": 0,
+        "state": "install ok installed\t2.3.1-1"
+      },
+      {
+        "package": "nvtop",
+        "exit_code": 0,
+        "state": "install ok installed\t3.2.0-2"
+      },
+      {
+        "package": "lm-sensors",
+        "exit_code": 0,
+        "state": "install ok installed\t1:3.6.2-2build1"
+      },
+      {
+        "package": "pipx",
+        "exit_code": 0,
+        "state": "install ok installed\t1.8.0-1"
+      }
+    ]
+  },
+  "changes": "User-local gh installed with official SHA-256; isolated quant and gpu environments installed; reviewed system development batch installed and functionally verified; existing Node, local-agent environment, drivers and integrations preserved."
 }

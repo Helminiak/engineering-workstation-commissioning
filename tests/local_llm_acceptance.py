@@ -22,25 +22,30 @@ FIX = (
 
 async def main():
     FIX.mkdir(parents=True, exist_ok=True)
-    if not (FIX / ".git").exists():
-        subprocess.run(["git", "init", "-q", str(FIX)], check=True)  # noqa: ASYNC221 -- bounded local fixture operations
-        (FIX / "tracked.txt").write_text("baseline\n")
-        subprocess.run(["git", "-C", str(FIX), "add", "tracked.txt"], check=True)  # noqa: ASYNC221 -- bounded local fixture operations
-        subprocess.run(  # noqa: ASYNC221 -- bounded local fixture operations
-            [
-                "git",
-                "-C",
-                str(FIX),
-                "-c",
-                "user.name=Acceptance Fixture",
-                "-c",
-                "user.email=fixture@localhost",
-                "commit",
-                "-qm",
-                "Baseline fixture",
-            ],
-            check=True,
+    # Use an existing acceptance repository; standing authorization prohibits creating repositories.
+    repo = ROOT / "scratch/local-agent-acceptance"
+    if not (repo / ".git").is_dir():
+        raise RuntimeError(
+            "Existing acceptance repository missing; repository creation needs approval"
         )
+    subprocess.run(["git", "-C", str(repo), "diff", "--cached", "--quiet"], check=True)  # noqa: ASYNC221
+    (FIX / "tracked.txt").write_text("baseline\n")
+    subprocess.run(["git", "-C", str(FIX), "add", "tracked.txt"], check=True)  # noqa: ASYNC221
+    subprocess.run(  # noqa: ASYNC221 -- bounded existing fixture commit
+        [
+            "git",
+            "-C",
+            str(FIX),
+            "-c",
+            "user.name=Acceptance Fixture",
+            "-c",
+            "user.email=fixture@localhost",
+            "commit",
+            "-qm",
+            "Baseline acceptance case",
+        ],
+        check=True,
+    )
     token = (
         Path("/home/joe/.lmstudio/credentials/local-work-api.token").read_text().strip()
     )
@@ -68,11 +73,11 @@ async def main():
             messages = [
                 {
                     "role": "system",
-                    "content": "You are a local commissioning agent. Use tools to perform the task, execute actual commands and inspect results. Only modify scratch/local-agent-acceptance. No sudo, network, secrets, deployments or pushes. Be concise.",
+                    "content": f"You are a local commissioning agent. Use tools to perform the task, execute actual commands and inspect results. Only modify files inside {FIX}. The parent repository contains old artifacts and changes that are not evidence for this test. No sudo, network, secrets, deployments or pushes. Be concise.",
                 },
                 {
                     "role": "user",
-                    "content": f"""Acceptance test in {FIX}. Independently perform all: execute whoami, pwd and nvidia-smi; create and read probe.txt containing verified; create and execute check.sh printing bash-ok; create calculate.py implementing sum_squares(n), summing i*i for i=1..n; create and run test_calculate.py asserting sum_squares(10)==385 and sum_squares(0)==0; inspect Git status; append commissioned to tracked.txt; show Git diff; execute Node and Python version checks; generate report.md containing actual exit codes and test results. Use run_command or run_python. Do not just describe commands. Finish with a concise result. /no_think""",
+                    "content": f"""Acceptance test in {FIX}. Independently perform all: execute whoami, pwd and nvidia-smi; create and read probe.txt containing verified; create and execute check.sh printing bash-ok; create calculate.py implementing sum_squares(n), summing i*i for i=1..n; create and run test_calculate.py asserting sum_squares(10)==385 and sum_squares(0)==0; inspect Git status; actually append commissioned to {FIX}/tracked.txt using a shell command, read that exact file back, and show git diff -- {FIX}/tracked.txt; do not reuse a parent file diff; execute Node and Python version checks; generate report.md containing actual exit codes and test results. Use run_command or run_python. Do not just describe commands. Finish with a concise result. /no_think""",
                 },
             ]
             for turn in range(24):
@@ -144,7 +149,12 @@ async def main():
     assert "commissioned" in (FIX / "tracked.txt").read_text()
     for command in [["bash", "check.sh"], [sys.executable, "test_calculate.py"]]:
         subprocess.run(command, cwd=FIX, check=True)  # noqa: ASYNC221 -- bounded local fixture operations
-    diff = subprocess.check_output(["git", "diff"], cwd=FIX, text=True)  # noqa: ASYNC221 -- bounded local fixture operations
+    diff = await asyncio.to_thread(
+        subprocess.check_output,
+        ["git", "diff", "--", str(FIX / "tracked.txt")],
+        cwd=FIX,
+        text=True,
+    )
     assert "+commissioned" in diff
     assert any(x.get("tool") for x in transcript), "No tool calls"
     all_commands = "\n".join(
