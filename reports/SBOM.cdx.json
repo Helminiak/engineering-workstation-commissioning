@@ -1,0 +1,3019 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "local-agent:annotated-types@0.8.0",
+      "name": "annotated-types",
+      "version": "0.8.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:anyio@4.15.1",
+      "name": "anyio",
+      "version": "4.15.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:attrs@26.1.0",
+      "name": "attrs",
+      "version": "26.1.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:babel@2.18.0",
+      "name": "babel",
+      "version": "2.18.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:certifi@2026.7.22",
+      "name": "certifi",
+      "version": "2026.7.22",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:cffi@2.1.1",
+      "name": "cffi",
+      "version": "2.1.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:charset-normalizer@3.5.2",
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:click@8.5.0",
+      "name": "click",
+      "version": "8.5.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:contourpy@1.4.0",
+      "name": "contourpy",
+      "version": "1.4.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:courlan@1.4.0",
+      "name": "courlan",
+      "version": "1.4.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:cryptography@50.0.2",
+      "name": "cryptography",
+      "version": "50.0.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:cycler@0.12.1",
+      "name": "cycler",
+      "version": "0.12.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:dateparser@1.4.3",
+      "name": "dateparser",
+      "version": "1.4.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:ddgs@9.16.0",
+      "name": "ddgs",
+      "version": "9.16.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:eitype@0.2.2",
+      "name": "eitype",
+      "version": "0.2.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:et-xmlfile@2.0.0",
+      "name": "et-xmlfile",
+      "version": "2.0.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:fonttools@4.66.1",
+      "name": "fonttools",
+      "version": "4.66.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:h11@0.16.0",
+      "name": "h11",
+      "version": "0.16.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:htmldate@1.11.0",
+      "name": "htmldate",
+      "version": "1.11.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:httpcore2@2.13.1",
+      "name": "httpcore2",
+      "version": "2.13.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:httpx2@2.13.1",
+      "name": "httpx2",
+      "version": "2.13.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:idna@3.20",
+      "name": "idna",
+      "version": "3.20",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:jsonschema@4.26.0",
+      "name": "jsonschema",
+      "version": "4.26.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:jsonschema-specifications@2025.9.1",
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:justext@3.0.2",
+      "name": "justext",
+      "version": "3.0.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:kiwisolver@1.5.1",
+      "name": "kiwisolver",
+      "version": "1.5.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:lxml@6.1.3",
+      "name": "lxml",
+      "version": "6.1.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:lxml-html-clean@0.4.5",
+      "name": "lxml-html-clean",
+      "version": "0.4.5",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:matplotlib@3.11.2",
+      "name": "matplotlib",
+      "version": "3.11.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:mcp@2.3.0",
+      "name": "mcp",
+      "version": "2.3.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:mcp-types@2.3.0",
+      "name": "mcp-types",
+      "version": "2.3.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:numpy@2.5.3",
+      "name": "numpy",
+      "version": "2.5.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:openpyxl@3.1.5",
+      "name": "openpyxl",
+      "version": "3.1.5",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:opentelemetry-api@1.45.1",
+      "name": "opentelemetry-api",
+      "version": "1.45.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:packaging@26.3",
+      "name": "packaging",
+      "version": "26.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:pandas@3.0.6",
+      "name": "pandas",
+      "version": "3.0.6",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:pillow@12.3.0",
+      "name": "pillow",
+      "version": "12.3.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:primp@2.0.1",
+      "name": "primp",
+      "version": "2.0.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:pycparser@3.0",
+      "name": "pycparser",
+      "version": "3.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:pydantic@2.13.5",
+      "name": "pydantic",
+      "version": "2.13.5",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:pydantic-core@2.46.5",
+      "name": "pydantic-core",
+      "version": "2.46.5",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:pyjwt@2.15.1",
+      "name": "pyjwt",
+      "version": "2.15.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:pyparsing@3.3.3",
+      "name": "pyparsing",
+      "version": "3.3.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:pypdf@6.19.0",
+      "name": "pypdf",
+      "version": "6.19.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:python-dateutil@2.9.0.post0",
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:python-docx@1.2.0",
+      "name": "python-docx",
+      "version": "1.2.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:python-multipart@0.0.32",
+      "name": "python-multipart",
+      "version": "0.0.32",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:python-pptx@1.0.2",
+      "name": "python-pptx",
+      "version": "1.0.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:pytz@2026.5",
+      "name": "pytz",
+      "version": "2026.5",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:referencing@0.37.0",
+      "name": "referencing",
+      "version": "0.37.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:regex@2026.9.29",
+      "name": "regex",
+      "version": "2026.9.29",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:reportlab@5.0.1",
+      "name": "reportlab",
+      "version": "5.0.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:rpds-py@2026.9.1",
+      "name": "rpds-py",
+      "version": "2026.9.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:six@1.17.0",
+      "name": "six",
+      "version": "1.17.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:sse-starlette@3.5.0",
+      "name": "sse-starlette",
+      "version": "3.5.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:starlette@1.7.0",
+      "name": "starlette",
+      "version": "1.7.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:tld@0.13.2",
+      "name": "tld",
+      "version": "0.13.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:trafilatura@2.3.1",
+      "name": "trafilatura",
+      "version": "2.3.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:truststore@0.10.4",
+      "name": "truststore",
+      "version": "0.10.4",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:typing-extensions@4.16.0",
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:typing-inspection@0.4.4",
+      "name": "typing-inspection",
+      "version": "0.4.4",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:tzlocal@5.4.4",
+      "name": "tzlocal",
+      "version": "5.4.4",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:urllib3@2.8.0",
+      "name": "urllib3",
+      "version": "2.8.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:uvicorn@0.54.0",
+      "name": "uvicorn",
+      "version": "0.54.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "local-agent:xlsxwriter@3.2.9",
+      "name": "xlsxwriter",
+      "version": "3.2.9",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "local-agent"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:alembic@1.20.0",
+      "name": "alembic",
+      "version": "1.20.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:anyio@4.15.1",
+      "name": "anyio",
+      "version": "4.15.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:argon2-cffi@25.1.0",
+      "name": "argon2-cffi",
+      "version": "25.1.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:argon2-cffi-bindings@26.1.0",
+      "name": "argon2-cffi-bindings",
+      "version": "26.1.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:arrow@1.4.0",
+      "name": "arrow",
+      "version": "1.4.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:ast-serialize@0.12.1",
+      "name": "ast-serialize",
+      "version": "0.12.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:asttokens@3.0.2",
+      "name": "asttokens",
+      "version": "3.0.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:async-lru@2.3.0",
+      "name": "async-lru",
+      "version": "2.3.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:attrs@26.1.0",
+      "name": "attrs",
+      "version": "26.1.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:babel@2.18.0",
+      "name": "babel",
+      "version": "2.18.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:beautifulsoup4@4.15.0",
+      "name": "beautifulsoup4",
+      "version": "4.15.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:bleach@6.4.0",
+      "name": "bleach",
+      "version": "6.4.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:boolean-py@5.0",
+      "name": "boolean-py",
+      "version": "5.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:cachecontrol@0.14.4",
+      "name": "cachecontrol",
+      "version": "0.14.4",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:certifi@2026.7.22",
+      "name": "certifi",
+      "version": "2026.7.22",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:cffi@2.1.1",
+      "name": "cffi",
+      "version": "2.1.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:charset-normalizer@3.5.2",
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:cloudpickle@3.1.2",
+      "name": "cloudpickle",
+      "version": "3.1.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:colorlog@6.12.0",
+      "name": "colorlog",
+      "version": "6.12.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:comm@0.2.3",
+      "name": "comm",
+      "version": "0.2.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:contourpy@1.4.0",
+      "name": "contourpy",
+      "version": "1.4.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:coverage@7.16.2",
+      "name": "coverage",
+      "version": "7.16.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:cycler@0.12.1",
+      "name": "cycler",
+      "version": "0.12.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:cyclonedx-python-lib@11.12.0",
+      "name": "cyclonedx-python-lib",
+      "version": "11.12.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:debugpy@1.8.22",
+      "name": "debugpy",
+      "version": "1.8.22",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:defusedxml@0.7.1",
+      "name": "defusedxml",
+      "version": "0.7.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:duckdb@1.5.6",
+      "name": "duckdb",
+      "version": "1.5.6",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:executing@2.2.1",
+      "name": "executing",
+      "version": "2.2.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:fastjsonschema@2.22.2",
+      "name": "fastjsonschema",
+      "version": "2.22.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:filelock@4.0.12",
+      "name": "filelock",
+      "version": "4.0.12",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:fonttools@4.66.1",
+      "name": "fonttools",
+      "version": "4.66.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:formulaic@1.2.2",
+      "name": "formulaic",
+      "version": "1.2.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:fqdn@1.6.0",
+      "name": "fqdn",
+      "version": "1.6.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:h11@0.16.0",
+      "name": "h11",
+      "version": "0.16.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:httpcore@1.0.9",
+      "name": "httpcore",
+      "version": "1.0.9",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:httpx@0.28.1",
+      "name": "httpx",
+      "version": "0.28.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:hypothesis@6.168.5",
+      "name": "hypothesis",
+      "version": "6.168.5",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:idna@3.20",
+      "name": "idna",
+      "version": "3.20",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:iniconfig@2.3.1",
+      "name": "iniconfig",
+      "version": "2.3.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:interface-meta@2.0.1",
+      "name": "interface-meta",
+      "version": "2.0.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:ipykernel@7.4.0",
+      "name": "ipykernel",
+      "version": "7.4.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:ipython@9.17.1",
+      "name": "ipython",
+      "version": "9.17.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:ipython-pygments-lexers@1.1.1",
+      "name": "ipython-pygments-lexers",
+      "version": "1.1.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:isoduration@20.11.0",
+      "name": "isoduration",
+      "version": "20.11.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:jedi@0.20.0",
+      "name": "jedi",
+      "version": "0.20.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:jinja2@3.1.6",
+      "name": "jinja2",
+      "version": "3.1.6",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:joblib@1.6.0",
+      "name": "joblib",
+      "version": "1.6.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:json5@0.15.0",
+      "name": "json5",
+      "version": "0.15.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:jsonpointer@3.1.1",
+      "name": "jsonpointer",
+      "version": "3.1.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:jsonschema@4.26.0",
+      "name": "jsonschema",
+      "version": "4.26.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:jsonschema-specifications@2025.9.1",
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:jupyter-builder@1.2.3",
+      "name": "jupyter-builder",
+      "version": "1.2.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:jupyter-client@8.10.0",
+      "name": "jupyter-client",
+      "version": "8.10.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:jupyter-core@5.9.1",
+      "name": "jupyter-core",
+      "version": "5.9.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:jupyter-events@0.12.1",
+      "name": "jupyter-events",
+      "version": "0.12.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:jupyter-lsp@2.3.1",
+      "name": "jupyter-lsp",
+      "version": "2.3.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:jupyter-server@2.21.1",
+      "name": "jupyter-server",
+      "version": "2.21.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:jupyter-server-terminals@0.5.4",
+      "name": "jupyter-server-terminals",
+      "version": "0.5.4",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:jupyterlab@4.6.4",
+      "name": "jupyterlab",
+      "version": "4.6.4",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:jupyterlab-pygments@0.3.0",
+      "name": "jupyterlab-pygments",
+      "version": "0.3.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:jupyterlab-server@2.28.1",
+      "name": "jupyterlab-server",
+      "version": "2.28.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:kiwisolver@1.5.1",
+      "name": "kiwisolver",
+      "version": "1.5.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:lark@1.3.1",
+      "name": "lark",
+      "version": "1.3.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:librt@0.16.0",
+      "name": "librt",
+      "version": "0.16.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:license-expression@30.4.4",
+      "name": "license-expression",
+      "version": "30.4.4",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:llvmlite@0.50.0",
+      "name": "llvmlite",
+      "version": "0.50.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:mako@1.4.3",
+      "name": "mako",
+      "version": "1.4.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:markdown-it-py@4.2.0",
+      "name": "markdown-it-py",
+      "version": "4.2.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:markupsafe@3.0.4",
+      "name": "markupsafe",
+      "version": "3.0.4",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:matplotlib@3.11.2",
+      "name": "matplotlib",
+      "version": "3.11.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:matplotlib-inline@0.2.2",
+      "name": "matplotlib-inline",
+      "version": "0.2.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:mdurl@0.1.2",
+      "name": "mdurl",
+      "version": "0.1.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:mistune@3.3.4",
+      "name": "mistune",
+      "version": "3.3.4",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:mpmath@1.3.0",
+      "name": "mpmath",
+      "version": "1.3.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:msgpack@1.2.3",
+      "name": "msgpack",
+      "version": "1.2.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:mypy@2.4.0",
+      "name": "mypy",
+      "version": "2.4.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:mypy-extensions@1.1.0",
+      "name": "mypy-extensions",
+      "version": "1.1.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:narwhals@2.26.0",
+      "name": "narwhals",
+      "version": "2.26.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:nbclient@0.11.0",
+      "name": "nbclient",
+      "version": "0.11.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:nbconvert@7.17.1",
+      "name": "nbconvert",
+      "version": "7.17.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:nbformat@5.11.1",
+      "name": "nbformat",
+      "version": "5.11.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:nest-asyncio2@1.7.3",
+      "name": "nest-asyncio2",
+      "version": "1.7.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:notebook-shim@0.2.4",
+      "name": "notebook-shim",
+      "version": "0.2.4",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:numba@0.68.0",
+      "name": "numba",
+      "version": "0.68.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:numpy@2.5.3",
+      "name": "numpy",
+      "version": "2.5.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:optuna@5.0.0",
+      "name": "optuna",
+      "version": "5.0.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:packageurl-python@0.17.6",
+      "name": "packageurl-python",
+      "version": "0.17.6",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:packaging@26.3",
+      "name": "packaging",
+      "version": "26.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pandas@3.0.6",
+      "name": "pandas",
+      "version": "3.0.6",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pandocfilters@1.5.1",
+      "name": "pandocfilters",
+      "version": "1.5.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:parso@0.8.7",
+      "name": "parso",
+      "version": "0.8.7",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pathspec@1.1.1",
+      "name": "pathspec",
+      "version": "1.1.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:patsy@1.0.3",
+      "name": "patsy",
+      "version": "1.0.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pexpect@4.9.0",
+      "name": "pexpect",
+      "version": "4.9.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pillow@12.3.0",
+      "name": "pillow",
+      "version": "12.3.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pip@26.2.1",
+      "name": "pip",
+      "version": "26.2.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pip-api@0.0.35",
+      "name": "pip-api",
+      "version": "0.0.35",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pip-audit@2.10.1",
+      "name": "pip-audit",
+      "version": "2.10.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pip-requirements-parser@32.0.1",
+      "name": "pip-requirements-parser",
+      "version": "32.0.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:platformdirs@4.12.3",
+      "name": "platformdirs",
+      "version": "4.12.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:plotly@7.1.0",
+      "name": "plotly",
+      "version": "7.1.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pluggy@1.6.0",
+      "name": "pluggy",
+      "version": "1.6.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:polars@2.0.0",
+      "name": "polars",
+      "version": "2.0.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:polars-runtime-32@2.0.0",
+      "name": "polars-runtime-32",
+      "version": "2.0.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:prometheus-client@0.26.0",
+      "name": "prometheus-client",
+      "version": "0.26.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:prompt-toolkit@3.0.53",
+      "name": "prompt-toolkit",
+      "version": "3.0.53",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:psutil@7.2.2",
+      "name": "psutil",
+      "version": "7.2.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:ptyprocess@0.7.0",
+      "name": "ptyprocess",
+      "version": "0.7.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pure-eval@0.2.4",
+      "name": "pure-eval",
+      "version": "0.2.4",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:py-serializable@2.1.0",
+      "name": "py-serializable",
+      "version": "2.1.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pyarrow@25.0.1",
+      "name": "pyarrow",
+      "version": "25.0.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pycparser@3.0",
+      "name": "pycparser",
+      "version": "3.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pygments@2.21.0",
+      "name": "pygments",
+      "version": "2.21.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pyparsing@3.3.3",
+      "name": "pyparsing",
+      "version": "3.3.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pypdf@6.19.0",
+      "name": "pypdf",
+      "version": "6.19.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pytest@9.1.1",
+      "name": "pytest",
+      "version": "9.1.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pytest-cov@7.1.0",
+      "name": "pytest-cov",
+      "version": "7.1.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:python-dateutil@2.9.0.post0",
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:python-json-logger@4.2.0",
+      "name": "python-json-logger",
+      "version": "4.2.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pyyaml@6.0.3",
+      "name": "pyyaml",
+      "version": "6.0.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:pyzmq@27.2.0",
+      "name": "pyzmq",
+      "version": "27.2.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:referencing@0.37.0",
+      "name": "referencing",
+      "version": "0.37.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:requests@2.34.2",
+      "name": "requests",
+      "version": "2.34.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:rfc3339-validator@0.1.4",
+      "name": "rfc3339-validator",
+      "version": "0.1.4",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:rfc3986-validator@0.1.1",
+      "name": "rfc3986-validator",
+      "version": "0.1.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:rfc3987-syntax@1.1.0",
+      "name": "rfc3987-syntax",
+      "version": "1.1.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:rich@15.0.0",
+      "name": "rich",
+      "version": "15.0.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:rpds-py@2026.9.1",
+      "name": "rpds-py",
+      "version": "2026.9.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:ruff@0.16.10",
+      "name": "ruff",
+      "version": "0.16.10",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:scikit-learn@1.9.1",
+      "name": "scikit-learn",
+      "version": "1.9.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:scipy@1.18.1",
+      "name": "scipy",
+      "version": "1.18.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:send2trash@2.1.0",
+      "name": "send2trash",
+      "version": "2.1.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:six@1.17.0",
+      "name": "six",
+      "version": "1.17.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:sortedcontainers@2.4.0",
+      "name": "sortedcontainers",
+      "version": "2.4.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:soupsieve@2.10",
+      "name": "soupsieve",
+      "version": "2.10",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:sqlalchemy@2.1.3",
+      "name": "sqlalchemy",
+      "version": "2.1.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:stack-data@0.6.3",
+      "name": "stack-data",
+      "version": "0.6.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:statsmodels@0.15.0",
+      "name": "statsmodels",
+      "version": "0.15.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:sympy@1.14.0",
+      "name": "sympy",
+      "version": "1.14.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:terminado@0.18.1",
+      "name": "terminado",
+      "version": "0.18.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:threadpoolctl@3.7.0",
+      "name": "threadpoolctl",
+      "version": "3.7.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:tinycss2@1.5.1",
+      "name": "tinycss2",
+      "version": "1.5.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:tomli@2.4.1",
+      "name": "tomli",
+      "version": "2.4.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:tomli-w@1.2.0",
+      "name": "tomli-w",
+      "version": "1.2.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:tornado@6.5.10",
+      "name": "tornado",
+      "version": "6.5.10",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:tqdm@4.70.1",
+      "name": "tqdm",
+      "version": "4.70.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:traitlets@5.16.1",
+      "name": "traitlets",
+      "version": "5.16.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:typing-extensions@4.16.0",
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:tzdata@2026.5",
+      "name": "tzdata",
+      "version": "2026.5",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:uri-template@1.3.0",
+      "name": "uri-template",
+      "version": "1.3.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:urllib3@2.8.0",
+      "name": "urllib3",
+      "version": "2.8.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:wcwidth@0.9.2",
+      "name": "wcwidth",
+      "version": "0.9.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:webcolors@25.10.0",
+      "name": "webcolors",
+      "version": "25.10.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:webencodings@0.6.1",
+      "name": "webencodings",
+      "version": "0.6.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:websocket-client@1.9.2",
+      "name": "websocket-client",
+      "version": "1.9.2",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "quant:wrapt@2.5.0",
+      "name": "wrapt",
+      "version": "2.5.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "quant"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:cuda-bindings@13.3.1",
+      "name": "cuda-bindings",
+      "version": "13.3.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:cuda-pathfinder@1.6.0",
+      "name": "cuda-pathfinder",
+      "version": "1.6.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:cuda-toolkit@13.0.3.0",
+      "name": "cuda-toolkit",
+      "version": "13.0.3.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:filelock@3.32.3",
+      "name": "filelock",
+      "version": "3.32.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:fsspec@2026.7.0",
+      "name": "fsspec",
+      "version": "2026.7.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:jinja2@3.1.6",
+      "name": "jinja2",
+      "version": "3.1.6",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:markupsafe@3.0.3",
+      "name": "markupsafe",
+      "version": "3.0.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:mpmath@1.3.0",
+      "name": "mpmath",
+      "version": "1.3.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:networkx@3.6.1",
+      "name": "networkx",
+      "version": "3.6.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:numpy@2.5.3",
+      "name": "numpy",
+      "version": "2.5.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:nvidia-cublas@13.1.1.3",
+      "name": "nvidia-cublas",
+      "version": "13.1.1.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:nvidia-cuda-cupti@13.0.85",
+      "name": "nvidia-cuda-cupti",
+      "version": "13.0.85",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:nvidia-cuda-nvrtc@13.0.88",
+      "name": "nvidia-cuda-nvrtc",
+      "version": "13.0.88",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:nvidia-cuda-runtime@13.0.96",
+      "name": "nvidia-cuda-runtime",
+      "version": "13.0.96",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:nvidia-cudnn-cu13@9.24.0.43",
+      "name": "nvidia-cudnn-cu13",
+      "version": "9.24.0.43",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:nvidia-cufft@12.0.0.61",
+      "name": "nvidia-cufft",
+      "version": "12.0.0.61",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:nvidia-cufile@1.15.1.6",
+      "name": "nvidia-cufile",
+      "version": "1.15.1.6",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:nvidia-curand@10.4.0.35",
+      "name": "nvidia-curand",
+      "version": "10.4.0.35",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:nvidia-cusolver@12.0.4.66",
+      "name": "nvidia-cusolver",
+      "version": "12.0.4.66",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:nvidia-cusparse@12.6.3.3",
+      "name": "nvidia-cusparse",
+      "version": "12.6.3.3",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:nvidia-cusparselt-cu13@0.8.1",
+      "name": "nvidia-cusparselt-cu13",
+      "version": "0.8.1",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:nvidia-nccl-cu13@2.30.7",
+      "name": "nvidia-nccl-cu13",
+      "version": "2.30.7",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:nvidia-nvjitlink@13.3.33",
+      "name": "nvidia-nvjitlink",
+      "version": "13.3.33",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:nvidia-nvshmem-cu13@3.4.5",
+      "name": "nvidia-nvshmem-cu13",
+      "version": "3.4.5",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:nvidia-nvtx@13.0.85",
+      "name": "nvidia-nvtx",
+      "version": "13.0.85",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:setuptools@78.1.0",
+      "name": "setuptools",
+      "version": "78.1.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:sympy@1.14.0",
+      "name": "sympy",
+      "version": "1.14.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:torch@2.14.1+cu130",
+      "name": "torch",
+      "version": "2.14.1+cu130",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:triton@3.8.0",
+      "name": "triton",
+      "version": "3.8.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "gpu:typing-extensions@4.16.0",
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "properties": [
+        {
+          "name": "commissioning:environment",
+          "value": "gpu"
+        }
+      ]
+    }
+  ]
+}

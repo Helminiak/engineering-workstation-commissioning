@@ -1,4 +1,5 @@
 {
+  "timestamp": "2026-10-07T00:18:54.675409+00:00",
   "tools": {
     "git": {
       "command": [
@@ -1084,5 +1085,6 @@
         "version": "4.16.0"
       }
     ]
-  }
+  },
+  "changes": "User-local gh installed with official SHA-256; isolated quant and gpu environments installed; existing Node, local-agent environment, drivers and integrations preserved."
 }

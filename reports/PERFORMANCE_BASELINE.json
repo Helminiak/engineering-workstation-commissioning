@@ -1,0 +1,23 @@
+{
+  "16384": {
+    "context": 16384,
+    "repeats": 3,
+    "median_ttft_s": 0.33778134699969087,
+    "median_generation_tokens_per_second": 162.9022451221249,
+    "peak_vram_mib": 25021,
+    "structured_output_verified": true,
+    "limitations": "Short ~3K input benchmark; capacity allocation and inference verified, near-limit long-context accuracy and prompt throughput not measured."
+  },
+  "32768": {
+    "context": 32768,
+    "repeats": 3,
+    "median_ttft_s": 0.3421670509997057,
+    "median_generation_tokens_per_second": 161.05914159382834,
+    "peak_vram_mib": 25725,
+    "structured_output_verified": true,
+    "limitations": "Short ~3K input benchmark; capacity allocation and inference verified, near-limit long-context accuracy and prompt throughput not measured."
+  },
+  "recommended_context": 32768,
+  "long_input_tokens": 25729,
+  "notes": "Generation and TTFT include shared-prefix cache effects. Long-input run initially took 10.073s; repeat was cached. No cold prompt-throughput or 48K/64K claim."
+}

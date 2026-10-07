@@ -1,0 +1,8 @@
+# Security checkpoint
+Local API is bound to 127.0.0.1:1234 and uses the existing owner-only token. No persistent API token is included in reports, source, commits or prompts. An early SDK handle dump exposed transient client session fields in tool output; diagnostics now use whitelisted metadata. Those fields were not written into commissioning files. Original bridge backed up before changes. Command audits and local agent transcripts are owner-only and excluded from Git. Redaction is heuristic; never assume raw logs are safe to upload.
+
+Core execution is Joe-account shell execution, not an OS sandbox. Cwd and document reads are scoped; arbitrary executable code can reach other user files. Agent prompts prohibit sudo and external actions, but prompts are not a hard security boundary. Privileged changes require operator approval. Native Bionic approval behavior remains MANUAL_REQUIRED.
+
+ruff and limited mypy checks are recorded. Quant and local-agent pip-audit scans and npm audit found no known vulnerabilities at scan time. The GPU vendor wheel index is not fully covered by PyPI advisory scanning. The staged secret scan is heuristic and does not replace Gitleaks. ShellCheck awaits approved installation. No private code was sent to third-party scanners; dependency auditing queried public package names.
+
+Rollback: backups/workbench_mcp.*.py restores the original bridge; stop local agent before restoring. New isolated environments can be retired independently after confirming no tasks use them. The user-local gh binary is independent of system packages. No account integrations were removed, credentials changed, or ports exposed.

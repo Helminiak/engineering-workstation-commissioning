@@ -1,0 +1,2 @@
+const fs=require('fs');const {LMStudioClient}=require('../tools/lmstudio-client/node_modules/@lmstudio/sdk/dist/index.cjs');
+(async()=>{const c=new LMStudioClient({apiToken:fs.readFileSync('/home/joe/.lmstudio/credentials/local-work-api.token','utf8').trim()});const rows=[];for(const m of await c.llm.listLoaded()){const i=await m.getModelInfo();rows.push({identifier:i.identifier,quantization:i.quantization?.name,contextLength:i.contextLength,config:await m.getLoadConfig()});}console.log(JSON.stringify(rows));})().catch(e=>{console.error(e.message);process.exit(1)});

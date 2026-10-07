@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-07T00:00:49.750540+00:00",
+  "updated_at": "2026-10-07T00:18:55.147352+00:00",
   "objective": "Commission a verified, resumable Ubuntu RTX 5090 engineering workstation. Prioritize local execution before expansion.",
   "stages": {
     "execution": {
@@ -26,23 +26,38 @@
     "local_agent": {
       "phase": "1",
       "status": "PASS_WITH_LIMITATIONS",
-      "start_time": "2026-10-07T00:00:15.798514+00:00",
-      "end_time": "2026-10-07T00:00:28.551588+00:00",
+      "start_time": "2026-10-07T00:09:37.638462+00:00",
+      "end_time": "2026-10-07T00:09:52.587541+00:00",
       "commands": [
         {
           "command": ".venv/bin/python tests/local_llm_acceptance.py",
           "exit_code": 0,
           "start_time": "2026-10-07T00:00:15.805879+00:00",
           "end_time": "2026-10-07T00:00:28.544338+00:00"
+        },
+        {
+          "command": ".venv/bin/python tests/local_llm_acceptance.py && .venv/bin/python tests/test_mcp_isolation.py",
+          "exit_code": 0,
+          "start_time": "2026-10-07T00:09:37.646277+00:00",
+          "end_time": "2026-10-07T00:09:52.581251+00:00"
         }
       ],
       "evidence": [
-        "evidence/local_agent-20261006T200028544357.json"
+        "evidence/local_agent-20261006T200028544357.json",
+        "evidence/local_agent-20261007T000952581269.json"
       ],
       "verification": true,
-      "repair_attempts": [],
+      "repair_attempts": [
+        {
+          "attempt": 1,
+          "command": ".venv/bin/python tests/local_llm_acceptance.py",
+          "exit_code": 1,
+          "cause": "MCP inputSchema/isError naming differs from installed SDK; changed to input_schema/is_error",
+          "retest": "PASS; recorded local_agent verifier evidence"
+        }
+      ],
       "remaining_issues": [
-        "Native Bionic UI approval and failure isolation not yet verified; this is local OpenAI-compatible API plus real MCP bridge."
+        "Native Bionic UI projects, shell and approval behavior require operator verification. API/MCP agent and optional connector failure isolation verified."
       ]
     },
     "resume_engine": {
@@ -67,102 +82,200 @@
     },
     "development": {
       "phase": "3",
-      "status": "NOT_STARTED",
+      "status": "MANUAL_REQUIRED",
       "start_time": null,
       "end_time": null,
       "commands": [],
       "evidence": [],
       "verification": null,
       "repair_attempts": [],
-      "remaining_issues": []
+      "remaining_issues": [
+        "Inventory and apt simulation saved. Node/Python/Git functional. Missing C/C++/Java/Rust and utilities require operator-approved sudo apt batch."
+      ]
     },
     "github": {
       "phase": "4",
-      "status": "NOT_STARTED",
+      "status": "MANUAL_REQUIRED",
       "start_time": null,
       "end_time": null,
       "commands": [],
       "evidence": [],
       "verification": null,
       "repair_attempts": [],
-      "remaining_issues": []
+      "remaining_issues": [
+        "gh installed and SHA-256 verified. gh auth status exits 1: no logged-in GitHub hosts. Operator sign-in needed; no remote created."
+      ]
     },
     "gpu_llm": {
       "phase": "5",
-      "status": "NOT_STARTED",
-      "start_time": null,
-      "end_time": null,
-      "commands": [],
-      "evidence": [],
-      "verification": null,
-      "repair_attempts": [],
-      "remaining_issues": []
+      "status": "PASS_WITH_LIMITATIONS",
+      "start_time": "2026-10-07T00:07:18.519178+00:00",
+      "end_time": "2026-10-07T00:07:20.464009+00:00",
+      "commands": [
+        {
+          "command": "venvs/gpu/bin/python tests/validate_cuda.py && node tests/long_context.cjs",
+          "exit_code": 0,
+          "start_time": "2026-10-07T00:07:18.531616+00:00",
+          "end_time": "2026-10-07T00:07:20.454206+00:00"
+        }
+      ],
+      "evidence": [
+        "evidence/gpu_llm-20261006T200720454223.json"
+      ],
+      "verification": true,
+      "repair_attempts": [
+        {
+          "attempt": 1,
+          "command": "python3 tests/benchmark_llm.py 16384",
+          "exit_code": 1,
+          "cause": "Overly strict output assertion and 300-token cap",
+          "raw_failure_log": "Not persisted; tool output only. Summary retained; no timing claimed."
+        },
+        {
+          "attempt": 2,
+          "command": "python3 tests/benchmark_llm.py 16384",
+          "exit_code": 1,
+          "cause": "OpenAI-compatible API rejects off reasoning_effort (HTTP 400); reassessed docs and direct request; none supported"
+        },
+        {
+          "attempt": 3,
+          "command": "node tests/long_context.cjs",
+          "exit_code": 1,
+          "cause": "Preflight token guard rejected 36159-token prompt before inference; reduced fixture to25729 tokens",
+          "retest": "PASS; evidence/long-context.json"
+        }
+      ],
+      "remaining_issues": [
+        "16K/32K measured; 48K/64K not tested. Short inference performance only. CLI/SDK allocation registry differs from native REST. Bionic native UI unverified."
+      ]
     },
     "scientific": {
       "phase": "6",
-      "status": "NOT_STARTED",
-      "start_time": null,
-      "end_time": null,
-      "commands": [],
-      "evidence": [],
-      "verification": null,
+      "status": "PASS",
+      "start_time": "2026-10-07T00:07:40.154290+00:00",
+      "end_time": "2026-10-07T00:07:43.827584+00:00",
+      "commands": [
+        {
+          "command": "venvs/quant/bin/python tests/validate_scientific.py && uv pip check --python venvs/quant/bin/python",
+          "exit_code": 0,
+          "start_time": "2026-10-07T00:07:40.164323+00:00",
+          "end_time": "2026-10-07T00:07:43.799045+00:00"
+        }
+      ],
+      "evidence": [
+        "evidence/scientific-20261006T200743799069.json"
+      ],
+      "verification": true,
       "repair_attempts": [],
       "remaining_issues": []
     },
     "forensics": {
       "phase": "7",
-      "status": "NOT_STARTED",
-      "start_time": null,
-      "end_time": null,
-      "commands": [],
-      "evidence": [],
-      "verification": null,
+      "status": "PASS_WITH_LIMITATIONS",
+      "start_time": "2026-10-07T00:06:01.521147+00:00",
+      "end_time": "2026-10-07T00:06:01.561314+00:00",
+      "commands": [
+        {
+          "command": "python3 tests/test_forensics.py",
+          "exit_code": 0,
+          "start_time": "2026-10-07T00:06:01.529091+00:00",
+          "end_time": "2026-10-07T00:06:01.555200+00:00"
+        }
+      ],
+      "evidence": [
+        "evidence/forensics-20261006T200601555207.json"
+      ],
+      "verification": true,
       "repair_attempts": [],
-      "remaining_issues": []
+      "remaining_issues": [
+        "Synthetic baseline validates known anomalies; current JSONL analyzer loads records in memory and is not yet a large-log streaming implementation."
+      ]
     },
     "mbo": {
       "phase": "8",
-      "status": "NOT_STARTED",
+      "status": "MANUAL_REQUIRED",
       "start_time": null,
       "end_time": null,
       "commands": [],
       "evidence": [],
       "verification": null,
       "repair_attempts": [],
-      "remaining_issues": []
+      "remaining_issues": [
+        "Python synthetic reference book unit tests pass; Java implementation and compilation require JDK approval. Full order-book throughput, liquidity/regime analysis not yet commissioned."
+      ]
     },
     "security": {
       "phase": "9",
-      "status": "NOT_STARTED",
-      "start_time": null,
-      "end_time": null,
-      "commands": [],
-      "evidence": [],
-      "verification": null,
+      "status": "PASS_WITH_LIMITATIONS",
+      "start_time": "2026-10-07T00:14:41.516585+00:00",
+      "end_time": "2026-10-07T00:14:42.053335+00:00",
+      "commands": [
+        {
+          "command": "scripts/verify-security.sh",
+          "exit_code": 0,
+          "start_time": "2026-10-07T00:14:41.526017+00:00",
+          "end_time": "2026-10-07T00:14:42.043738+00:00"
+        }
+      ],
+      "evidence": [
+        "evidence/security-20261007T001442043751.json"
+      ],
+      "verification": true,
       "repair_attempts": [],
-      "remaining_issues": []
+      "remaining_issues": [
+        "Heuristic secret scan, limited domain mypy and package audits only. GPU vendor advisory coverage incomplete; native approval and hard execution sandbox unverified; ShellCheck pending JDK/tool batch."
+      ]
     },
     "rag": {
       "phase": "10",
-      "status": "NOT_STARTED",
-      "start_time": null,
-      "end_time": null,
-      "commands": [],
-      "evidence": [],
-      "verification": null,
+      "status": "PASS_WITH_LIMITATIONS",
+      "start_time": "2026-10-07T00:07:33.393353+00:00",
+      "end_time": "2026-10-07T00:07:33.516316+00:00",
+      "commands": [
+        {
+          "command": ".venv/bin/python tests/test_rag.py",
+          "exit_code": 0,
+          "start_time": "2026-10-07T00:07:33.401776+00:00",
+          "end_time": "2026-10-07T00:07:33.510410+00:00"
+        }
+      ],
+      "evidence": [
+        "evidence/rag-20261006T200733510434.json"
+      ],
+      "verification": true,
       "repair_attempts": [],
-      "remaining_issues": []
+      "remaining_issues": [
+        "Tested synthetic authorized directory; no OCR, long-document retrieval benchmark or personal-data indexing."
+      ]
     },
     "end_to_end": {
       "phase": "11",
-      "status": "NOT_STARTED",
-      "start_time": null,
-      "end_time": null,
-      "commands": [],
-      "evidence": [],
-      "verification": null,
+      "status": "BLOCKED",
+      "start_time": "2026-10-07T00:16:56.105958+00:00",
+      "end_time": "2026-10-07T00:17:03.413982+00:00",
+      "commands": [
+        {
+          "command": "python3 tests/end_to_end.py",
+          "exit_code": 2,
+          "start_time": "2026-10-07T00:14:17.008912+00:00",
+          "end_time": "2026-10-07T00:14:23.446469+00:00"
+        },
+        {
+          "command": "python3 tests/end_to_end.py",
+          "exit_code": 2,
+          "start_time": "2026-10-07T00:16:56.114374+00:00",
+          "end_time": "2026-10-07T00:17:03.407592+00:00"
+        }
+      ],
+      "evidence": [
+        "evidence/end_to_end-20261007T001423446485.json",
+        "evidence/end_to_end-20261007T001703407609.json"
+      ],
+      "verification": false,
       "repair_attempts": [],
-      "remaining_issues": []
+      "remaining_issues": [
+        "Available subsystems verified; Java/C++/Rust and GitHub are mandatory unfinished gates."
+      ]
     }
   }
 }

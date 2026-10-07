@@ -1,0 +1,4 @@
+# Reproducibility
+Exact currently installed Python versions are frozen in configs/*-requirements.lock. Recreate isolated Python 3.12 environments with uv venv, then install the matching lock; the GPU lock requires the official cu130 PyTorch wheel index. Locks list versions but do not lock every wheel hash; platform-specific reproducibility is limited. CONFIGURATION_HASHES.json records source/config hashes and SBOM.cdx.json records packages per environment. SHA-256 source-evidence hashes and seeded validation are recorded locally. Raw datasets are excluded from Git; tests regenerate synthetic fixtures.
+
+No remote state exists until GitHub authentication and repository authorization are completed. Previous Qwen setup documentation may be stale; commissioned settings/evidence are authoritative. Benchmark medians include prefix caching and do not represent cold long-context prompt throughput.

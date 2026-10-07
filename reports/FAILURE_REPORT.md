@@ -17,3 +17,5 @@
 
 - Local Qwen scientific task first tool call exited1: scipy.linalg.cond does not exist. Qwen diagnosed it and changed to numpy.linalg.cond; original calculation and regression checks passed. Five tool calls recorded with exit codes[1,0,0,0,0]; independently verified results2,3,385,285.
 - Runner handoff enrichment briefly introduced a malformed f-string; syntax and isolated runner tests caught it before any real state update. Simplified precomputed fields, fixed and retested.
+
+Full integration exits 2 for unfinished system tools and GitHub authentication; these are not PASS.

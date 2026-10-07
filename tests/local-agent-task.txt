@@ -1,0 +1,1 @@
+Read commissioning/STATUS.md. Then create scratch/local-agent-resume-proof.txt containing the actual current next unfinished phase, username and working directory. Run scripts/show_status.sh, report real exit codes, and finish. Modify no other files. /no_think

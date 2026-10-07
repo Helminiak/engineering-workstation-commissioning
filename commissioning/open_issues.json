@@ -1,19 +1,34 @@
 {
   "issues": [
     {
-      "id": "github-cli",
-      "status": "NOT_TESTED",
-      "detail": "gh missing; auth not tested; repository creation not authorized."
+      "id": "system-development",
+      "status": "MANUAL_REQUIRED",
+      "detail": "Concrete apt batch and successful simulation prepared. Await operator sudo approval; run scripts/development-install-request.sh --operator-approved only after approval."
+    },
+    {
+      "id": "github-auth",
+      "status": "MANUAL_REQUIRED",
+      "detail": "gh 2.102.0 installed and official SHA-256 verified; gh auth status exits 1. Operator sign-in and private repository authorization pending. No remote pushes or PRs tested."
     },
     {
       "id": "bionic-native",
       "status": "MANUAL_REQUIRED",
-      "detail": "No native apps or browser surfaces exposed to UI automation. Native shell, project mode and approval behavior cannot yet be verified."
+      "detail": "No native UI surfaces exposed. Bionic native projects, approval behavior and independent native version remain unverified; API/MCP acceptance passes."
     },
     {
-      "id": "context",
-      "status": "IN_PROGRESS",
-      "detail": "Model observed loaded with 19968 context; 32K measurement pending."
+      "id": "mbo-java",
+      "status": "MANUAL_REQUIRED",
+      "detail": "Python reference cases and hypothesis tests pass. Java book, full-book benchmark, liquidity persistence and regime analysis remain unfinished."
+    },
+    {
+      "id": "forensic-scale",
+      "status": "NOT_TESTED",
+      "detail": "In-memory JSONL reference fixture verified. Streaming large-log scale and broad regression/correlation toolkit remain unfinished."
+    },
+    {
+      "id": "security-coverage",
+      "status": "PASS_WITH_LIMITATIONS",
+      "detail": "ruff, limited mypy, dependency audits, SBOM and staged secret heuristics verified. Gitleaks not installed; ShellCheck awaits approval; GPU vendor advisory coverage limited."
     }
   ]
 }
