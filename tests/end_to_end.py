@@ -27,6 +27,8 @@ commands = [
         ".venv/bin/python tests/test_rag.py && .venv/bin/python tests/test_rag_formats.py",
     ),
     ("local-agent Java evidence", "python3 tests/verify_agent_java_proof.py"),
+    ("Native Bionic historical acceptance", "python3 scripts/verify-bionic-history.py"),
+    ("Bionic current usability", "python3 scripts/inspect-bionic-context.py"),
     ("Java/C++/Rust", "scripts/verify-development.sh && scripts/verify-build-tools.sh"),
     ("CPU/RAM/filesystem", "python3 tests/validate_hardware.py"),
     ("GitHub authentication", "gh api user --jq .login"),
@@ -54,7 +56,11 @@ for name, cmd in commands:
         else (
             "MANUAL_REQUIRED"
             if name == "GitHub authentication"
-            else ("BLOCKED" if name == "health" and p.returncode == 2 else "FAIL")
+            else (
+                "BLOCKED"
+                if name in ["health", "Bionic current usability"] and p.returncode == 2
+                else "FAIL"
+            )
         )
     )
     rows.append(
@@ -69,21 +75,6 @@ for name, cmd in commands:
         }
     )
     print(name, status, flush=True)
-for category, reason in [
-    (
-        "Bionic native UI",
-        "Native projects and approval behavior unavailable to automation; API/MCP tested separately.",
-    ),
-]:
-    rows.append(
-        {
-            "category": category,
-            "status": "MANUAL_REQUIRED",
-            "reason": reason,
-            "command": None,
-            "exit_code": None,
-        }
-    )
 p = ROOT / "artifacts/synthetic-engineering.csv"
 with p.open("w") as f:
     writer = csv.writer(f)
@@ -99,7 +90,7 @@ report = {
     "artifact_sha256": hashlib.sha256(p.read_bytes()).hexdigest(),
     "results": rows,
     "local_llm_evidence": "evidence/local-llm-acceptance.json",
-    "limitations": "Local LLM evidence is independently checked; Private remote write/commit verification passes; native Bionic verification gates full integration completion. Native Bionic remains separately unverified. No proprietary data or trading strategy.",
+    "limitations": "Local LLM evidence is independently checked; Private remote write/commit verification passes; historical native acceptance passes; current Bionic context usability remains blocked. No proprietary data or trading strategy.",
 }
 (ROOT / "evidence/end-to-end.json").write_text(json.dumps(report, indent=2) + "\n")
 (ROOT / "artifacts/engineering-report.json").write_text(

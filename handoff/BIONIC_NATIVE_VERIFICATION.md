@@ -1,36 +1,22 @@
-# Native Bionic verification — operator required
+# Bionic native acceptance and current usability
 
-Bionic 1.1.7+7 was launched normally by Codex and is running. The native test is BLOCKED: cua.getState() after launch returned apps=[], browsers=[]; Codex cannot submit a native session or act on tool approvals. Read reports/BIONIC_NATIVE_DIAGNOSIS.json and BIONIC_NATIVE_ACCEPTANCE.json.
+Historical native engineering acceptance PASS is preserved. Codex independently reviewed the persisted native tool-call/result trace and fixture artifacts without rerunning native commands. The trace contains 11 shell command results, plus native file reads/writes and one repaired edit-schema error. Bash, Python calculation385, pytest2tests, whoami/pwd/GPU and scoped Git status/diff passed. See reports/BIONIC_NATIVE_ACCEPTANCE.json and private evidence/bionic-native-historical-trace.json. Do not repeat or overwrite that fixture.
 
-The API/MCP local-agent path passes independent tests. Native Bionic projects and tool approval remain unverified because no native UI surface is available to this session. Do not infer native support from API tests.
+Current usability is separately BLOCKED. Read reports/BIONIC_CONTEXT_DIAGNOSIS.json. Current model is operator-loaded Qwen Q4_K_M, context105472, four parallel slots. Bionic requests around123K tokens exceed this context. The hello at21:59:15 produced122973 tokens. Persisted base system prompt tokenizes to474 tokens and stored text through this hello to167; dynamic request components have not been reconstructed. Regular LM Studio CLI hello succeeds with36prompt tokens; plain no-tool API hello succeeds with13. These controls are Codex-run and are not native Bionic commands or GUI comparisons.
 
-1. Open the installed Bionic interface. Record the actual displayed version, if available, and the selected model/context. Do not include credentials or account settings screenshots.
-2. Inspect the actual project/tool controls. If they provide a workspace selection, select `/home/joe/LLM-Workspace`. Record available controls and approval behavior rather than assuming a coding mode exists.
-3. Submit handoff/BIONIC_NATIVE_TASK.txt to the native agent in an Allow coding project for `/home/joe/LLM-Workspace/scratch/local-agent-acceptance`. It names a fresh case inside the existing harmless fixture repository and requires Git status/diff and tests. The older prompt below is supplementary only. Approve only normal-user commands in the named scratch directory. Do not approve sudo, external uploads, new repositories, or pushes.
-4. Save the native transcript locally to `evidence/bionic-native-transcript.txt`, excluding credentials. Preserve command exit codes and errors. Run the independent commands below in a terminal; record output and exits in `evidence/bionic-native-verification.txt`.
-5. Have the commissioning runner record verification only after the artifacts and transcript are independently checked. If tools are unavailable, keep MANUAL_REQUIRED or BLOCKED and describe the actual error.
+Configuration preserved under the directory recorded by state/bionic-context-backup.json (owner-only, excluded from Git). Baseline VRAM total32607MiB/used28688MiB/free3421MiB. No context, model, plugin or security configuration changed during this diagnosis. Do not infer current memory feasibility from the earlier Q6_K32K benchmark.
 
-## Native agent prompt
+Next operator action: compare exactly hello in pristine Bionic and regular LM Studio GUI chats on the same loaded local model, without attachments or changed settings. Record timestamps, result and error; correlate with server token counts. Codex has no desktop controls and cannot independently submit those GUI turns. Then inspect per-project enabled tools and quantify assembled schemas/instructions; a minimal core-only test should preserve native coding tools and avoid changing global security controls. No connector has yet been proven responsible for the large request.
 
-Execute actual tools. Only write inside `/home/joe/LLM-Workspace/scratch/bionic-native-proof`. Run whoami, pwd and nvidia-smi. Create the directory if needed. Write and read probe.txt containing native-bionic-verified. Create check.sh that prints bash-ok and execute it. Create calculation.py that asserts sum(i*i for i in range(1,11)) == 385 and prints PYTHON_RESULT=385; execute it. Inspect Git status and current branch of `/home/joe/LLM-Workspace` without modifying Git. Write report.md in the scratch directory with each command, actual result and exit code. Do not claim success without execution. Do not use sudo, network, secrets, new repositories, commits or pushes.
-
-## Independent terminal checks
-
+Reproduction commands:
 ```bash
 cd /home/joe/LLM-Workspace
-cat scratch/bionic-native-proof/probe.txt
-bash scratch/bionic-native-proof/check.sh
-python3 scratch/bionic-native-proof/calculation.py
-cat scratch/bionic-native-proof/report.md
-git status --short
-git branch --show-current
+lms ps
+nvidia-smi --query-gpu=memory.total,memory.used,memory.free --format=csv,noheader
+lms chat qwen/qwen3.8-27b --prompt hello --stats --reasoning off --dont-fetch-catalog
+python3 scripts/verify-bionic-history.py
+python3 scripts/inspect-bionic-context.py
 ```
-
-Inspect source before running the generated Bash/Python files. Matching output alone is insufficient to prove native execution: review the native transcript and tool exit codes. Existing files are not proof of a fresh run.
-
-## Evidence separation
-Codex prepared only the fresh tracked baseline (state/bionic-native-case.json), launched the app and initialized MCP sessions. None of those actions counts as Bionic execution. Save Bionic native tool transcript separately under evidence/bionic-native/. Record actual command outputs and exit codes; missing commands are NOT_TESTED, never PASS. Do not recreate the fixture or substitute Codex/scripted API execution for native calls. The current native acceptance matrix has no outputs or exit codes because no native command was submitted.
-
-Native launch logged Atlassian authentication required and ignored duplicate GitHub tool names. Codex initialization of native-config Local Workbench, Context7 Docs and Cloudflare Docs passed. Legacy Context7 OAuth endpoint without app credentials failed; that probe does not diagnose Bionic stored OAuth state. No evidence yet shows an optional failure prevents core native tools. Do not disable integrations based only on these findings.
+The last command exits2 for current blocked usability. Historical acceptance verifier exits0. A health check may pass while Bionic request assembly fails. Never combine these into a current native PASS.
 
 Official coding-project instructions: https://lmstudio.ai/docs/bionic/agent/code-project

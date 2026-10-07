@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-07T01:36:59.767372+00:00",
+  "timestamp": "2026-10-07T02:09:25.748746+00:00",
   "username": "joe",
   "hostname": "5090FE",
   "kernel": "7.0.0-38-generic",
@@ -7,15 +7,15 @@
   "cpu_model": "13th Gen Intel(R) Core(TM) i9-13900K",
   "logical_cpus": 32,
   "ram_kib": 64471312,
-  "disk_free_bytes": 370676953088,
-  "gpu": "NVIDIA GeForce RTX 5090, 595.91.07, 32607 MiB, 26206 MiB",
+  "disk_free_bytes": 370669522944,
+  "gpu": "NVIDIA GeForce RTX 5090, 595.91.07, 32607 MiB, 28201 MiB",
   "lmstudio_version": "0.4.25+1",
   "bionic_version": "1.1.7+7",
   "loaded_llms": [
     {
       "identifier": "qwen/qwen3.8-27b",
-      "quantization": "Q6_K",
-      "contextLength": 32768,
+      "quantization": "Q4_K_M",
+      "contextLength": 105472,
       "config": {
         "autoFit": false,
         "gpu": {
@@ -25,10 +25,10 @@
           "numCpuExpertLayersRatio": "off"
         },
         "gpuStrictVramCap": false,
-        "maxParallelPredictions": 1,
+        "maxParallelPredictions": 4,
         "useUnifiedKvCache": true,
         "offloadKVCacheToGpu": true,
-        "contextLength": 32768,
+        "contextLength": 105472,
         "promptTemplate": {
           "type": "jinja",
           "jinjaPromptTemplate": {
@@ -37,7 +37,7 @@
         },
         "ropeFrequencyBase": false,
         "ropeFrequencyScale": false,
-        "evalBatchSize": 1024,
+        "evalBatchSize": 2048,
         "physicalBatchSize": 512,
         "flashAttention": true,
         "contextCheckpoints": 32,
@@ -60,8 +60,8 @@
           "excludeAllConfig": false
         },
         "numExperts": 0,
-        "llamaKCacheQuantizationType": "q8_0",
-        "llamaVCacheQuantizationType": "q8_0"
+        "llamaKCacheQuantizationType": false,
+        "llamaVCacheQuantizationType": false
       }
     }
   ],

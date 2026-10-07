@@ -1,84 +1,86 @@
 {
-  "timestamp": "2026-10-07T01:35:22.988189+00:00",
-  "executor": "Bionic native agent",
-  "status": "BLOCKED",
-  "checks": [
+  "timestamp": "2026-10-07T02:09:25.731186+00:00",
+  "executor": "Bionic native agent (historical)",
+  "reviewer": "Codex read-only trace/artifact verification; no acceptance commands rerun",
+  "status": "PASS",
+  "fixture": "/home/joe/LLM-Workspace/scratch/local-agent-acceptance/bionic-native-20261007T013341",
+  "source_database": "/home/joe/.lmstudio/apps/bionic/projects/14effd21-51b5-4082-a3d7-d977b6a57ef1/.internal/ng-sessions.sqlite",
+  "artifact_sha256": {
+    "probe.txt": "0bd2a9586dcc4a80c92794f27d810f842b1ff4ae46f639d80a73b2f016336a06",
+    "check.sh": "5e90277189bc1e928d82427627b6295c6321b648f0fe06a4e82c1f205308a9d6",
+    "calculation.py": "2799ec9f1286e37b6b84b6243cb45abddeaa098ebf85da4b1304481dd55d399f",
+    "report.md": "3fcb27348b4a3acef50f8698df2bda36c4486c316fa566a7bbc39a0e1ff25134",
+    "test_calculation.py": "982c3739ce60ca98efdb8c6ed88f57ad5865dac79755a49fd9d7003d301665f0",
+    "tracked.txt": "c5d1526523ca119199d42140e6f5c76e8ea898c6b0ef0f4d8edef8b8614f6c81"
+  },
+  "current_usability": "BLOCKED separately; historical pass is not a current usability guarantee",
+  "native_commands": [
     {
-      "check": "whoami",
-      "status": "NOT_TESTED",
-      "command_submitted": false,
-      "stdout": null,
-      "stderr": null,
-      "exit_code": null
+      "command": "mkdir -p /home/joe/LLM-Workspace/scratch/local-agent-acceptance/bionic-native-20261007T013341 && cd /home/joe/LLM-Workspace/scratch/local-agent-acceptance/bionic-native-20261007T013341 && pwd && ls -la",
+      "exit_code": 0,
+      "native_error": false,
+      "output_sha256": "c3d8b343e9dcf9149e86a61c3bbfad19ae2cbeda10445259ae3919a686a89d99"
     },
     {
-      "check": "pwd",
-      "status": "NOT_TESTED",
-      "command_submitted": false,
-      "stdout": null,
-      "stderr": null,
-      "exit_code": null
+      "command": "nvidia-smi",
+      "exit_code": 0,
+      "native_error": false,
+      "output_sha256": "2a95a118533c2372924eb10fa0ecec38b7a02f4c7b52824f7e4b92d665513fe2"
     },
     {
-      "check": "nvidia-smi",
-      "status": "NOT_TESTED",
-      "command_submitted": false,
-      "stdout": null,
-      "stderr": null,
-      "exit_code": null
+      "command": "pwd",
+      "exit_code": 0,
+      "native_error": false,
+      "output_sha256": "bc597506c3ff00d4c0867a9bb26eb4dc5ad8f5c7ace25f16069b52d5329e5230"
     },
     {
-      "check": "workspace file write/read",
-      "status": "NOT_TESTED",
-      "command_submitted": false,
-      "stdout": null,
-      "stderr": null,
-      "exit_code": null
+      "command": "whoami",
+      "exit_code": 0,
+      "native_error": false,
+      "output_sha256": "eda5cee243c27ecb1a8a6fcaad65466cfa4d5df84db44e81d31a1ef299d7fea0"
     },
     {
-      "check": "Bash script creation/execution",
-      "status": "NOT_TESTED",
-      "command_submitted": false,
-      "stdout": null,
-      "stderr": null,
-      "exit_code": null
+      "command": "python3 test_calculation.py 2>&1 || python3 -m pytest test_calculation.py -v 2>&1",
+      "exit_code": 0,
+      "native_error": false,
+      "output_sha256": "53ee9f572967db054e133c7480f28f0812ba12f740c07a67998c0287dc251a56"
     },
     {
-      "check": "Python script creation/execution",
-      "status": "NOT_TESTED",
-      "command_submitted": false,
-      "stdout": null,
-      "stderr": null,
-      "exit_code": null
+      "command": "bash check.sh",
+      "exit_code": 0,
+      "native_error": false,
+      "output_sha256": "8a2a63b7a9770b301b7bf70548b0f38967a0993cc06780270a933fe5b551de62"
     },
     {
-      "check": "Git status",
-      "status": "NOT_TESTED",
-      "command_submitted": false,
-      "stdout": null,
-      "stderr": null,
-      "exit_code": null
+      "command": "python3 -m pytest test_calculation.py -v",
+      "exit_code": 0,
+      "native_error": false,
+      "output_sha256": "31d0ee1780294fac270ee9ce20ab1ce1c3df7d4129f5c79d2ed87fb3e3530a07"
     },
     {
-      "check": "fresh tracked file modification/Git diff",
-      "status": "NOT_TESTED",
-      "command_submitted": false,
-      "stdout": null,
-      "stderr": null,
-      "exit_code": null
+      "command": "git status && git status --porcelain",
+      "exit_code": 0,
+      "native_error": false,
+      "output_sha256": "055769ba8da1a9381a02f780f826740fc1970cd6833ba2ae08c3cd8df64a0a40"
     },
     {
-      "check": "test execution",
-      "status": "NOT_TESTED",
-      "command_submitted": false,
-      "stdout": null,
-      "stderr": null,
-      "exit_code": null
+      "command": "python3 calculation.py",
+      "exit_code": 0,
+      "native_error": false,
+      "output_sha256": "8147429a869b95369e94cc235d8ec9f4c4719cef961d9420660d78262c50b8a5"
+    },
+    {
+      "command": "git diff -- /home/joe/LLM-Workspace/scratch/local-agent-acceptance/bionic-native-20261007T013341/tracked.txt",
+      "exit_code": 0,
+      "native_error": false,
+      "output_sha256": "f6afc4deba172b9cb3f1de40b4d495bb929aadac1d5f7f4166b115ee0f112d7e"
+    },
+    {
+      "command": "git status -- .",
+      "exit_code": 0,
+      "native_error": false,
+      "output_sha256": "5c5c17d0b8f51cb430c3ecd56bce85049458d4849e47a6ef552ae126a8c20e64"
     }
   ],
-  "blocker": "Bionic process running, but Codex desktop control inventory is empty. Native session/approval submission unavailable. No Bionic-run command output has been observed.",
-  "fixture": "/home/joe/LLM-Workspace/scratch/local-agent-acceptance/bionic-native-20261007T013341",
-  "codex_setup_evidence": "state/bionic-native-case.json",
-  "codex_diagnostics_evidence": "evidence/bionic-native-diagnostics.json",
-  "operator_prompt": "handoff/BIONIC_NATIVE_TASK.txt"
+  "raw_outputs": "Local owner-only evidence/bionic-native-historical-trace.json; excluded from Git"
 }

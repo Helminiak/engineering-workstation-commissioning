@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-07T01:36:59.735503+00:00",
+  "updated_at": "2026-10-07T02:08:26.937336+00:00",
   "objective": "Commission a verified, resumable Ubuntu RTX 5090 engineering workstation. Prioritize local execution before expansion.",
   "stages": {
     "execution": {
@@ -70,7 +70,7 @@
         }
       ],
       "remaining_issues": [
-        "Actual API/MCP execution verified independently; native Bionic UI and approval behavior remain MANUAL_REQUIRED. Joe-account shell is not an OS sandbox."
+        "Historical API/MCP and native engineering acceptance verified. Current Bionic chat usability is separately BLOCKED by request/context mismatch. Joe-account shell is not an OS sandbox."
       ]
     },
     "resume_engine": {
@@ -182,7 +182,7 @@
         }
       ],
       "remaining_issues": [
-        "16K/32K measured; 48K/64K not tested. Short inference performance only. CLI/SDK allocation registry differs from native REST. Bionic native UI unverified."
+        "Historical Q6_K16K/32K benchmark scope retained. Current operator-loaded Q4_K_M105472/four-slot configuration differs; Bionic request around123K exceeds it. 48K/64K Q6 tests not performed."
       ]
     },
     "scientific": {
@@ -382,26 +382,33 @@
       "verification": false,
       "repair_attempts": [],
       "remaining_issues": [
-        "All tested local subsystems, CLI authentication and authorized private remote commit verification pass. Native Bionic UI/tool approval remains MANUAL_REQUIRED."
+        "Historical native engineering acceptance PASS verified; current Bionic chat usability separately BLOCKED by context overflow. Other previously tested subsystems and GitHub synchronization remain verified."
       ]
     },
     "bionic_native": {
       "phase": "1-native",
-      "status": "BLOCKED",
-      "start_time": "2026-10-07T01:34:48.668716+00:00",
-      "end_time": "2026-10-07T01:34:49.537685+00:00",
+      "status": "PASS",
+      "start_time": "2026-10-07T02:06:11.509448+00:00",
+      "end_time": "2026-10-07T02:06:11.553287+00:00",
       "commands": [
         {
           "command": ".venv/bin/python scripts/diagnose-bionic-native.py",
           "exit_code": 2,
           "start_time": "2026-10-07T01:34:48.677516+00:00",
           "end_time": "2026-10-07T01:34:49.530263+00:00"
+        },
+        {
+          "command": "python3 scripts/verify-bionic-history.py",
+          "exit_code": 0,
+          "start_time": "2026-10-07T02:06:11.517548+00:00",
+          "end_time": "2026-10-07T02:06:11.547130+00:00"
         }
       ],
       "evidence": [
-        "evidence/bionic_native-20261007T013449530284.json"
+        "evidence/bionic_native-20261007T013449530284.json",
+        "evidence/bionic_native-20261007T020611547142.json"
       ],
-      "verification": false,
+      "verification": true,
       "repair_attempts": [
         {
           "failure": "Bionic was not running; native UI surfaces unavailable",
@@ -418,8 +425,35 @@
           "evidence": "evidence/bionic-launch-inference-repair.json"
         }
       ],
+      "remaining_issues": []
+    },
+    "bionic_usability": {
+      "phase": "1-current-usability",
+      "status": "BLOCKED",
+      "start_time": "2026-10-07T02:07:45.728686+00:00",
+      "end_time": "2026-10-07T02:07:45.801950+00:00",
+      "commands": [
+        {
+          "command": "python3 scripts/inspect-bionic-context.py",
+          "exit_code": 2,
+          "start_time": "2026-10-07T02:06:11.609452+00:00",
+          "end_time": "2026-10-07T02:06:11.660275+00:00"
+        },
+        {
+          "command": "python3 scripts/inspect-bionic-context.py",
+          "exit_code": 2,
+          "start_time": "2026-10-07T02:07:45.737229+00:00",
+          "end_time": "2026-10-07T02:07:45.796430+00:00"
+        }
+      ],
+      "evidence": [
+        "evidence/bionic_usability-20261007T020611660287.json",
+        "evidence/bionic_usability-20261007T020745796443.json"
+      ],
+      "verification": false,
+      "repair_attempts": [],
       "remaining_issues": [
-        "BLOCKED: Bionic is running but cua.getState exposes no desktop controls. Codex cannot submit/approve a native session. No Bionic-run acceptance output or exit codes exist. Operator must run handoff/BIONIC_NATIVE_TASK.txt in an Allow coding project for the prepared existing fixture repository."
+        "Current Bionic chat BLOCKED by122973-token request versus105472 context. Base prompt474 and stored message text167 tokens; dynamic overhead remains unattributed. Historical native acceptance PASS preserved; fresh GUI comparison pending."
       ]
     }
   }

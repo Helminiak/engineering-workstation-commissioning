@@ -34,4 +34,6 @@
 
 - Post-launch Qwen repair PASS: existing loader exit0 restored Q6_K32768; authenticated API returned expected42 in0.210s. Codex health check exit0. This does not change native Bionic acceptance BLOCKED. Evidence: bionic-launch-inference-repair.json and health-after-bionic-launch.json.
 
-Full integration exits 2 for unfinished native Bionic UI verification. CLI authentication and authorized private remote push verification pass. These are not PASS.
+- Current Bionic usability failure after historical acceptance: operator-loaded Q4_K_M105472/four slots uses28688MiB of32607MiB VRAM at baseline. Server rejects hello-related122973-token request (17501 over context); other native requests~123K. Native error persisted in session DB. Base system text tokenizes474, stored message text167; dynamic payload attribution unresolved. Regular CLI hello36tokens and API13tokens pass. No configuration/context increase attempted; 12 files backed up privately. Historical native PASS verified from real tool trace and kept separate. GUI comparison remains pending.
+
+Full integration exits 2 for current Bionic context usability failure. Historical native acceptance, CLI authentication and authorized private remote push verification pass. These are not PASS.

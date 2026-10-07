@@ -1,6 +1,6 @@
 # Status
-Checkpoint: 2026-10-07T01:36:59.735503+00:00
-Post-launch Qwen32K restoration and Codex inference/health verified; Bionic native acceptance blocked at UI submission with no native outputs
+Checkpoint: 2026-10-07T02:08:26.937336+00:00
+Historical native PASS preserved from real trace; current Bionic context overflow measured and blocked; configuration backed up; no context/plugin changes
 
 - execution: PASS
 - local_agent: PASS_WITH_LIMITATIONS
@@ -14,4 +14,5 @@ Post-launch Qwen32K restoration and Codex inference/health verified; Bionic nati
 - security: PASS_WITH_LIMITATIONS
 - rag: PASS_WITH_LIMITATIONS
 - end_to_end: BLOCKED
-- bionic_native: BLOCKED
+- bionic_native: PASS
+- bionic_usability: BLOCKED

@@ -51,13 +51,18 @@ def checkpoint(p, note):
         for k, v in p["stages"].items()
         if v["status"] not in ("PASS", "PASS_WITH_LIMITATIONS")
     ]
-    if "bionic_native" in pending:
-        pending.remove("bionic_native")
-        pending.insert(0, "bionic_native")
+    for priority in ["bionic_native", "bionic_usability"]:
+        if priority in pending:
+            pending.remove(priority)
+            pending.insert(0, priority)
     next_action = (
-        "Operator: submit handoff/BIONIC_NATIVE_TASK.txt in native Bionic Allow coding project for the existing fixture repository; preserve native tool transcript and actual exits. Codex: independently review evidence afterward. Do not substitute API/MCP probes for native execution."
-        if pending and pending[0] == "bionic_native"
-        else "Inspect recorded evidence for the next unfinished stage; rerun its verifier before continuing."
+        "Inspect reports/BIONIC_CONTEXT_DIAGNOSIS.json and private configuration backups. Operator: compare pristine Bionic/regular GUI hello with same loaded model. Measure assembled tool/instruction payload before any context increase; preserve historical native acceptance PASS. Do not reload or disable integrations blindly."
+        if pending and pending[0] == "bionic_usability"
+        else (
+            "Operator: submit handoff/BIONIC_NATIVE_TASK.txt in native Bionic Allow coding project for the existing fixture repository; preserve native tool transcript and actual exits. Codex: independently review evidence afterward. Do not substitute API/MCP probes for native execution."
+            if pending and pending[0] == "bionic_native"
+            else "Inspect recorded evidence for the next unfinished stage; rerun its verifier before continuing."
+        )
     )
     commit = (
         subprocess.run(
@@ -112,7 +117,7 @@ First command: scripts/show_status.sh
 Read commissioning/MISSION.md for the durable operator requirements.
 Reproduce current blocker: native Bionic UI requires operator verification; read handoff/BIONIC_NATIVE_VERIFICATION.md. Verify private GitHub state with python3 scripts/verify-github-remote.py after authorized pushes. Health checks CLI authentication separately from remote writes. Development passes; do not repeat apt installation.
 Next: {next_action}
-Bionic launch state: state/bionic-native-launch.json; inspect its PID before another launch. Fresh native fixture: state/bionic-native-case.json; do not recreate it or replace existing data. Native acceptance is recorded separately in reports/BIONIC_NATIVE_ACCEPTANCE.json.
+Bionic launch state: state/bionic-native-launch.json; inspect its PID before another launch. Fresh native fixture: state/bionic-native-case.json; do not recreate it or replace existing data. Historical native acceptance PASS is recorded separately in reports/BIONIC_NATIVE_ACCEPTANCE.json; current usability is in reports/BIONIC_CONTEXT_DIAGNOSIS.json.
 Reproduce: python3 scripts/commission.py verify STAGE --command 'VERIFIER' (inspect progress.json commands).
 Do not repeat: working NVIDIA driver, working Node, existing model downloads; do not replace existing integrations.
 Standing authorization: reviewed development sudo batch already approved and installed; normal workspace builds/tests/checkpoints authorized. Operator approved private Helminiak/engineering-workstation-commissioning creation and sanitized commissioning/main-work push. Read AUTHORIZATION.json.

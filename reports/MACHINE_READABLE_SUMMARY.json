@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-10-07T01:36:59.767372+00:00",
+  "timestamp": "2026-10-07T02:09:25.748746+00:00",
   "status": "BLOCKED",
-  "base_commit": "f259f5f352988fc541a9e9da15d92ca50e4bb0cf",
+  "base_commit": "13474841cdab6c15076855b74d0c0c4175b5af9a",
   "branch": "commissioning/main-work",
   "stages": {
     "execution": "PASS",
@@ -16,13 +16,14 @@
     "security": "PASS_WITH_LIMITATIONS",
     "rag": "PASS_WITH_LIMITATIONS",
     "end_to_end": "BLOCKED",
-    "bionic_native": "BLOCKED"
+    "bionic_native": "PASS",
+    "bionic_usability": "BLOCKED"
   },
   "open_issues": [
     {
-      "id": "bionic-native",
+      "id": "bionic-usability-context",
       "status": "BLOCKED",
-      "detail": "Bionic 1.1.7+7 launched and running. cua.getState after launch returns apps=[], browsers=[]; no native session submission/approval surface available. Fresh existing-repo fixture and handoff/BIONIC_NATIVE_TASK.txt prepared by Codex. No Bionic acceptance commands submitted; native stdout/exit codes NOT_TESTED. Codex MCP initialization probes pass core and public documentation tools. Native log Atlassian OAuth failure has unverified impact; no connector disabled."
+      "detail": "Historical Bionic native acceptance PASS verified from persisted shell/file tool trace. Current hello requests~123K tokens exceed loaded Q4_K_M105472 context/four slots. Same model regular CLI hello36tokens/API13tokens pass. Native error and server log correlate. VRAM before changes3421MiB free; no context/plugin/security changes made. Exact payload component attribution and pristine GUI comparison remain unverified. See reports/BIONIC_CONTEXT_DIAGNOSIS.json."
     },
     {
       "id": "security-coverage",
@@ -36,9 +37,9 @@
     }
   ],
   "verification": {
-    "timestamp": "2026-10-07T01:36:59.767372+00:00",
+    "timestamp": "2026-10-07T02:09:25.748746+00:00",
     "local_execution": "2026-10-06T23:58:41.825782+00:00",
-    "local_agent": "PASS via API/MCP; native UI MANUAL_REQUIRED",
+    "local_agent": "Historical API/MCP and native acceptance PASS; current Bionic usability BLOCKED separately",
     "cuda": {
       "status": "PASS",
       "torch": "2.14.1+cu130",
@@ -255,96 +256,366 @@
       "correction": "Initial wrong fixture repository rejected, commissioning repo corrected by agent."
     },
     "bionic_native": {
-      "timestamp": "2026-10-07T01:34:49.462212+00:00",
-      "initiator": "Codex",
-      "bionic_version": "1.1.7+7",
-      "bionic_process_running": true,
-      "desktop_control": {
-        "timestamp": "2026-10-07T01:34:48.627121+00:00",
-        "initiator": "Codex",
-        "command": "cua.getState() after normal Bionic launch",
-        "result": {
-          "apps": [],
-          "browsers": []
-        }
+      "timestamp": "2026-10-07T02:09:25.731186+00:00",
+      "executor": "Bionic native agent (historical)",
+      "reviewer": "Codex read-only trace/artifact verification; no acceptance commands rerun",
+      "status": "PASS",
+      "fixture": "/home/joe/LLM-Workspace/scratch/local-agent-acceptance/bionic-native-20261007T013341",
+      "source_database": "/home/joe/.lmstudio/apps/bionic/projects/14effd21-51b5-4082-a3d7-d977b6a57ef1/.internal/ng-sessions.sqlite",
+      "artifact_sha256": {
+        "probe.txt": "0bd2a9586dcc4a80c92794f27d810f842b1ff4ae46f639d80a73b2f016336a06",
+        "check.sh": "5e90277189bc1e928d82427627b6295c6321b648f0fe06a4e82c1f205308a9d6",
+        "calculation.py": "2799ec9f1286e37b6b84b6243cb45abddeaa098ebf85da4b1304481dd55d399f",
+        "report.md": "3fcb27348b4a3acef50f8698df2bda36c4486c316fa566a7bbc39a0e1ff25134",
+        "test_calculation.py": "982c3739ce60ca98efdb8c6ed88f57ad5865dac79755a49fd9d7003d301665f0",
+        "tracked.txt": "c5d1526523ca119199d42140e6f5c76e8ea898c6b0ef0f4d8edef8b8614f6c81"
       },
-      "mcp_diagnostics": [
+      "current_usability": "BLOCKED separately; historical pass is not a current usability guarantee",
+      "native_commands": [
         {
-          "name": "Local Workbench",
-          "initiator": "Codex",
-          "status": "PASS",
-          "tools": [
-            "run_command",
-            "run_python",
-            "search_web",
-            "read_web",
-            "read_document"
-          ],
-          "scope": "protocol initialization/list only; no Bionic native command execution"
+          "command": "mkdir -p /home/joe/LLM-Workspace/scratch/local-agent-acceptance/bionic-native-20261007T013341 && cd /home/joe/LLM-Workspace/scratch/local-agent-acceptance/bionic-native-20261007T013341 && pwd && ls -la",
+          "exit_code": 0,
+          "native_error": false,
+          "output_sha256": "c3d8b343e9dcf9149e86a61c3bbfad19ae2cbeda10445259ae3919a686a89d99"
         },
         {
-          "name": "Context7 Docs",
-          "initiator": "Codex",
-          "status": "PASS",
-          "tools": [
-            "resolve-library-id",
-            "query-docs"
-          ],
-          "scope": "protocol initialization/list only; no Bionic native command execution"
+          "command": "nvidia-smi",
+          "exit_code": 0,
+          "native_error": false,
+          "output_sha256": "2a95a118533c2372924eb10fa0ecec38b7a02f4c7b52824f7e4b92d665513fe2"
         },
         {
-          "name": "Cloudflare Docs",
-          "initiator": "Codex",
-          "status": "PASS",
-          "tools": [
-            "search_cloudflare_documentation",
-            "migrate_pages_to_workers_guide"
-          ],
-          "scope": "protocol initialization/list only; no Bionic native command execution"
+          "command": "pwd",
+          "exit_code": 0,
+          "native_error": false,
+          "output_sha256": "bc597506c3ff00d4c0867a9bb26eb4dc5ad8f5c7ace25f16069b52d5329e5230"
         },
         {
-          "name": "Legacy Context7 OAuth endpoint, without native OAuth credentials",
-          "initiator": "Codex",
-          "status": "FAIL",
-          "error_types": [
-            "ExceptionGroup",
-            "ExceptionGroup",
-            "MCPError"
+          "command": "whoami",
+          "exit_code": 0,
+          "native_error": false,
+          "output_sha256": "eda5cee243c27ecb1a8a6fcaad65466cfa4d5df84db44e81d31a1ef299d7fea0"
+        },
+        {
+          "command": "python3 test_calculation.py 2>&1 || python3 -m pytest test_calculation.py -v 2>&1",
+          "exit_code": 0,
+          "native_error": false,
+          "output_sha256": "53ee9f572967db054e133c7480f28f0812ba12f740c07a67998c0287dc251a56"
+        },
+        {
+          "command": "bash check.sh",
+          "exit_code": 0,
+          "native_error": false,
+          "output_sha256": "8a2a63b7a9770b301b7bf70548b0f38967a0993cc06780270a933fe5b551de62"
+        },
+        {
+          "command": "python3 -m pytest test_calculation.py -v",
+          "exit_code": 0,
+          "native_error": false,
+          "output_sha256": "31d0ee1780294fac270ee9ce20ab1ce1c3df7d4129f5c79d2ed87fb3e3530a07"
+        },
+        {
+          "command": "git status && git status --porcelain",
+          "exit_code": 0,
+          "native_error": false,
+          "output_sha256": "055769ba8da1a9381a02f780f826740fc1970cd6833ba2ae08c3cd8df64a0a40"
+        },
+        {
+          "command": "python3 calculation.py",
+          "exit_code": 0,
+          "native_error": false,
+          "output_sha256": "8147429a869b95369e94cc235d8ec9f4c4719cef961d9420660d78262c50b8a5"
+        },
+        {
+          "command": "git diff -- /home/joe/LLM-Workspace/scratch/local-agent-acceptance/bionic-native-20261007T013341/tracked.txt",
+          "exit_code": 0,
+          "native_error": false,
+          "output_sha256": "f6afc4deba172b9cb3f1de40b4d495bb929aadac1d5f7f4166b115ee0f112d7e"
+        },
+        {
+          "command": "git status -- .",
+          "exit_code": 0,
+          "native_error": false,
+          "output_sha256": "5c5c17d0b8f51cb430c3ecd56bce85049458d4849e47a6ef552ae126a8c20e64"
+        }
+      ],
+      "raw_outputs": "Local owner-only evidence/bionic-native-historical-trace.json; excluded from Git"
+    },
+    "bionic_current_usability": {
+      "timestamp": "2026-10-07T02:07:45.793276+00:00",
+      "current_usability": "BLOCKED",
+      "historical_native_acceptance": "PASS; separately verified from persisted Bionic tool trace",
+      "loaded_model": {
+        "timestamp": "2026-10-07T01:58:09.474Z",
+        "initiator": "Codex",
+        "models": [
+          {
+            "identifier": "qwen/qwen3.8-27b",
+            "path": "qwen/qwen3.8-27b",
+            "quantization": "Q4_K_M",
+            "contextLength": 105472,
+            "config": {
+              "contextLength": 105472,
+              "maxParallelPredictions": 4,
+              "useUnifiedKvCache": true,
+              "evalBatchSize": 2048,
+              "flashAttention": true,
+              "gpu": {
+                "splitStrategy": "evenly",
+                "disabledGpus": [],
+                "ratio": 1,
+                "numCpuExpertLayersRatio": "off"
+              },
+              "llamaKCacheQuantizationType": false,
+              "llamaVCacheQuantizationType": false
+            }
+          }
+        ]
+      },
+      "vram_mib": {
+        "total": 32607,
+        "used": 28190,
+        "free": 3919
+      },
+      "backup": {
+        "directory": "backups/bionic-context-20261007T015809Z",
+        "files": 12
+      },
+      "bionic_server_errors": [
+        {
+          "line": 30874,
+          "log_timestamp": "2026-10-06 19:16:23",
+          "request_tokens": 131244,
+          "available_context": 104704,
+          "excess_tokens": 26540
+        },
+        {
+          "line": 31249,
+          "log_timestamp": "2026-10-06 19:29:30",
+          "request_tokens": 123017,
+          "available_context": 106496,
+          "excess_tokens": 16521
+        },
+        {
+          "line": 31995,
+          "log_timestamp": "0.49.875.571 E srv    send_error: task id = 0, error: request (122946 tokens) exceeds the available context size (16384 tokens), try increasing it",
+          "request_tokens": 122946,
+          "available_context": 16384,
+          "excess_tokens": 106562
+        },
+        {
+          "line": 32025,
+          "log_timestamp": "1.00.659.728 E srv    send_error: task id = 3, error: request (122946 tokens) exceeds the available context size (16384 tokens), try increasing it",
+          "request_tokens": 122946,
+          "available_context": 16384,
+          "excess_tokens": 106562
+        },
+        {
+          "line": 33003,
+          "log_timestamp": "2026-10-06 21:46:43",
+          "request_tokens": 123134,
+          "available_context": 103936,
+          "excess_tokens": 19198
+        },
+        {
+          "line": 33372,
+          "log_timestamp": "2026-10-06 21:52:47",
+          "request_tokens": 123134,
+          "available_context": 104192,
+          "excess_tokens": 18942
+        },
+        {
+          "line": 33530,
+          "log_timestamp": "2026-10-06 21:54:25",
+          "request_tokens": 122988,
+          "available_context": 104192,
+          "excess_tokens": 18796
+        },
+        {
+          "line": 33617,
+          "log_timestamp": "2026-10-06 21:55:19",
+          "request_tokens": 123079,
+          "available_context": 105472,
+          "excess_tokens": 17607
+        },
+        {
+          "line": 33679,
+          "log_timestamp": "2026-10-06 21:55:54",
+          "request_tokens": 123119,
+          "available_context": 105472,
+          "excess_tokens": 17647
+        },
+        {
+          "line": 33701,
+          "log_timestamp": "2026-10-06 21:56:05",
+          "request_tokens": 123158,
+          "available_context": 105472,
+          "excess_tokens": 17686
+        },
+        {
+          "line": 33715,
+          "log_timestamp": "2026-10-06 21:56:10",
+          "request_tokens": 123160,
+          "available_context": 105472,
+          "excess_tokens": 17688
+        },
+        {
+          "line": 34022,
+          "log_timestamp": "2026-10-06 21:59:15",
+          "request_tokens": 122973,
+          "available_context": 105472,
+          "excess_tokens": 17501
+        }
+      ],
+      "bionic_hello_entries": [
+        {
+          "entry_id": "34711aba-0bfc-429d-ba2a-6f0295dc1cdf",
+          "previous_entry_count": 2,
+          "created_timestamp": 1791338355064,
+          "utc": "2026-10-07T01:59:15.064000+00:00",
+          "project_database": "/home/joe/.lmstudio/apps/bionic/projects/d49037d8-47f4-5808-9028-c707de117f8f/.internal/ng-sessions.sqlite",
+          "user_input": "hello",
+          "children": [
+            {
+              "type": "error",
+              "message_characters": 255
+            }
+          ],
+          "previous_entry_types": [
+            "stateChange",
+            "message"
+          ],
+          "previous_user_messages": 1,
+          "native_error_text": "The selected model was loaded with a context length that is too small for this request.\n\nTry one of the following:\n\u2022 Reduce load on your machine (close apps you're not using) and re-load the model.\n\u2022 Start with a shorter request or reduce attachment size."
+        },
+        {
+          "entry_id": "dbef5ad9-6176-42e9-ace0-d39180e26297",
+          "previous_entry_count": 10,
+          "created_timestamp": 1791338170384,
+          "utc": "2026-10-07T01:56:10.384000+00:00",
+          "project_database": "/home/joe/.lmstudio/apps/bionic/projects/14effd21-51b5-4082-a3d7-d977b6a57ef1/.internal/ng-sessions.sqlite",
+          "user_input": "hello",
+          "children": [
+            {
+              "type": "error",
+              "message_characters": 255
+            }
+          ]
+        },
+        {
+          "entry_id": "e2c442a5-b877-4fee-a74a-64eb04dc8531",
+          "previous_entry_count": 61,
+          "created_timestamp": 1791337599938,
+          "utc": "2026-10-07T01:46:39.938000+00:00",
+          "project_database": "/home/joe/.lmstudio/apps/bionic/projects/14effd21-51b5-4082-a3d7-d977b6a57ef1/.internal/ng-sessions.sqlite",
+          "user_input": "hello",
+          "children": [
+            {
+              "type": "error",
+              "message_characters": 255
+            }
           ]
         }
       ],
-      "native_log_observations": [
-        "Native Bionic launch reports Atlassian MCP authentication required. This does not establish that it blocks core tools.",
-        "Native Bionic launch reports duplicate GitHub tool names ignored; core execution impact unverified."
+      "session_overhead_metadata": [
+        {
+          "session_id": "cfdca7d2-907a-4253-ac5c-ee0407af45d4",
+          "updated_timestamp": 1791338509213,
+          "base_system_prompt_characters": 2238,
+          "module_count": 24,
+          "user_tool_specifier_count": 0,
+          "ui_context_estimate": 561
+        },
+        {
+          "session_id": "19c4fba2-f5d0-49c0-9215-d9acc7acc189",
+          "updated_timestamp": 1791338355070,
+          "base_system_prompt_characters": 2238,
+          "module_count": 24,
+          "user_tool_specifier_count": 0,
+          "ui_context_estimate": 6186
+        },
+        {
+          "session_id": "66b5fc62-073c-429e-bf3b-195245a98ec8",
+          "updated_timestamp": 1791338170394,
+          "base_system_prompt_characters": 2238,
+          "module_count": 24,
+          "user_tool_specifier_count": 0,
+          "ui_context_estimate": 6470
+        },
+        {
+          "session_id": "b2bdc1f8-4206-455c-bcf8-4058b4ec833a",
+          "updated_timestamp": 1791337963195,
+          "base_system_prompt_characters": 2238,
+          "module_count": 24,
+          "user_tool_specifier_count": 0,
+          "ui_context_estimate": 131704
+        }
       ],
-      "bionic_run_acceptance": {
-        "status": "BLOCKED",
-        "outputs": null,
-        "exit_codes": null,
-        "reason": "No desktop UI control or documented native agent submission interface exposed to Codex. Operator must submit handoff/BIONIC_NATIVE_TASK.txt in an Allow coding project. No native acceptance command has been submitted."
-      },
-      "limitations": [
-        "Codex protocol probes do not verify Bionic approvals or native tool calls.",
-        "Unauthenticated legacy OAuth endpoint probe does not verify Bionic stored OAuth credentials.",
-        "No connector disabled, credential modified, approval bypassed, or security control changed."
-      ],
-      "evidence": {
-        "launch_log": "logs/bionic-native-launch.log",
-        "fixture_setup": "state/bionic-native-case.json",
-        "native_task": "handoff/BIONIC_NATIVE_TASK.txt"
-      },
-      "codex_model_repair": {
-        "timestamp": "2026-10-07T01:36:39.404824+00:00",
+      "tokenized_text_components": {
         "initiator": "Codex",
-        "scope": "API inference after native app launch/model restoration; not native Bionic acceptance",
-        "context": 32768,
-        "quantization": "Q6_K",
-        "expected": "42",
-        "actual": "42",
-        "seconds": 0.21027433100243798,
-        "status": "PASS"
+        "source": "Read-only persisted native session plus loaded-model tokenizer",
+        "components": [
+          {
+            "component": "Persisted base system prompt",
+            "characters": 2238,
+            "tokens": 474
+          },
+          {
+            "component": "Stored text parts through latest hello",
+            "characters": 465,
+            "tokens": 167
+          },
+          {
+            "component": "hello alone",
+            "characters": 5,
+            "tokens": 1
+          }
+        ],
+        "stored_message_part_types": [
+          "text",
+          "text"
+        ],
+        "limitation": "Individual text token counts are not additive full-chat counts. Dynamic tools/instructions, project files, attachments and formatting not reconstructed. Raw text not saved or printed."
       },
-      "codex_health_after_launch": 0
+      "plain_api_control": {
+        "timestamp": "2026-10-07T02:00:33.997791+00:00",
+        "initiator": "Codex",
+        "comparison": "Fresh one-message API control, no tools/history; NOT a regular LM Studio GUI chat",
+        "user_input": "hello",
+        "status": "PASS",
+        "seconds": 0.3011038029981137,
+        "reply": "Hello! How can I help you today?",
+        "usage": {
+          "prompt_tokens": 13,
+          "completion_tokens": 10,
+          "total_tokens": 23,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "payload_characters": 145
+      },
+      "regular_lmstudio_cli_control": {
+        "initiator": "Codex",
+        "comparison": "Regular LM Studio CLI fresh chat; not GUI",
+        "command": "lms chat qwen/qwen3.8-27b --prompt hello --stats --reasoning off --dont-fetch-catalog",
+        "exit_code": 0,
+        "reply": "Hello! How can I help you today?",
+        "prompt_tokens": 36,
+        "predicted_tokens": 10,
+        "ttft_seconds": 0.163,
+        "tokens_per_second": 102.91
+      },
+      "regular_lmstudio_fresh_gui_comparison": "NOT_TESTED: no desktop controls; operator comparison requested",
+      "analysis": {
+        "confirmed": "Bionic assembled requests around123K tokens exceed loaded105472-token context; generation is rejected. Same model answers a no-tool API hello with13 prompt tokens and regular CLI hello with36.",
+        "component_attribution": "System/tool/history contributions cannot be split exactly from redacted server request logs. Native base prompts are2238 characters and24 module specifiers were persisted. These are metadata, not complete assembled requests.",
+        "inference": "Large Bionic-specific request overhead dominates the small input. Optional MCP schemas/instructions and project/session context are candidates; no particular connector is proven responsible.",
+        "freshness_limit": "Stored hello entries include earlier entries. API/CLI controls are fresh. Pristine Bionic-versus-LM-Studio GUI comparison is still required.",
+        "memory_decision": "No context increase attempted: only about3.3GiB VRAM free under current large-context/four-slot Q4 configuration. Do not reuse earlier Q6/32K memory estimates for this different configuration."
+      },
+      "changes": "Workspace evidence/checkpoint writes only. No model, context, plugin, security or app configuration changes.",
+      "next_action": "Compare pristine Bionic and regular LM Studio GUI hello requests on the same loaded model. Then measure enabled tool payload per project/provider and test a minimal core-only project without changing global security controls."
     },
     "github_connector": {
       "connector_authentication": "PASS",
@@ -405,7 +676,7 @@
       "writes": "NOT_TESTED; repository creation/push require approval"
     },
     "github_remote": {
-      "timestamp": "2026-10-07T01:29:54.827769+00:00",
+      "timestamp": "2026-10-07T01:37:30.544036+00:00",
       "repository": "Helminiak/engineering-workstation-commissioning",
       "branch": "commissioning/main-work",
       "operation": "read-only verification",
@@ -417,9 +688,9 @@
         "url": "https://github.com/Helminiak/engineering-workstation-commissioning",
         "viewerPermission": "ADMIN"
       },
-      "local_commit": "f259f5f352988fc541a9e9da15d92ca50e4bb0cf",
-      "remote_commit": "f259f5f352988fc541a9e9da15d92ca50e4bb0cf",
-      "api_commit": "f259f5f352988fc541a9e9da15d92ca50e4bb0cf",
+      "local_commit": "13474841cdab6c15076855b74d0c0c4175b5af9a",
+      "remote_commit": "13474841cdab6c15076855b74d0c0c4175b5af9a",
+      "api_commit": "13474841cdab6c15076855b74d0c0c4175b5af9a",
       "privacy": "PRIVATE",
       "limitation": "Read/branch/commit/push verified; PR creation, merge and deployment NOT_TESTED and not authorized."
     },

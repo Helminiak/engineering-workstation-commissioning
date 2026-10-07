@@ -1,9 +1,9 @@
 {
   "issues": [
     {
-      "id": "bionic-native",
+      "id": "bionic-usability-context",
       "status": "BLOCKED",
-      "detail": "Bionic 1.1.7+7 launched and running. cua.getState after launch returns apps=[], browsers=[]; no native session submission/approval surface available. Fresh existing-repo fixture and handoff/BIONIC_NATIVE_TASK.txt prepared by Codex. No Bionic acceptance commands submitted; native stdout/exit codes NOT_TESTED. Codex MCP initialization probes pass core and public documentation tools. Native log Atlassian OAuth failure has unverified impact; no connector disabled."
+      "detail": "Historical Bionic native acceptance PASS verified from persisted shell/file tool trace. Current hello requests~123K tokens exceed loaded Q4_K_M105472 context/four slots. Same model regular CLI hello36tokens/API13tokens pass. Native error and server log correlate. VRAM before changes3421MiB free; no context/plugin/security changes made. Exact payload component attribution and pristine GUI comparison remain unverified. See reports/BIONIC_CONTEXT_DIAGNOSIS.json."
     },
     {
       "id": "security-coverage",

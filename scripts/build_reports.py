@@ -132,7 +132,7 @@ write(C / "machine_state.json", machine)
 verification = {
     "timestamp": now,
     "local_execution": read("evidence/phase0.json").get("timestamp"),
-    "local_agent": "PASS via API/MCP; native UI MANUAL_REQUIRED",
+    "local_agent": "Historical API/MCP and native acceptance PASS; current Bionic usability BLOCKED separately",
     "cuda": read("evidence/cuda-validation.json"),
     "scientific": read("evidence/scientific-validation.json"),
     "forensics": read("evidence/forensics-validation.json"),
@@ -141,7 +141,8 @@ verification = {
     "forensic_statistics": read("evidence/forensic-statistics.json"),
     "cross_language_replay": read("evidence/cross-language-replay.json"),
     "local_agent_java": read("evidence/local-agent-java-verification.json"),
-    "bionic_native": read("evidence/bionic-native-diagnostics.json"),
+    "bionic_native": read("reports/BIONIC_NATIVE_ACCEPTANCE.json"),
+    "bionic_current_usability": read("reports/BIONIC_CONTEXT_DIAGNOSIS.json"),
     "github_connector": read("evidence/github-connector.json"),
     "github_cli_read": read("evidence/github-cli-read.json"),
     "github_remote": read("evidence/github-remote-verification.json"),
@@ -245,15 +246,15 @@ The core local-agent execution and persistent handoff infrastructure is operatio
 
 Verified: Joe/5090FE/Ubuntu 26.04.1/RTX 5090; real shell and file writes; Node/npm/npx; local Git branching and commits; Qwen independent engineering acceptance via API/MCP; Context7 public initialization and optional-connector failure isolation; rerunnable stage engine with timeout/failure evidence; PyTorch CUDA kernels and transfers; deterministic scientific validation; 200K-record disk-backed forensic analysis and correlation/regression fixtures; Java/Python order-book agreement, Maven/JUnit, CMake/Ninja, clang analysis, Valgrind, GDB, Rust/clippy and ShellCheck; local-agent Java compilation; local embedding retrieval and stale-index detection.
 
-Recommended Qwen Q6_K context: 32,768, tested with 25,729 input tokens. Measured short benchmark peak VRAM 25,725 MiB of 32,607 MiB; median generation about 161 tokens/sec. Cache and short-prompt limits apply.
+Historical API/MCP Qwen Q6_K recommendation: 32,768, tested with 25,729 input tokens. This is not a fix for current Bionic request overhead. Measured short benchmark peak VRAM 25,725 MiB of 32,607 MiB; median generation about 161 tokens/sec. Cache and short-prompt limits apply.
 
-Private Helminiak/engineering-workstation-commissioning created with operator approval; commissioning/main-work push verified by matching local HEAD, Git remote and GitHub API commits. CLI authentication as Helminiak and repository privacy/write permissions pass. Incomplete: native Bionic projects/tool approval and full integration completion. Installed Bionic1.1.7+7 launched successfully, but native acceptance submission is BLOCKED because this session exposes no desktop UI controls. No Bionic-run output or exit codes exist; Codex-only MCP diagnostics are separate in BIONIC_NATIVE_DIAGNOSIS.json. PR creation, merge and deployment were not authorized or performed. One unexplained Python3.14 streaming failure is recorded; controls pass and forensic verification is pinned to Python3.12. yq/fd and Gradle are absent and were not needed for verified workflows. No driver, kernel, firmware or security-control changes made. Only the approved private commissioning repository/task branch was created/pushed.
+Private Helminiak/engineering-workstation-commissioning created with operator approval; commissioning/main-work push verified by matching local HEAD, Git remote and GitHub API commits. CLI authentication as Helminiak and repository privacy/write permissions pass. Historical native Bionic engineering acceptance PASS is preserved and verified from persisted native tool results. Current usability is BLOCKED: requests around123K tokens exceed the currently loaded Q4_K_M105472-token/four-slot context. Regular CLI hello uses36 tokens and plain API hello13. GUI comparison and exact payload composition remain unverified; no context increase attempted with only about3.3GiB VRAM free. Read BIONIC_CONTEXT_DIAGNOSIS.json. Full integration remains incomplete. PR creation, merge and deployment were not authorized or performed. One unexplained Python3.14 streaming failure is recorded; controls pass and forensic verification is pinned to Python3.12. yq/fd and Gradle are absent and were not needed for verified workflows. No driver, kernel, firmware or security-control changes made. Only the approved private commissioning repository/task branch was created/pushed.
 
 Read commissioning/NEXT_AGENT.md and run scripts/show_status.sh. Detailed evidence is local in evidence/ and logs/. Sanitized reports, scripts and state are committed locally and pushed to the approved private repository. See git log -1 for the exact latest commit.
 """)
 (R / "FAILURE_REPORT.md").write_text(
     (C / "FAILURES.md").read_text()
-    + "\nFull integration exits 2 for unfinished native Bionic UI verification. CLI authentication and authorized private remote push verification pass. These are not PASS.\n"
+    + "\nFull integration exits 2 for current Bionic context usability failure. Historical native acceptance, CLI authentication and authorized private remote push verification pass. These are not PASS.\n"
 )
 (R / "SYSTEM_ARCHITECTURE.md").write_text(
     (C / "ARCHITECTURE.md").read_text()
@@ -268,7 +269,7 @@ Environments: .venv retains original local-agent tools; venvs/quant is Python 3.
 (R / "SECURITY_REPORT.md").write_text("""# Security checkpoint
 Local API is bound to 127.0.0.1:1234 and uses the existing owner-only token. No persistent API token is included in reports, source, commits or prompts. An early SDK handle dump exposed transient client session fields in tool output; diagnostics now use whitelisted metadata. Those fields were not written into commissioning files. Original bridge backed up before changes. Command audits and local agent transcripts are owner-only and excluded from Git. Redaction is heuristic; never assume raw logs are safe to upload.
 
-Core execution is Joe-account shell execution, not an OS sandbox. Cwd and document reads are scoped; arbitrary executable code can reach other user files. Agent prompts prohibit sudo and external actions, but prompts are not a hard security boundary. Privileged changes require operator approval. Native Bionic approval behavior remains MANUAL_REQUIRED.
+Core execution is Joe-account shell execution, not an OS sandbox. Cwd and document reads are scoped; arbitrary executable code can reach other user files. Agent prompts prohibit sudo and external actions, but prompts are not a hard security boundary. Privileged changes require operator approval. Historical native tool acceptance passed with recorded outputs/exits. Current Bionic usability is blocked separately; ongoing approval coverage remains limited.
 
 ruff and limited mypy checks are recorded. Quant and local-agent pip-audit scans and npm audit found no known vulnerabilities at scan time. The GPU vendor wheel index is not fully covered by PyPI advisory scanning. The staged secret scan is heuristic and does not replace Gitleaks. ShellCheck, clang analysis, Java lint/JUnit and Rust clippy now pass. No private code was sent to third-party scanners; dependency auditing queried public package names.
 

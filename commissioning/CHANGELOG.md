@@ -169,3 +169,19 @@
 - 2026-10-07T01:36:31.860331+00:00: Bionic launch left Qwen unloaded; commissioned 32K reload in progress as Codex repair; native acceptance still blocked
 
 - 2026-10-07T01:36:59.742230+00:00: Post-launch Qwen32K restoration and Codex inference/health verified; Bionic native acceptance blocked at UI submission with no native outputs
+
+- 2026-10-07T02:06:11.516333+00:00: bionic_native: verification started
+
+- 2026-10-07T02:06:11.561671+00:00: bionic_native: PASS
+
+- 2026-10-07T02:06:11.608105+00:00: bionic_usability: verification started
+
+- 2026-10-07T02:06:11.673104+00:00: bionic_usability: BLOCKED
+
+- 2026-10-07T02:07:45.735902+00:00: bionic_usability: verification started
+
+- 2026-10-07T02:07:45.808823+00:00: bionic_usability: BLOCKED
+
+- 2026-10-07T02:07:45.862265+00:00: end_to_end: BLOCKED: Historical native engineering acceptance PASS verified; current Bionic chat usability separately BLOCKED by context overflow. Other previously tested subsystems and GitHub synchronization remain verified.
+
+- 2026-10-07T02:08:26.947332+00:00: Historical native PASS preserved from real trace; current Bionic context overflow measured and blocked; configuration backed up; no context/plugin changes
